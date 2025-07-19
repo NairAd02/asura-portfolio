@@ -21,7 +21,7 @@ export default function Header() {
             </div>
           </NavigationComponent>
 
-          {breakpoint === "xs" || breakpoint === "sm" || breakpoint === "md" ? (
+          {breakpoint === "xs" || breakpoint === "sm" || breakpoint === "md" || breakpoint === "lg" ? (
             <PopoverContainer trigger={<AlignCenter />}>
               <HeaderNav />
             </PopoverContainer>

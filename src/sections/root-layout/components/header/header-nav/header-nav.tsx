@@ -14,7 +14,7 @@ const sections = [
 
 export default function HeaderNav() {
   return (
-    <nav className="flex flex-col md:flex-row items-center gap-2 text-sm font-medium">
+    <nav className="flex flex-col lg:flex-row items-center gap-2 text-sm font-medium">
       {sections.map((section) => (
         <Link
           key={section}
@@ -24,11 +24,11 @@ export default function HeaderNav() {
           offset={-100}
           duration={500}
           activeClass="active"
-          className="group"
+          className="group w-full"
         >
           <Button
             variant="outline"
-            className="transition-all group-[.active]:bg-primary group-[.active]:text-white"
+            className="transition-all w-full lg:w-auto group-[.active]:bg-primary group-[.active]:text-white"
           >
             {capitalize(section)}
           </Button>
