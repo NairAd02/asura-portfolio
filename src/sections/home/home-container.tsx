@@ -27,6 +27,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import HomeHeroSection from "./components/home-hero-section/home-hero-section";
+import { principalPlaceHolder } from "@/lib/place-holders";
 
 export default function HomeContainer() {
   return (
@@ -77,7 +78,7 @@ export default function HomeContainer() {
             <Card className="overflow-hidden">
               <div className="aspect-video">
                 <Image
-                  src="/placeholder.svg?height=300&width=500"
+                  src={principalPlaceHolder}
                   alt="Proyecto 1"
                   width={500}
                   height={300}
@@ -129,7 +130,7 @@ export default function HomeContainer() {
             <Card className="overflow-hidden">
               <div className="aspect-video">
                 <Image
-                  src="/placeholder.svg?height=300&width=500"
+                  src={principalPlaceHolder}
                   alt="Proyecto 2"
                   width={500}
                   height={300}
@@ -181,7 +182,7 @@ export default function HomeContainer() {
             <Card className="overflow-hidden">
               <div className="aspect-video">
                 <Image
-                  src="/placeholder.svg?height=300&width=500"
+                  src={principalPlaceHolder}
                   alt="Proyecto 3"
                   width={500}
                   height={300}
@@ -233,7 +234,7 @@ export default function HomeContainer() {
             <Card className="overflow-hidden">
               <div className="aspect-video">
                 <Image
-                  src="/placeholder.svg?height=300&width=500"
+                  src={principalPlaceHolder}
                   alt="Proyecto 4"
                   width={500}
                   height={300}
