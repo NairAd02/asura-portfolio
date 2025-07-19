@@ -22,14 +22,15 @@ export default function CertificationGroupCard({ certificationGroup }: Props) {
               <div>
                 <div className="flex items-center justify-between">
                   <p className="font-medium">{certification.title}</p>
-                  <Badge variant="outline">
-                    {formatDate(certification.startDate)} -
-                    {formatDate(certification.endDate)}
-                  </Badge>
+                 
                 </div>
                 <p className="text-sm text-muted-foreground">
                   {certification.institution}
                 </p>
+                 <Badge className="whitespace-normal md:whitespace-nowrap" variant="outline">
+                    {formatDate(certification.startDate)} -
+                    {formatDate(certification.endDate)}
+                  </Badge>
               </div>
               {index < certificationGroup.certifications.length - 1 && (
                 <Separator />

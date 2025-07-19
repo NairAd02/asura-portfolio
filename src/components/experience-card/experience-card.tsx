@@ -25,11 +25,11 @@ export default function ExperienceCard({ experience }: Props) {
               {experience.company}
             </CardDescription>
           </div>
-          <Badge variant="outline">
-            {formatDate(experience.startDate)} -{" "}
-            {experience.endDate ? formatDate(experience.endDate) : "Presente"}
-          </Badge>
         </div>
+        <Badge className="whitespace-normal md:whitespace-nowrap" variant="outline">
+          {formatDate(experience.startDate)} -{" "}
+          {experience.endDate ? formatDate(experience.endDate) : "Presente"}
+        </Badge>
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground mb-4">{experience.description}</p>
