@@ -1,47 +1,43 @@
-import Link from "next/link";
-import React from "react";
+import { Link } from "react-scroll";
+import { Button } from "@/components/ui/button";
+
+const sections = [
+  "inicio",
+  "acerca",
+  "proyectos",
+  "experiencia",
+  "habilidades",
+  "educacion",
+  "blogs",
+  "contacto",
+];
 
 export default function HeaderNav() {
   return (
-    
-      <nav className="flex flex-col md:flex-row items-center gap-4 text-sm font-medium">
+    <nav className="flex flex-col md:flex-row items-center gap-2 text-sm font-medium">
+      {sections.map((section) => (
         <Link
-          href="#inicio"
-          className="transition-colors hover:text-foreground/80"
+          key={section}
+          to={section}
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+          activeClass="active"
+          className="group"
         >
-          Inicio
+          <Button
+            variant="outline"
+            className="transition-all group-[.active]:bg-primary group-[.active]:text-white"
+          >
+            {capitalize(section)}
+          </Button>
         </Link>
-        <Link
-          href="#proyectos"
-          className="transition-colors hover:text-foreground/80"
-        >
-          Proyectos
-        </Link>
-        <Link
-          href="#experiencia"
-          className="transition-colors hover:text-foreground/80"
-        >
-          Experiencia
-        </Link>
-        <Link
-          href="#habilidades"
-          className="transition-colors hover:text-foreground/80"
-        >
-          Habilidades
-        </Link>
-        <Link
-          href="#educacion"
-          className="transition-colors hover:text-foreground/80"
-        >
-          Educación
-        </Link>
-        <Link
-          href="#contacto"
-          className="transition-colors hover:text-foreground/80"
-        >
-          Contacto
-        </Link>
-      </nav>
-    
+      ))}
+    </nav>
   );
+}
+
+function capitalize(text: string) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }
