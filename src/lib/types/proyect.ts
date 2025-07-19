@@ -5,6 +5,8 @@ export interface Proyect {
   name: string;
   description: string;
   mainImage?: string;
+  sourceCodeUrl?: string;
+  deploymentUrl?: string;
   images: string[];
   problem: string;
   solution: string;
