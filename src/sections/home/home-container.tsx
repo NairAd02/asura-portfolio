@@ -1,28 +1,17 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
   Github,
   Linkedin,
   Mail,
-  ExternalLink,
   Download,
   Calendar,
   MapPin,
   Phone,
-  Code,
-  Database,
-  Cloud,
-  TestTube,
-  Cpu,
-  Brain,
 } from "lucide-react";
 import Link from "next/link";
 import HomeHeroSection from "./components/home-hero-section/home-hero-section";
