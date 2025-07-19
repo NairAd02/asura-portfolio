@@ -31,6 +31,7 @@ import HomeProyectsSection from "./components/home-proyects-section/home-proyect
 import HomeExperienceSection from "./components/home-experience-section/home-experience-section";
 import HomeSkillsSection from "./components/home-skills-section/home-skills-section";
 import HomeEducationAndCertificationsSection from "./components/home-education-and-certifications-section/home-education-and-certifications-section";
+import HomeBlogsSection from "./components/home-blogs-section/home-blogs-section";
 
 export default function HomeContainer() {
   return (
@@ -54,64 +55,7 @@ export default function HomeContainer() {
       <HomeEducationAndCertificationsSection />
 
       {/* Blog Section (Optional) */}
-      <section className="py-24">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Blog & Publicaciones
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Comparto conocimientos y experiencias a través de artículos
-                técnicos.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto max-w-4xl py-12">
-            <div className="grid gap-6 md:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Optimización de Performance en React</CardTitle>
-                  <CardDescription>15 de Enero, 2024</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Técnicas avanzadas para mejorar el rendimiento de
-                    aplicaciones React, incluyendo memoización, lazy loading y
-                    optimización de re-renders.
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="#" target="_blank">
-                      Leer más
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle>Arquitectura Serverless con Next.js</CardTitle>
-                  <CardDescription>8 de Diciembre, 2023</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Cómo construir aplicaciones escalables usando Next.js y
-                    funciones serverless, con ejemplos prácticos y mejores
-                    prácticas.
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href="#" target="_blank">
-                      Leer más
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeBlogsSection />
 
       {/* Contact Section */}
       <section id="contacto" className="py-24 bg-muted/50">
