@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HomeAboutSection() {
   return (
-    <section className="py-24 bg-muted/50">
+    <section id="acerca" className="py-24 bg-muted/50">
       <div className="px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
