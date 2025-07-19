@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { principalPlaceHolder } from "@/lib/place-holders";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -50,7 +51,7 @@ export default function HomeHeroSection() {
           <div className="flex items-center justify-center">
             <div className="relative">
               <Image
-                src="/images/place-holder.jpg"
+                src={principalPlaceHolder}
                 alt="Foto profesional"
                 width={400}
                 height={400}
