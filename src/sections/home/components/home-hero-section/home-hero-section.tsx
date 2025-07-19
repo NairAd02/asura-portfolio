@@ -8,7 +8,7 @@ import React from "react";
 export default function HomeHeroSection() {
   return (
     <section id="inicio" className="p-8">
-      <div className="container px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="flex flex-col-reverse md:flex-row justify-between gap-8">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
