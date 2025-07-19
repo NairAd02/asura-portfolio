@@ -30,6 +30,7 @@ import HomeAboutSection from "./components/home-about-section/home-about-section
 import HomeProyectsSection from "./components/home-proyects-section/home-proyects-section";
 import HomeExperienceSection from "./components/home-experience-section/home-experience-section";
 import HomeSkillsSection from "./components/home-skills-section/home-skills-section";
+import HomeEducationAndCertificationsSection from "./components/home-education-and-certifications-section/home-education-and-certifications-section";
 
 export default function HomeContainer() {
   return (
@@ -50,129 +51,7 @@ export default function HomeContainer() {
       <HomeSkillsSection />
 
       {/* Education Section */}
-      <section id="educacion" className="py-24 bg-muted/50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Educación y Certificaciones
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Mi formación académica y certificaciones profesionales.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto max-w-3xl py-12">
-            <div className="space-y-6">
-              {/* Degree */}
-              <Card>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle>
-                        Ingeniería en Sistemas Computacionales
-                      </CardTitle>
-                      <CardDescription className="text-base">
-                        Universidad Tecnológica
-                      </CardDescription>
-                    </div>
-                    <Badge variant="outline">2014 - 2018</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Formación integral en desarrollo de software, algoritmos,
-                    estructuras de datos y arquitectura de sistemas. Proyecto de
-                    tesis enfocado en aplicaciones web escalables.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Certifications */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Certificaciones Profesionales</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="font-medium">AWS Certified Developer</p>
-                        <p className="text-sm text-muted-foreground">
-                          Amazon Web Services
-                        </p>
-                      </div>
-                      <Badge variant="secondary">2023</Badge>
-                    </div>
-                    <Separator />
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="font-medium">
-                          React Developer Certification
-                        </p>
-                        <p className="text-sm text-muted-foreground">Meta</p>
-                      </div>
-                      <Badge variant="secondary">2022</Badge>
-                    </div>
-                    <Separator />
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="font-medium">Google Cloud Professional</p>
-                        <p className="text-sm text-muted-foreground">
-                          Google Cloud Platform
-                        </p>
-                      </div>
-                      <Badge variant="secondary">2022</Badge>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Courses */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Cursos y Bootcamps</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="font-medium">
-                          Full Stack Web Development Bootcamp
-                        </p>
-                        <p className="text-sm text-muted-foreground">Platzi</p>
-                      </div>
-                      <Badge variant="outline">2021</Badge>
-                    </div>
-                    <Separator />
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="font-medium">Advanced React Patterns</p>
-                        <p className="text-sm text-muted-foreground">
-                          Epic React
-                        </p>
-                      </div>
-                      <Badge variant="outline">2021</Badge>
-                    </div>
-                    <Separator />
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="font-medium">
-                          Machine Learning Fundamentals
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          Coursera
-                        </p>
-                      </div>
-                      <Badge variant="outline">2023</Badge>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeEducationAndCertificationsSection />
 
       {/* Blog Section (Optional) */}
       <section className="py-24">
