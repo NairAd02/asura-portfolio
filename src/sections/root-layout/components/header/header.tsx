@@ -1,13 +1,18 @@
+"use client";
 import AppLogo from "@/components/app-logo/app-logo";
 import NavigationComponent from "@/components/navigation-component/navigation-component";
-import Link from "next/link";
+import PopoverContainer from "@/components/ui/popover-container";
 import React from "react";
+import HeaderNav from "./header-nav/header-nav";
+import { useBreakpoint } from "@/hooks/screen/use-breakpoint";
+import { AlignCenter } from "lucide-react";
 
 export default function Header() {
+  const breakpoint = useBreakpoint();
   return (
     <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
       <nav>
-        <div className="container flex px-4 h-14 items-center">
+        <div className="flex px-4 h-14 items-center justify-between">
           <NavigationComponent href="/">
             <div className="flex items-center gap-2">
               {" "}
@@ -15,46 +20,14 @@ export default function Header() {
               <span className="font-bold">Asura-Portfolio</span>
             </div>
           </NavigationComponent>
-          <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-            <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link
-                href="#inicio"
-                className="transition-colors hover:text-foreground/80"
-              >
-                Inicio
-              </Link>
-              <Link
-                href="#proyectos"
-                className="transition-colors hover:text-foreground/80"
-              >
-                Proyectos
-              </Link>
-              <Link
-                href="#experiencia"
-                className="transition-colors hover:text-foreground/80"
-              >
-                Experiencia
-              </Link>
-              <Link
-                href="#habilidades"
-                className="transition-colors hover:text-foreground/80"
-              >
-                Habilidades
-              </Link>
-              <Link
-                href="#educacion"
-                className="transition-colors hover:text-foreground/80"
-              >
-                Educación
-              </Link>
-              <Link
-                href="#contacto"
-                className="transition-colors hover:text-foreground/80"
-              >
-                Contacto
-              </Link>
-            </nav>
-          </div>
+
+          {breakpoint === "xs" || breakpoint === "sm" || breakpoint === "md" ? (
+            <PopoverContainer trigger={<AlignCenter />}>
+              <HeaderNav />
+            </PopoverContainer>
+          ) : (
+            <HeaderNav />
+          )}
         </div>
       </nav>
     </header>
