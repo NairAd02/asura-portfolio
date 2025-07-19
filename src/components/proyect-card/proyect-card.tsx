@@ -27,8 +27,8 @@ export default function ProyectCard({ proyect }: Props) {
             <Image
               src={proyect.mainImage || principalPlaceHolder}
               alt={`Imagen del proyecto ${proyect.name}`}
-              width={320}
-              height={320}
+              width={250}
+              height={250}
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
