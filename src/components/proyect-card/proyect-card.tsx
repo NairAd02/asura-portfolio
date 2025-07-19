@@ -11,8 +11,8 @@ import Image from "next/image";
 import { principalPlaceHolder } from "@/lib/place-holders";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
+import NavigationComponent from "../navigation-component/navigation-component";
 
 interface Props {
   proyect: Proyect;
@@ -52,18 +52,26 @@ export default function ProyectCard({ proyect }: Props) {
           <strong>Impacto:</strong> {proyect.impact}
         </p>
         <div className="flex gap-2">
-          <Button size="sm" variant="outline" asChild>
-            <Link href="https://github.com" target="_blank">
-              <Github className="w-4 h-4 mr-2" />
-              Código
-            </Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link href="https://demo.com" target="_blank">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Demo
-            </Link>
-          </Button>
+          {proyect.sourceCodeUrl ? (
+            <NavigationComponent href={proyect.sourceCodeUrl}>
+              <Button size="sm" variant="outline">
+                <Github className="w-4 h-4 mr-2" />
+                Código Fuente
+              </Button>
+            </NavigationComponent>
+          ) : (
+            <Badge variant="secondary">No hay código fuente disponible</Badge>
+          )}
+          {proyect.deploymentUrl ? (
+            <NavigationComponent href={proyect.deploymentUrl}>
+              <Button size="sm">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Demo
+              </Button>
+            </NavigationComponent>
+          ) : (
+            <Badge variant="secondary">No hay demo disponible</Badge>
+          )}
         </div>
       </CardContent>
     </Card>
