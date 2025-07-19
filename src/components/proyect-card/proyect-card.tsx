@@ -20,7 +20,7 @@ interface Props {
 
 export default function ProyectCard({ proyect }: Props) {
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-0 shadow-md">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-md">
       <div className="flex flex-col sm:flex-row h-full">
         <div className="flex items-center justify-center">
           <div className="relative">
