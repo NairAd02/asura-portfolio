@@ -51,26 +51,30 @@ export default function ProyectCard({ proyect }: Props) {
           <br />
           <strong>Impacto:</strong> {proyect.impact}
         </p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap w-full gap-2">
           {proyect.sourceCodeUrl ? (
             <NavigationComponent href={proyect.sourceCodeUrl}>
-              <Button size="sm" variant="outline">
+              <Button size="sm" className="w-full" variant="outline">
                 <Github className="w-4 h-4 mr-2" />
                 Código Fuente
               </Button>
             </NavigationComponent>
           ) : (
-            <Badge variant="secondary">No hay código fuente disponible</Badge>
+            <Badge className="w-full" variant="secondary">
+              No hay código fuente disponible
+            </Badge>
           )}
           {proyect.deploymentUrl ? (
             <NavigationComponent href={proyect.deploymentUrl}>
-              <Button size="sm">
+              <Button className="w-full" size="sm">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Demo
               </Button>
             </NavigationComponent>
           ) : (
-            <Badge variant="secondary">No hay demo disponible</Badge>
+            <Badge className="w-full" variant="secondary">
+              No hay demo disponible
+            </Badge>
           )}
         </div>
       </CardContent>
