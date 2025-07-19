@@ -24,12 +24,11 @@ import {
   Cpu,
   Brain,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import HomeHeroSection from "./components/home-hero-section/home-hero-section";
-import { principalPlaceHolder } from "@/lib/place-holders";
 import HomeAboutSection from "./components/home-about-section/home-about-section";
 import HomeProyectsSection from "./components/home-proyects-section/home-proyects-section";
+import HomeExperienceSection from "./components/home-experience-section/home-experience-section";
 
 export default function HomeContainer() {
   return (
@@ -44,155 +43,7 @@ export default function HomeContainer() {
       <HomeProyectsSection />
 
       {/* Experience Section */}
-      <section id="experiencia" className="py-24 bg-muted/50">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Experiencia Laboral
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Mi trayectoria profesional en el desarrollo de software y
-                tecnología.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto max-w-3xl py-12">
-            <div className="space-y-8">
-              {/* Experience 1 */}
-              <Card>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle>Senior Full Stack Developer</CardTitle>
-                      <CardDescription className="text-base">
-                        TechCorp Solutions
-                      </CardDescription>
-                    </div>
-                    <Badge variant="outline">2022 - Presente</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Lidero el desarrollo de aplicaciones web escalables para
-                    clientes enterprise. Responsable de la arquitectura técnica
-                    y mentoría del equipo junior.
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm">
-                      <strong>Logros clave:</strong>
-                    </p>
-                    <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>
-                        Redujo el tiempo de carga de aplicaciones en un 40%
-                        mediante optimizaciones
-                      </li>
-                      <li>
-                        Implementó CI/CD que redujo bugs en producción en un 60%
-                      </li>
-                      <li>Mentoré a 5 desarrolladores junior</li>
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">Node.js</Badge>
-                    <Badge variant="secondary">AWS</Badge>
-                    <Badge variant="secondary">Docker</Badge>
-                    <Badge variant="secondary">PostgreSQL</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Experience 2 */}
-              <Card>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle>Frontend Developer</CardTitle>
-                      <CardDescription className="text-base">
-                        StartupXYZ
-                      </CardDescription>
-                    </div>
-                    <Badge variant="outline">2020 - 2022</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Desarrollé interfaces de usuario modernas y responsivas para
-                    productos SaaS. Colaboré estrechamente con el equipo de
-                    UX/UI para implementar diseños pixel-perfect.
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm">
-                      <strong>Logros clave:</strong>
-                    </p>
-                    <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>
-                        Migré aplicación legacy a React, mejorando performance
-                        en 50%
-                      </li>
-                      <li>
-                        Implementé design system que aceleró desarrollo en 30%
-                      </li>
-                      <li>
-                        Lideré adopción de TypeScript en el equipo frontend
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">TypeScript</Badge>
-                    <Badge variant="secondary">Sass</Badge>
-                    <Badge variant="secondary">Jest</Badge>
-                    <Badge variant="secondary">Figma</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Freelance Experience */}
-              <Card>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle>Desarrollador Freelance</CardTitle>
-                      <CardDescription className="text-base">
-                        Proyectos Independientes
-                      </CardDescription>
-                    </div>
-                    <Badge variant="outline">2018 - 2020</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Trabajé con múltiples clientes desarrollando soluciones web
-                    personalizadas, desde landing pages hasta aplicaciones
-                    complejas de gestión.
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm">
-                      <strong>Proyectos destacados:</strong>
-                    </p>
-                    <ul className="text-sm text-muted-foreground list-disc list-inside space-y-1">
-                      <li>E-commerce para tienda local (Vue.js + Stripe)</li>
-                      <li>
-                        Sistema de reservas para restaurante (React + Firebase)
-                      </li>
-                      <li>Portfolio interactivo para agencia creativa</li>
-                    </ul>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <Badge variant="secondary">Vue.js</Badge>
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">Firebase</Badge>
-                    <Badge variant="secondary">Stripe</Badge>
-                    <Badge variant="secondary">WordPress</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeExperienceSection />
 
       {/* Skills Section */}
       <section id="habilidades" className="py-24">
