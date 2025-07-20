@@ -7,7 +7,7 @@ import React from "react";
 
 export default function HomeHeroSection() {
   return (
-    <section id="inicio" className="p-8">
+    <section id="inicio" className="p-8 bg-background">
       <div className="px-4 md:px-6">
         <div className="flex flex-col-reverse md:flex-row justify-between gap-8">
           <div className="flex flex-col justify-center space-y-4">
@@ -16,7 +16,7 @@ export default function HomeHeroSection() {
                 Hola, soy{" "}
                 <span className="text-primary">Adrian Suarez Padrón</span>
               </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl">
+              <p className="max-w-[600px] text-black font-semibold md:text-xl">
                 Desarrollador de software con enfoque en soluciones escalables y
                 diseño limpio. Especializado en crear experiencias digitales
                 excepcionales.
@@ -31,17 +31,17 @@ export default function HomeHeroSection() {
               </Button>
             </div>
             <div className="flex items-center space-x-4 pt-4">
-              <Button variant="ghost" size="icon" asChild>
+              <Button variant="default" size="icon" asChild>
                 <Link href="https://github.com" target="_blank">
                   <Github className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="ghost" size="icon" asChild>
+              <Button variant="default" size="icon" asChild>
                 <Link href="https://linkedin.com" target="_blank">
                   <Linkedin className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="ghost" size="icon" asChild>
+              <Button variant="default" size="icon" asChild>
                 <Link href="mailto:tu@email.com">
                   <Mail className="h-5 w-5" />
                 </Link>
@@ -55,7 +55,7 @@ export default function HomeHeroSection() {
                 alt="Foto profesional"
                 width={400}
                 height={400}
-                className="aspect-square object-cover rounded-full border-4 border-primary/20"
+                className="aspect-square object-cover rounded-full border-4 border-primary/60"
               />
             </div>
           </div>
