@@ -20,7 +20,10 @@ interface Props {
 
 export default function ProyectCard({ proyect }: Props) {
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-md">
+    <Card className="group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-md">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-6 bg-primary" />
+      
       <div className="flex flex-col sm:flex-row h-full">
         <div className="flex items-center justify-center">
           <div className="relative">
@@ -31,7 +34,7 @@ export default function ProyectCard({ proyect }: Props) {
               height={250}
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         </div>
 
@@ -39,10 +42,10 @@ export default function ProyectCard({ proyect }: Props) {
           {/* Header */}
           <div className="space-y-3">
             <div>
-              <h3 className="text-xl font-bold text-foreground line-clamp-2 mb-2">
+              <h3 className="text-xl font-bold text-foreground group-hover:text-primary line-clamp-2 mb-2">
                 {proyect.name}
               </h3>
-              <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+              <p className="text-sm text-black font-semibold line-clamp-2 leading-relaxed">
                 {proyect.description}
               </p>
             </div>
@@ -79,7 +82,7 @@ export default function ProyectCard({ proyect }: Props) {
                   <Target className="w-3 h-3 text-destructive" />
                   Problema
                 </div>
-                <p className="text-muted-foreground line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {proyect.problem}
                 </p>
               </div>
@@ -89,7 +92,7 @@ export default function ProyectCard({ proyect }: Props) {
                   <Lightbulb className="w-3 h-3 text-yellow-500" />
                   Solución
                 </div>
-                <p className="text-muted-foreground line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {proyect.solution}
                 </p>
               </div>
@@ -99,7 +102,7 @@ export default function ProyectCard({ proyect }: Props) {
                   <TrendingUp className="w-3 h-3 text-blue-500" />
                   Aprendizaje
                 </div>
-                <p className="text-muted-foreground line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {proyect.teachings}
                 </p>
               </div>
@@ -109,7 +112,7 @@ export default function ProyectCard({ proyect }: Props) {
                   <TrendingUp className="w-3 h-3 text-green-500" />
                   Impacto
                 </div>
-                <p className="text-muted-foreground line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {proyect.impact}
                 </p>
               </div>
