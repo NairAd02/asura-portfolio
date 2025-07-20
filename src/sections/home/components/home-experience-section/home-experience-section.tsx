@@ -131,8 +131,8 @@ export default function HomeExperienceSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-3xl py-12">
-          <div className="space-y-8">
+        <div className="mx-auto max-w-6xl py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {experiences.map((experience, index) => (
               <ExperienceCard key={index} experience={experience} />
             ))}
