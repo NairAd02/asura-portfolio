@@ -28,7 +28,7 @@ export default function HeaderNav() {
         >
           <Button
             variant="outline"
-            className="transition-all w-full lg:w-auto group-[.active]:bg-primary group-[.active]:text-white"
+            className="transition-all w-full lg:w-auto group-[.active]:bg-primary group-[.active]:text-white hover:text-primary-foreground duration-200 hover:shadow-md hover:bg-primary"
           >
             {capitalize(section)}
           </Button>
