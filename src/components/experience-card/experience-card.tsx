@@ -1,11 +1,17 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Building2, Calendar, Trophy, Code } from "lucide-react"
-import { Experience } from "@/lib/types/experiences"
-import { formatDate } from "@/lib/format-date"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Building2, Calendar, Trophy, Code } from "lucide-react";
+import { Experience } from "@/lib/types/experiences";
+import { formatDate } from "@/lib/format-date";
 
 interface Props {
-  experience: Experience
+  experience: Experience;
 }
 
 export default function ExperienceCard({ experience }: Props) {
@@ -22,10 +28,14 @@ export default function ExperienceCard({ experience }: Props) {
               {experience.company}
             </CardDescription>
           </div>
-          <Badge className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium shrink-0" variant="outline">
+          <Badge
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium shrink-0"
+            variant="outline"
+          >
             <Calendar className="h-3 w-3" />
-            <span className="whitespace-nowrap">
-              {formatDate(experience.startDate)} - {experience.endDate ? formatDate(experience.endDate) : "Presente"}
+            <span className="whitespace-normal md:whitespace-nowrap">
+              {formatDate(experience.startDate)} -{" "}
+              {experience.endDate ? formatDate(experience.endDate) : "Presente"}
             </span>
           </Badge>
         </div>
@@ -34,7 +44,9 @@ export default function ExperienceCard({ experience }: Props) {
       <CardContent className="space-y-6">
         {/* Descripción */}
         <div>
-          <p className="text-black font-semibold leading-relaxed">{experience.description}</p>
+          <p className="text-black font-semibold leading-relaxed">
+            {experience.description}
+          </p>
         </div>
 
         {/* Logros clave */}
@@ -42,7 +54,9 @@ export default function ExperienceCard({ experience }: Props) {
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <Trophy className="h-4 w-4 text-amber-500" />
-              <h4 className="text-sm font-semibold text-foreground">Logros clave</h4>
+              <h4 className="text-sm font-semibold text-foreground">
+                Logros clave
+              </h4>
             </div>
             <ul className="space-y-2 ml-6">
               {experience.achievements.map((achievement, index) => (
@@ -62,14 +76,16 @@ export default function ExperienceCard({ experience }: Props) {
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <Code className="h-4 w-4 text-blue-500" />
-              <h4 className="text-sm font-semibold text-foreground">Tecnologías</h4>
+              <h4 className="text-sm font-semibold text-foreground">
+                Tecnologías
+              </h4>
             </div>
             <div className="flex flex-wrap gap-2">
               {experience.technologies.map((technology, index) => (
                 <Badge
                   key={index}
-                   variant="secondary"
-                    className="text-xs px-2 py-0.5 font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                  variant="secondary"
+                  className="text-xs px-2 py-0.5 font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                 >
                   {technology.name}
                 </Badge>
@@ -79,7 +95,5 @@ export default function ExperienceCard({ experience }: Props) {
         )}
       </CardContent>
     </Card>
-  )
+  );
 }
-
-
