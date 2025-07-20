@@ -23,9 +23,6 @@ interface Props {
 export default function BlogCard({ blog }: Props) {
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 border-r-4 border-r-primary/40 hover:border-r-primary">
-      {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
       {/* Content */}
       <div className="relative">
         <CardHeader className="space-y-3">
