@@ -1,6 +1,10 @@
-export interface SkillGroup {
-  title: string;
-  skills: Skill[];
+export interface Skill {
+  name: string;
   icon?: string;
-  color?: string;
+  level: SkillLevel;
+}
+
+export interface SkillLevel {
+  level: string;
+  color: string;
 }

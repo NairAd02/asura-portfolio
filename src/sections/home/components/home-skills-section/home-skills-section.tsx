@@ -1,5 +1,5 @@
 import SkillGroupCard from "@/components/skill-group-card/skill-group-card";
-import { SkillGroup } from "@/lib/types/skill-group";
+import { SkillGroup } from "@/lib/types/skill-groups";
 import React from "react";
 
 const skillGroups: SkillGroup[] = [
