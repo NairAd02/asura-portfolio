@@ -105,8 +105,8 @@ export default function HomeBlogsSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-4xl py-12">
-          <div className="grid gap-6 md:grid-cols-2">
+        <div className="mx-auto max-w-6xl py-12">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {blogs.map((blog, index) => (
               <BlogCard key={index} blog={blog} />
             ))}
