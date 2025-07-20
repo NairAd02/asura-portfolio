@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Asura-Portfolio",
-  description: "Portafolio personalizado para mostrar mi habilidades",
+  description: "Portafolio personalizado para mostrar mis habilidades",
 };
 
 export default function RootLayout({
