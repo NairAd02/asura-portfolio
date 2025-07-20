@@ -59,8 +59,7 @@ export default function CertificationGroupCard({ certificationGroup }: Props) {
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-muted-foreground" />
                   <Badge
-                    variant="secondary"
-                    className="bg-primary/5 text-primary border-primary/20 font-medium hover:bg-primary/10 transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium shrink-0" variant="outline"
                   >
                     {formatDate(certification.startDate)} -{" "}
                     {formatDate(certification.endDate)}
