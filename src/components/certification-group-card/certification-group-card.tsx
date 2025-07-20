@@ -1,9 +1,13 @@
-import { CertificationGroup } from "@/lib/types/certification-groups";
-import React from "react";
+import type { CertificationGroup } from "@/lib/types/certification-groups";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "../ui/badge";
-import { Separator } from "../ui/separator";
+import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/format-date";
+import {
+  BadgeIcon as Certificate,
+  Building,
+  Calendar,
+  FileText,
+} from "lucide-react";
 
 interface Props {
   certificationGroup: CertificationGroup;
@@ -11,33 +15,61 @@ interface Props {
 
 export default function CertificationGroupCard({ certificationGroup }: Props) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{certificationGroup.title}</CardTitle>
+    <Card className="group hover:shadow-lg transition-all duration-300 border-r-4 border-r-primary/40 hover:border-r-primary border-l-4 border-l-primary/40 hover:border-l-primary">
+      <CardHeader className="pb-4">
+        <div className="flex items-center gap-3">
+          <div className="p-2 rounded-lg bg-primary/70 group-hover:bg-primary transition-colors">
+            <FileText className="w-5 h-5 text-white" />
+          </div>
+          <CardTitle className="text-xl font-semibold text-foreground">
+            {certificationGroup.title}
+          </CardTitle>
+        </div>
       </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          {certificationGroup.certifications.map((certification, index) => (
-            <div className="space-y-2" key={index}>
-              <div>
-                <div className="flex items-center justify-between">
-                  <p className="font-medium">{certification.title}</p>
-                 
+
+      <CardContent className="space-y-6">
+        {certificationGroup.certifications.map((certification, index) => (
+          <div key={index} className="relative">
+            <div className="flex gap-4">
+              {/* Timeline indicator */}
+              <div className="flex flex-col items-center">
+                <div className="p-1.5 rounded-full bg-primary/70 group-hover:bg-primary border-2 border-primary/20">
+                  <Certificate className="w-3 h-3 text-white" />
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  {certification.institution}
-                </p>
-                 <Badge className="whitespace-normal md:whitespace-nowrap" variant="outline">
-                    {formatDate(certification.startDate)} -
+                {index < certificationGroup.certifications.length - 1 && (
+                  <div className="w-px h-16 bg-gradient-to-b from-primary/20 to-transparent mt-2" />
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 space-y-3 pb-2">
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white leading-tight">
+                    {certification.title}
+                  </h3>
+
+                  <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
+                    <Building className="w-4 h-4" />
+                    <span className="font-medium">
+                      {certification.institution}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-muted-foreground" />
+                  <Badge
+                    variant="secondary"
+                    className="bg-primary/5 text-primary border-primary/20 font-medium hover:bg-primary/10 transition-colors"
+                  >
+                    {formatDate(certification.startDate)} -{" "}
                     {formatDate(certification.endDate)}
                   </Badge>
+                </div>
               </div>
-              {index < certificationGroup.certifications.length - 1 && (
-                <Separator />
-              )}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </CardContent>
     </Card>
   );
