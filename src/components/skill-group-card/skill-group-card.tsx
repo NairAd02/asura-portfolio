@@ -1,4 +1,4 @@
-import { SkillGroup } from "@/lib/types/skill-group";
+import { SkillGroup } from "@/lib/types/skill-groups";
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AvatarContainer from "../ui/avatar-container";
