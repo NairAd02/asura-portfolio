@@ -1,21 +1,26 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Loader2, Send, CheckCircle } from "lucide-react"
-
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Loader2, Send, CheckCircle } from "lucide-react";
 
 interface FormData {
-  name: string
-  email: string
-  subject: string
-  message: string
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
 export default function ContactForm() {
@@ -24,33 +29,31 @@ export default function ContactForm() {
     email: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       // Simular envío de email (aquí integrarías con tu servicio de email)
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
-     
+      console.log("Formulario enviado:", formData);
 
-      console.log("Formulario enviado:", formData)
-
-      setIsSubmitted(true)
-      
+      setIsSubmitted(true);
 
       // Resetear formulario después de 3 segundos
       setTimeout(() => {
@@ -59,15 +62,15 @@ export default function ContactForm() {
           email: "",
           subject: "",
           message: "",
-        })
-        setIsSubmitted(false)
-      }, 3000)
+        });
+        setIsSubmitted(false);
+      }, 3000);
     } catch (error) {
-      
+      console.log(error);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   if (isSubmitted) {
     return (
@@ -75,17 +78,21 @@ export default function ContactForm() {
         <CardContent className="flex flex-col items-center justify-center py-12">
           <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
           <h3 className="text-xl font-semibold mb-2">¡Mensaje Enviado!</h3>
-          <p className="text-muted-foreground text-center">Gracias por contactarme. Te responderé lo antes posible.</p>
+          <p className="text-muted-foreground text-center">
+            Gracias por contactarme. Te responderé lo antes posible.
+          </p>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>Envíame un Mensaje</CardTitle>
-        <CardDescription>Completa el formulario y me pondré en contacto contigo pronto</CardDescription>
+        <CardDescription>
+          Completa el formulario y me pondré en contacto contigo pronto
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -160,9 +167,11 @@ export default function ContactForm() {
             )}
           </Button>
 
-          <p className="text-xs text-muted-foreground text-center">* Campos obligatorios</p>
+          <p className="text-xs text-muted-foreground text-center">
+            * Campos obligatorios
+          </p>
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }
