@@ -1,0 +1,60 @@
+import { cn } from "@/lib/utils";
+import { Skeleton } from "../ui/skeleton";
+
+interface CardSkeletonGroupProps {
+  count?: number;
+  containerClassName?: string;
+  cardClassName?: string;
+  cardInnerClassName?: string;
+  showImage?: boolean;
+  showFooter?: boolean;
+  imageHeight?: string;
+  titleWidth?: string;
+  descriptionWidth?: string;
+  footerHeight?: string;
+}
+
+export function CardSkeletonGroup({
+  count = 3,
+  containerClassName,
+  cardClassName,
+  cardInnerClassName,
+  showImage = true,
+  showFooter = true,
+  imageHeight = "h-48",
+  titleWidth = "w-3/4",
+  descriptionWidth = "w-full",
+  footerHeight = "h-8",
+}: CardSkeletonGroupProps) {
+  return (
+    <div className={cn("w-full", containerClassName)}>
+      {Array.from({ length: count }).map((_, index) => (
+        <div
+          key={index}
+          className={cn(
+            "rounded-lg border border-border p-4 shadow-sm flex flex-col",
+            cardClassName
+          )}
+        >
+          <div className={cn("space-y-3", cardInnerClassName)}>
+            {showImage && (
+              <Skeleton className={cn("w-full rounded-md", imageHeight)} />
+            )}
+
+            <div className="space-y-2">
+              <Skeleton className={cn("h-5", titleWidth)} />
+              <Skeleton className={cn("h-4", descriptionWidth)} />
+              <Skeleton className={cn("h-4 w-1/2")} />
+            </div>
+
+            {showFooter && (
+              <div className="pt-4 mt-auto">
+                <Skeleton className={cn("w-full rounded-md", footerHeight)} />
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
