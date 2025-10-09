@@ -1,126 +1,6 @@
-import React from "react";
-import { Project } from "@/lib/types/project";
-import ProjectCard from "@/components/project-card/project-card";
-
-const proyects: Project[] = [
-  {
-    id: "1",
-    name: "EcoTracks",
-    images: [],
-    description:
-      "Aplicación para rastrear y reducir la huella de carbono personal",
-    problem:
-      "Falta de conciencia sobre el impacto ambiental de las actividades diarias",
-    solution: "App que calcula emisiones y sugiere alternativas sostenibles",
-    impact: "Reducción promedio de 15% en huella de carbono de usuarios",
-    teachings:
-      "Importancia de UX para adopción de hábitos, escalabilidad de bases de datos ecológicas",
-    technologies: [
-      { id: "1", name: "React Native", color: "blue", icon: "" },
-      { id: "1", name: "Node.js", color: "green", icon: "" },
-      { id: "1", name: "MongoDB", color: "green", icon: "" },
-    ],
-  },
-  {
-    id: "2",
-    name: "MediConnect",
-    images: [],
-    description: "Plataforma de telemedicina para áreas rurales",
-    problem: "Acceso limitado a especialistas médicos en zonas remotas",
-    solution: "Sistema de videoconsultas con historial médico integrado",
-    impact:
-      "3000+ consultas realizadas en primer año, reduciendo tiempos de espera",
-    teachings:
-      "Desafíos de HIPAA compliance, importancia de baja latencia en video",
-    technologies: [
-      { id: "1", name: "Angular", color: "red", icon: "" },
-      { id: "1", name: "Firebase", color: "orange", icon: "" },
-      { id: "1", name: "WebRTC", color: "blue", icon: "" },
-    ],
-  },
-  {
-    id: "3",
-    name: "SkillSwap",
-    description: "Marketplace para intercambio de habilidades entre vecinos",
-    images: [],
-    problem: "Desperdicio de talento local y falta de conexión comunitaria",
-    solution: "Plataforma que permite intercambiar servicios sin dinero",
-    impact: "Creación de red local con 5000+ usuarios en 6 meses",
-    teachings:
-      "Diseño de sistemas de reputación, manejo de transacciones sin dinero",
-    technologies: [
-      { id: "1", id, name: "Vue.js", color: "green", icon: "" },
-      { id: "1", name: "Django", color: "darkgreen", icon: "" },
-      { id: "1", name: "PostgreSQL", color: "blue", icon: "" },
-    ],
-  },
-  {
-    id: "4",
-    name: "AgroVision",
-    description: "Sistema de monitoreo de cultivos con drones e IA",
-    images: [],
-    problem: "Detección tardía de plagas y enfermedades en cultivos",
-    solution: "Análisis automatizado de imágenes multiespectrales",
-    impact: "Aumento de 20% en rendimiento para 150 granjas piloto",
-    teachings:
-      "Procesamiento de imágenes a escala, integración hardware/software",
-    technologies: [
-      { id: "1", name: "Python", color: "blue", icon: "" },
-      { id: "1", name: "TensorFlow", color: "orange", icon: "" },
-      { id: "1", name: "OpenCV", color: "lightblue", icon: "" },
-    ],
-  },
-  {
-    id: "5",
-    name: "EduPlay",
-    description:
-      "Juegos educativos personalizados para niños con necesidades especiales",
-    images: [],
-    problem: "Falta de herramientas educativas inclusivas",
-    solution: "Plataforma con juegos adaptables a diferentes capacidades",
-    impact: "Mejoró engagement educativo en 85% de casos estudiados",
-    teachings:
-      "Diseño inclusivo, importancia de feedback constante con usuarios finales",
-    technologies: [
-      { name: "Unity", color: "black", icon: "" },
-      { name: "C#", color: "purple", icon: "" },
-      { name: "Azure", color: "blue", icon: "" },
-    ],
-  },
-  {
-    id: "6",
-    name: "CityFlow",
-    description: "Optimización de tráfico urbano usando datos en tiempo real",
-    images: [],
-    problem: "Congestión vehicular en horas pico",
-    solution: "Sistema que ajusta semáforos y sugiere rutas basado en patrones",
-    impact: "Reducción de 30% en tiempos de viaje en zona de prueba",
-    teachings:
-      "Procesamiento de streams de datos, coordinación con sistemas legacy",
-    technologies: [
-      { name: "Kafka", color: "purple", icon: "" },
-      { name: "Spark", color: "red", icon: "" },
-      { name: "Go", color: "blue", icon: "" },
-    ],
-  },
-  {
-    id: "7",
-    name: "FoodRescue",
-    description:
-      "Conecta restaurantes con bancos de alimentos para reducir desperdicio",
-    images: [],
-    problem: "Desperdicio de alimentos comestibles en sector gastronómico",
-    solution: "App para programar recolecciones de excedentes alimentarios",
-    impact: "100+ toneladas de comida redirigidas en primer año",
-    teachings:
-      "Logística en tiempo real, importancia de incentivos para participación",
-    technologies: [
-      { name: "Flutter", color: "blue", icon: "" },
-      { name: "Firebase", color: "orange", icon: "" },
-      { name: "Google Maps API", color: "blue", icon: "" },
-    ],
-  },
-];
+import React, { Suspense } from "react";
+import HomeProjectsSectionListContainer from "./list/home-projects-section-list-container";
+import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
 
 export default function HomeProjectsSection() {
   return (
@@ -137,11 +17,18 @@ export default function HomeProjectsSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid gap-6 py-12 xl:grid-cols-2 lg:gap-4">
-          {proyects.map((proyect, index) => (
-            <ProjectCard key={index} proyect={proyect} />
-          ))}
-        </div>
+        <Suspense
+          fallback={
+            <CardSkeletonGroup
+              containerClassName="mx-auto grid gap-6 py-12 xl:grid-cols-2 lg:gap-4"
+              count={4}
+            />
+          }
+        >
+          <HomeProjectsSectionListContainer
+            projectsFilters={{ technologies: [] }}
+          />
+        </Suspense>
       </div>
     </section>
   );
