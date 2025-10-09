@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import NavigationComponent from "../navigation-component/navigation-component";
 import type { Project } from "@/lib/types/project";
+import TechnologyBadge from "../technology-badge/technology-badge";
 
 interface Props {
   proyect: Project;
@@ -54,13 +55,7 @@ export default function ProjectCard({ proyect }: Props) {
               </h4>
               <div className="flex flex-wrap gap-1">
                 {proyect.technologies.map((technology, index) => (
-                  <Badge
-                    key={index}
-                    variant="secondary"
-                    className="text-xs px-2 py-0.5 font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                  >
-                    {technology.name}
-                  </Badge>
+                  <TechnologyBadge key={index} technology={technology} />
                 ))}
                 {proyect.technologies.length > 6 && (
                   <Badge variant="outline" className="text-xs px-2 py-0.5">
