@@ -1,4 +1,4 @@
-import type { Proyect } from "@/lib/types/proyect";
+
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { principalPlaceHolder } from "@/lib/place-holders";
@@ -13,12 +13,13 @@ import {
   TrendingUp,
 } from "lucide-react";
 import NavigationComponent from "../navigation-component/navigation-component";
+import { Project } from "@/lib/types/project";
 
 interface Props {
-  proyect: Proyect;
+  proyect: Project;
 }
 
-export default function ProyectCard({ proyect }: Props) {
+export default function ProjectCard({ proyect }: Props) {
   return (
     <Card className="group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-b-4 border-b-primary/40 hover:border-b-primary shadow-md">
       {/* Top accent line */}

@@ -1,8 +1,8 @@
 import React from "react";
-import { Proyect } from "@/lib/types/proyect";
-import ProyectCard from "@/components/proyect-card/proyect-card";
+import { Project } from "@/lib/types/project";
+import ProjectCard from "@/components/project-card/project-card";
 
-const proyects: Proyect[] = [
+const proyects: Project[] = [
   {
     id: "1",
     name: "EcoTracks",
@@ -16,9 +16,9 @@ const proyects: Proyect[] = [
     teachings:
       "Importancia de UX para adopción de hábitos, escalabilidad de bases de datos ecológicas",
     technologies: [
-      { name: "React Native", color: "blue", icon: "" },
-      { name: "Node.js", color: "green", icon: "" },
-      { name: "MongoDB", color: "green", icon: "" },
+      { id: "1", name: "React Native", color: "blue", icon: "" },
+      { id: "1", name: "Node.js", color: "green", icon: "" },
+      { id: "1", name: "MongoDB", color: "green", icon: "" },
     ],
   },
   {
@@ -33,9 +33,9 @@ const proyects: Proyect[] = [
     teachings:
       "Desafíos de HIPAA compliance, importancia de baja latencia en video",
     technologies: [
-      { name: "Angular", color: "red", icon: "" },
-      { name: "Firebase", color: "orange", icon: "" },
-      { name: "WebRTC", color: "blue", icon: "" },
+      { id: "1", name: "Angular", color: "red", icon: "" },
+      { id: "1", name: "Firebase", color: "orange", icon: "" },
+      { id: "1", name: "WebRTC", color: "blue", icon: "" },
     ],
   },
   {
@@ -49,9 +49,9 @@ const proyects: Proyect[] = [
     teachings:
       "Diseño de sistemas de reputación, manejo de transacciones sin dinero",
     technologies: [
-      { name: "Vue.js", color: "green", icon: "" },
-      { name: "Django", color: "darkgreen", icon: "" },
-      { name: "PostgreSQL", color: "blue", icon: "" },
+      { id: "1", id, name: "Vue.js", color: "green", icon: "" },
+      { id: "1", name: "Django", color: "darkgreen", icon: "" },
+      { id: "1", name: "PostgreSQL", color: "blue", icon: "" },
     ],
   },
   {
@@ -65,9 +65,9 @@ const proyects: Proyect[] = [
     teachings:
       "Procesamiento de imágenes a escala, integración hardware/software",
     technologies: [
-      { name: "Python", color: "blue", icon: "" },
-      { name: "TensorFlow", color: "orange", icon: "" },
-      { name: "OpenCV", color: "lightblue", icon: "" },
+      { id: "1", name: "Python", color: "blue", icon: "" },
+      { id: "1", name: "TensorFlow", color: "orange", icon: "" },
+      { id: "1", name: "OpenCV", color: "lightblue", icon: "" },
     ],
   },
   {
@@ -122,7 +122,7 @@ const proyects: Proyect[] = [
   },
 ];
 
-export default function HomeProyectsSection() {
+export default function HomeProjectsSection() {
   return (
     <section id="proyectos" className="py-24 bg-background">
       <div className="px-4 md:px-6">
@@ -139,7 +139,7 @@ export default function HomeProyectsSection() {
         </div>
         <div className="mx-auto grid gap-6 py-12 xl:grid-cols-2 lg:gap-4">
           {proyects.map((proyect, index) => (
-            <ProyectCard key={index} proyect={proyect} />
+            <ProjectCard key={index} proyect={proyect} />
           ))}
         </div>
       </div>
