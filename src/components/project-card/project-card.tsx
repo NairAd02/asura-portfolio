@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { principalPlaceHolder } from "@/lib/place-holders";
@@ -24,7 +23,7 @@ export default function ProjectCard({ proyect }: Props) {
     <Card className="group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-b-4 border-b-primary/40 hover:border-b-primary shadow-md">
       {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-6 bg-primary" />
-      
+
       <div className="flex flex-col sm:flex-row h-full">
         <div className="flex items-center justify-center">
           <div className="relative">
@@ -57,7 +56,7 @@ export default function ProjectCard({ proyect }: Props) {
                 Tecnologías
               </h4>
               <div className="flex flex-wrap gap-1">
-                {proyect.technologies.slice(0, 6).map((technology, index) => (
+                {proyect.technologies.map((technology, index) => (
                   <Badge
                     key={index}
                     variant="secondary"
