@@ -5,7 +5,7 @@ import ProyectCard from "@/components/proyect-card/proyect-card";
 const proyects: Proyect[] = [
   {
     id: "1",
-    name: "EcoTrack",
+    name: "EcoTracks",
     images: [],
     description:
       "Aplicación para rastrear y reducir la huella de carbono personal",
