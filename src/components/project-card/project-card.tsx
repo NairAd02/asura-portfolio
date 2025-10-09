@@ -26,7 +26,7 @@ export default function ProjectCard({ proyect }: Props) {
       <div className="absolute top-0 left-0 right-0 h-6 bg-primary" />
 
       <div className="flex flex-col sm:flex-row h-full">
-        <div className="relative w-full sm:w-64 h-64 sm:h-auto flex-shrink-0 overflow-hidden">
+        <div className="relative w-full sm:w-72 h-64 sm:h-auto flex-shrink-0 overflow-hidden">
           <Image
             src={proyect.mainImage || principalPlaceHolder}
             alt={`Imagen del proyecto ${proyect.name}`}
