@@ -12,7 +12,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import NavigationComponent from "../navigation-component/navigation-component";
-import { Project } from "@/lib/types/project";
+import type { Project } from "@/lib/types/project";
 
 interface Props {
   proyect: Project;
@@ -25,17 +25,14 @@ export default function ProjectCard({ proyect }: Props) {
       <div className="absolute top-0 left-0 right-0 h-6 bg-primary" />
 
       <div className="flex flex-col sm:flex-row h-full">
-        <div className="flex items-center justify-center">
-          <div className="relative">
-            <Image
-              src={proyect.mainImage || principalPlaceHolder}
-              alt={`Imagen del proyecto ${proyect.name}`}
-              width={250}
-              height={250}
-              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+        <div className="relative w-full sm:w-64 h-64 sm:h-auto flex-shrink-0 overflow-hidden">
+          <Image
+            src={proyect.mainImage || principalPlaceHolder}
+            alt={`Imagen del proyecto ${proyect.name}`}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
         <CardContent className="flex-1 p-6 flex gap-4 flex-col justify-between">
