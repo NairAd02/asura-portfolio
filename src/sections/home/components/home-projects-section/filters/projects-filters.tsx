@@ -2,10 +2,10 @@ import { useCallback } from "react";
 import { Separator } from "@/components/ui/separator";
 import SearchInput from "@/components/inputs/search-input/search-input";
 import ListInput from "@/components/inputs/list-input/list-input";
-import { OptionData } from "@/lib/types/filters";
 import { ProjectsFilters as ProjectsFiltersType } from "./hooks/use-projects-filters";
 import { Technology } from "@/lib/types/technologies";
 import TextareaInput from "@/components/inputs/textarea-input/textarea-input";
+import { OptionData } from "@/lib/types/filters";
 
 interface Props {
   filters: ProjectsFiltersType;
