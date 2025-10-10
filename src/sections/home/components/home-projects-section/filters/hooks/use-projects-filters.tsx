@@ -13,6 +13,7 @@ import {
   resetFilters,
   saveFilters,
 } from "@/lib/actions/filters-actions";
+import { paths } from "@/lib/routes/path";
 
 export interface ProjectsFilters {
   name?: string;
@@ -37,7 +38,7 @@ export default function useProjectsFilters({
 }: Props) {
   const [filters, setFilters] = useState<ProjectsFilters>(defaultsFilters);
   const [isPending, startTransition] = useTransition();
-  const SECTION_KEY = "@projects";
+  const SECTION_KEY = paths.home.projectsSection;
 
   // 🔄 Al montar, cargar los filtros persistidos desde el servidor
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function useProjectsFilters({
         const cached = await loadFilters<ProjectsFilters>(SECTION_KEY);
         if (cached) setFilters(cached);
       });
-  }, [useCache]);
+  }, [useCache, SECTION_KEY]);
 
   // ✅ Actualiza filtros, guarda en el caché y revalida SSR automáticamente
   async function handleChangeFilters(updatedFilters: Partial<ProjectsFilters>) {

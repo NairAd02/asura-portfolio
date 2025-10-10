@@ -4,10 +4,11 @@ import { Project } from "@/lib/types/project";
 import HomeProjectsSectionList from "./home-projects-section-list";
 import { getSectionFilters } from "@/lib/cache/server-cache";
 import { ProjectsFilters } from "../filters/hooks/use-projects-filters";
+import { paths } from "@/lib/routes/path";
 
 export default async function HomeProjectsSectionListContainer() {
   const projectsFilters = (await getSectionFilters<ProjectsFilters>(
-    "@projects"
+    paths.home.projectsSection
   )) || {
     technologies: [],
   };
