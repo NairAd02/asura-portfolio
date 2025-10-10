@@ -25,9 +25,7 @@ export default function HomeProjectsSection() {
             />
           }
         >
-          <HomeProjectsSectionListContainer
-            projectsFilters={{ technologies: [] }}
-          />
+          <HomeProjectsSectionListContainer />
         </Suspense>
       </div>
     </section>
