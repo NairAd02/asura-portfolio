@@ -14,7 +14,7 @@ export default function ProjectsFiltersContainer() {
     getActiveFiltersCount,
     handleChangeFilters,
     handleResetFilters,
-  } = useProjectsFilters({});
+  } = useProjectsFilters({ useCache: true });
   const { technologies, loadingData: loadingDataTechs } = useTechnologies();
   return (
     <div className="flex flex-col gap-4">
