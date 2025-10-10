@@ -32,7 +32,7 @@ interface Props {
   useCache?: boolean;
 }
 
-// 🧠 Utilidad simple de debounce (se conserva entre renders)
+// Utilidad simple de debounce (se conserva entre renders)
 function useDebouncedCallback<T extends (...args: any[]) => void>(
   callback: T,
   delay: number
@@ -65,7 +65,7 @@ export default function useProjectsFilters({
   const [isPending, startTransition] = useTransition();
   const SECTION_KEY = paths.home.projectsSection;
 
-  // 🔄 Al montar, cargar filtros guardados en cookies/servidor
+  // Al montar, cargar filtros guardados en cookies/servidor
   useEffect(() => {
     if (useCache)
       startTransition(async () => {
@@ -74,7 +74,7 @@ export default function useProjectsFilters({
       });
   }, [useCache, SECTION_KEY]);
 
-  // 🕒 Función debounced para guardar filtros con revalidatePath
+  // Función debounced para guardar filtros con revalidatePath
   const debouncedSaveFilters = useDebouncedCallback(
     (newFilters: ProjectsFilters) => {
       startTransition(async () => {
@@ -84,7 +84,7 @@ export default function useProjectsFilters({
     600 // ms de espera antes de guardar y revalidar
   );
 
-  // ✅ Cambia filtros y guarda con debounce
+  // Cambia filtros y guarda con debounce
   function handleChangeFilters(updatedFilters: Partial<ProjectsFilters>) {
     const newFilters = { ...filters, ...updatedFilters };
     setFilters(newFilters);
@@ -98,7 +98,7 @@ export default function useProjectsFilters({
     }
   }
 
-  // 🔁 Resetea los filtros
+  // Resetea los filtros
   function handleResetFilters() {
     const reset = { technologies: [] };
     setFilters(reset);
@@ -113,7 +113,7 @@ export default function useProjectsFilters({
     }
   }
 
-  // 🧮 Contador de filtros activos
+  // Contador de filtros activos
   function getActiveFiltersCount() {
     let count = 0;
     if (filters.name) count++;
