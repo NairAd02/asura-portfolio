@@ -12,6 +12,7 @@ export default async function HomeProjectsSectionListContainer() {
   )) || {
     technologies: [],
   };
+  console.log(projectsFilters);
   const res = await getProjectsList(projectsFilters);
 
   if (res.error) {
