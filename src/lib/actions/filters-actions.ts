@@ -11,7 +11,7 @@ import { StorageValue } from "unstorage";
 export async function saveFilters(section: string, filters: any) {
   await setSectionFilters(section, filters);
 
-  revalidatePath(`/${section}`, "page");
+  revalidatePath(`${section}`, "page");
 }
 
 export async function loadFilters<T extends StorageValue>(
@@ -23,5 +23,5 @@ export async function loadFilters<T extends StorageValue>(
 export async function resetFilters(section: string) {
   await clearSectionFilters(section);
 
-  revalidatePath(`/${section}`, "page");
+  revalidatePath(`${section}`, "page");
 }
