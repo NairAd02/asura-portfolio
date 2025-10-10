@@ -37,7 +37,7 @@ export default function useProjectsFilters({
 }: Props) {
   const [filters, setFilters] = useState<ProjectsFilters>(defaultsFilters);
   const [isPending, startTransition] = useTransition();
-  const SECTION_KEY = "projects";
+  const SECTION_KEY = "@projects";
 
   // 🔄 Al montar, cargar los filtros persistidos desde el servidor
   useEffect(() => {
