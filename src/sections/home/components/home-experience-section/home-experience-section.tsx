@@ -11,9 +11,9 @@ const experiences: Experience[] = [
     description:
       "Lideré el desarrollo de interfaces para productos SaaS empresariales, trabajando en un equipo ágil multidisciplinario.",
     technologies: [
-      { name: "React", color: "#61DAFB", icon: "react" },
-      { name: "TypeScript", color: "#3178C6", icon: "typescript" },
-      { name: "GraphQL", color: "#E10098", icon: "graphql" },
+      { id: "1", name: "React", color: "#61DAFB", icon: "react" },
+      { id: "2", name: "TypeScript", color: "#3178C6", icon: "typescript" },
+      { id: "3", name: "GraphQL", color: "#E10098", icon: "graphql" },
     ],
     mainImage: "https://example.com/techsolutions.jpg",
     achievements: [
@@ -30,9 +30,9 @@ const experiences: Experience[] = [
     description:
       "Desarrollé soluciones completas para plataforma de sostenibilidad ambiental con enfoque en escalabilidad.",
     technologies: [
-      { name: "Node.js", color: "#339933", icon: "nodejs" },
-      { name: "MongoDB", color: "#47A248", icon: "mongodb" },
-      { name: "AWS", color: "#FF9900", icon: "aws" },
+      { id: "4", name: "Node.js", color: "#339933", icon: "nodejs" },
+      { id: "5", name: "MongoDB", color: "#47A248", icon: "mongodb" },
+      { id: "6", name: "AWS", color: "#FF9900", icon: "aws" },
     ],
     mainImage: "https://example.com/greentech.jpg",
     achievements: [
@@ -49,9 +49,9 @@ const experiences: Experience[] = [
     description:
       "Desarrollo de aplicaciones móviles bancarias con altos estándares de seguridad y usabilidad.",
     technologies: [
-      { name: "Flutter", color: "#02569B", icon: "flutter" },
-      { name: "Dart", color: "#0175C2", icon: "dart" },
-      { name: "Firebase", color: "#FFCA28", icon: "firebase" },
+      { id: "7", name: "Flutter", color: "#02569B", icon: "flutter" },
+      { id: "8", name: "Dart", color: "#0175C2", icon: "dart" },
+      { id: "9", name: "Firebase", color: "#FFCA28", icon: "firebase" },
     ],
     mainImage: "https://example.com/digitalbank.jpg",
     achievements: [
@@ -68,9 +68,9 @@ const experiences: Experience[] = [
     description:
       "Desarrollo de sitios web y aplicaciones personalizadas para diversos clientes.",
     technologies: [
-      { name: "JavaScript", color: "#F7DF1E", icon: "javascript" },
-      { name: "PHP", color: "#777BB4", icon: "php" },
-      { name: "WordPress", color: "#21759B", icon: "wordpress" },
+      { id: "10", name: "JavaScript", color: "#F7DF1E", icon: "javascript" },
+      { id: "11", name: "PHP", color: "#777BB4", icon: "php" },
+      { id: "12", name: "WordPress", color: "#21759B", icon: "wordpress" },
     ],
     achievements: [
       "Entregué 15+ proyectos para clientes en 6 industrias diferentes",
@@ -85,9 +85,9 @@ const experiences: Experience[] = [
     description:
       "Liderazgo técnico en desarrollo de soluciones innovadoras para clientes Fortune 500.",
     technologies: [
-      { name: "Kubernetes", color: "#326CE5", icon: "kubernetes" },
-      { name: "Go", color: "#00ADD8", icon: "go" },
-      { name: "Microservices", color: "#3A7BD5" },
+      { id: "13", name: "Kubernetes", color: "#326CE5", icon: "kubernetes" },
+      { id: "14", name: "Go", color: "#00ADD8", icon: "go" },
+      { id: "15", name: "Microservices", color: "#3A7BD5" },
     ],
     mainImage: "https://example.com/innovatech.jpg",
     achievements: [
@@ -104,9 +104,9 @@ const experiences: Experience[] = [
     description:
       "Investigación en tecnologías emergentes y desarrollo de prototipos para proyectos académicos.",
     technologies: [
-      { name: "Python", color: "#3776AB", icon: "python" },
-      { name: "Machine Learning", color: "#FF6F00" },
-      { name: "R", color: "#276DC3", icon: "r" },
+      { id: "16", name: "Python", color: "#3776AB", icon: "python" },
+      { id: "17", name: "Machine Learning", color: "#FF6F00" },
+      { id: "18", name: "R", color: "#276DC3", icon: "r" },
     ],
     achievements: [
       "Publicación de paper sobre algoritmos de recomendación",
