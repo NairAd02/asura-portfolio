@@ -6,7 +6,6 @@ import {
   getSectionFilters,
   setSectionFilters,
 } from "../cache/server-cache";
-import { StorageValue } from "unstorage";
 
 export async function saveFilters(section: string, filters: any) {
   await setSectionFilters(section, filters);
@@ -14,9 +13,7 @@ export async function saveFilters(section: string, filters: any) {
   revalidatePath(`${section}`, "page");
 }
 
-export async function loadFilters<T extends StorageValue>(
-  section: string
-): Promise<T | null> {
+export async function loadFilters<T>(section: string): Promise<T | null> {
   return await getSectionFilters<T>(section);
 }
 
