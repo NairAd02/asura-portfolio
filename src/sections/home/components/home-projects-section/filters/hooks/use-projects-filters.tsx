@@ -27,11 +27,13 @@ export interface ProjectsFilters {
 interface Props {
   setPagination?: Dispatch<SetStateAction<Pagination>>;
   defaultsFilters?: ProjectsFilters;
+  useCache?: boolean;
 }
 
 export default function useProjectsFilters({
   setPagination,
   defaultsFilters = { technologies: [] },
+  useCache = false,
 }: Props) {
   const [filters, setFilters] = useState<ProjectsFilters>(defaultsFilters);
   const [isPending, startTransition] = useTransition();
@@ -39,21 +41,22 @@ export default function useProjectsFilters({
 
   // 🔄 Al montar, cargar los filtros persistidos desde el servidor
   useEffect(() => {
-    startTransition(async () => {
-      const cached = await loadFilters<ProjectsFilters>(SECTION_KEY);
-      if (cached) setFilters(cached);
-    });
-  }, []);
+    if (useCache)
+      startTransition(async () => {
+        const cached = await loadFilters<ProjectsFilters>(SECTION_KEY);
+        if (cached) setFilters(cached);
+      });
+  }, [useCache]);
 
   // ✅ Actualiza filtros, guarda en el caché y revalida SSR automáticamente
   async function handleChangeFilters(updatedFilters: Partial<ProjectsFilters>) {
     const newFilters = { ...filters, ...updatedFilters };
     setFilters(newFilters);
-
-    startTransition(async () => {
-      await saveFilters(SECTION_KEY, newFilters);
-      // revalidatePath() dentro de saveFilters vuelve a ejecutar el fetch SSR
-    });
+    if (useCache)
+      startTransition(async () => {
+        await saveFilters(SECTION_KEY, newFilters);
+        // revalidatePath() dentro de saveFilters vuelve a ejecutar el fetch SSR
+      });
 
     if (setPagination) {
       setPagination((old) => ({ ...old, page: 1 }));
@@ -64,10 +67,10 @@ export default function useProjectsFilters({
   async function handleResetFilters() {
     const reset = { technologies: [] };
     setFilters(reset);
-
-    startTransition(async () => {
-      await resetFilters(SECTION_KEY);
-    });
+    if (useCache)
+      startTransition(async () => {
+        await resetFilters(SECTION_KEY);
+      });
 
     if (setPagination) {
       setPagination((old) => ({ ...old, page: 1 }));
