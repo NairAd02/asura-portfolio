@@ -7,7 +7,7 @@ import { ProjectsFilters } from "../filters/hooks/use-projects-filters";
 
 export default async function HomeProjectsSectionListContainer() {
   const projectsFilters = (await getSectionFilters<ProjectsFilters>(
-    "projects"
+    "@projects"
   )) || {
     technologies: [],
   };
