@@ -1,15 +1,16 @@
 import React from "react";
 import { getProjectsList } from "@/lib/services/projects";
-import { Project, ProjectsFiltersDTO } from "@/lib/types/project";
+import { Project } from "@/lib/types/project";
 import HomeProjectsSectionList from "./home-projects-section-list";
+import { getSectionFilters } from "@/lib/cache/server-cache";
+import { ProjectsFilters } from "../filters/hooks/use-projects-filters";
 
-interface Props {
-  projectsFilters: ProjectsFiltersDTO;
-}
-
-export default async function HomeProjectsSectionListContainer({
-  projectsFilters,
-}: Props) {
+export default async function HomeProjectsSectionListContainer() {
+  const projectsFilters = (await getSectionFilters<ProjectsFilters>(
+    "projects"
+  )) || {
+    technologies: [],
+  };
   const res = await getProjectsList(projectsFilters);
 
   if (res.error) {
