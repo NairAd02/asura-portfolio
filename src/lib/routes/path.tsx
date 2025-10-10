@@ -4,7 +4,9 @@ interface Path {
 }
 
 interface ApplicationPath {
-  home: Path;
+  home: Path & {
+    projectsSection: string;
+  };
   projectDetails: (
     params?: Record<string, string>,
     query?: Record<string, string>
@@ -28,6 +30,7 @@ function replaceParamsInPath(
 export const paths: ApplicationPath = {
   home: {
     root: "/",
+    projectsSection: "/@projects",
     isProtected: false,
   },
   projectDetails: (params = {}, query = {}) => {

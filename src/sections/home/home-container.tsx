@@ -5,9 +5,13 @@ import HomeSkillsSection from "./components/home-skills-section/home-skills-sect
 import HomeEducationAndCertificationsSection from "./components/home-education-and-certifications-section/home-education-and-certifications-section";
 import HomeBlogsSection from "./components/home-blogs-section/home-blogs-section";
 import HomeContactSection from "./components/home-contact-section/home-contact-section";
-import HomeProjectsSection from "./components/home-projects-section/home-projects-section";
+import { ReactNode } from "react";
 
-export default function HomeContainer() {
+interface Props {
+  homeProjectsSection: ReactNode;
+}
+
+export default function HomeContainer({ homeProjectsSection }: Props) {
   return (
     <div className="flex flex-col bg-background">
       {/* Hero Section */}
@@ -17,7 +21,7 @@ export default function HomeContainer() {
       <HomeAboutSection />
 
       {/* Projects Section */}
-      <HomeProjectsSection />
+      {homeProjectsSection}
 
       {/* Experience Section */}
       <HomeExperienceSection />
