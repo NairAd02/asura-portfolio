@@ -34,8 +34,8 @@ export default function ExperienceCard({ experience }: Props) {
           >
             <Calendar className="h-3 w-3" />
             <span className="whitespace-normal md:whitespace-nowrap">
-              {formatDate(experience.startDate)} -{" "}
-              {experience.endDate ? formatDate(experience.endDate) : "Presente"}
+              {formatDate(experience.startdate)} -{" "}
+              {experience.enddate ? formatDate(experience.enddate) : "Presente"}
             </span>
           </Badge>
         </div>
