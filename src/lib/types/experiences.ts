@@ -11,3 +11,11 @@ export interface Experience {
   achievements: string[];
   technologies: Technology[];
 }
+
+export interface ExperiencesFiltersDTO {
+  company?: string;
+  position?: string;
+  description?: string;
+  achievements?: string;
+  technologies: string[];
+}
