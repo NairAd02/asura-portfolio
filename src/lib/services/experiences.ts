@@ -76,7 +76,7 @@ export async function getExperiencesList(
   if (error) return { data: null, error };
 
   const experiences = data as (Experience & {
-    technology_has_experience: { technology: Technology }[];
+    experience_has_technology: { technology: Technology }[];
   })[];
 
   try {
@@ -88,7 +88,7 @@ export async function getExperiencesList(
         }
 
         const technologies = await Promise.all(
-          experience.technology_has_experience.map(
+          experience.experience_has_technology.map(
             async (the: { technology: Technology }) => ({
               ...the.technology,
               icon: the.technology.icon
