@@ -4,7 +4,7 @@ import { Experience } from "@/lib/types/experiences";
 import HomeExperienceSectionList from "./home-experience-section-list";
 
 export default async function HomeExperienceSectionListContainer() {
-  const res = await getExperiencesList();
+  const res = await getExperiencesList({ technologies: [] });
 
   if (res.error) {
     console.log(res.error);

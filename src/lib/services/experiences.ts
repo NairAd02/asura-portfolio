@@ -6,7 +6,7 @@ import { Technology } from "../types/technologies";
 import { getImageUrlOrThrow } from "./supabase-storage";
 
 export async function getExperiencesList(
-  experienceFilters?: ExperiencesFiltersDTO
+  experienceFilters: ExperiencesFiltersDTO
 ) {
   const supabase = await createClient();
 
