@@ -11,6 +11,7 @@ import { Experience } from "@/lib/types/experiences";
 import { formatDate } from "@/lib/format-date";
 import AvatarContainer from "../ui/avatar-container";
 import { Skeleton } from "../ui/skeleton";
+import TechnologyBadge from "../technology-badge/technology-badge";
 
 interface Props {
   experience: Experience;
@@ -97,13 +98,7 @@ export default function ExperienceCard({ experience }: Props) {
             </div>
             <div className="flex flex-wrap gap-2">
               {experience.technologies.map((technology, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="text-xs px-2 py-0.5 font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                >
-                  {technology.name}
-                </Badge>
+                <TechnologyBadge key={index} technology={technology} />
               ))}
             </div>
           </div>
