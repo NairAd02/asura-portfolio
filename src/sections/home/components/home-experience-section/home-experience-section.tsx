@@ -1,120 +1,6 @@
-import ExperienceCard from "@/components/experience-card/experience-card";
-import { Experience } from "@/lib/types/experiences";
-import React from "react";
-
-const experiences: Experience[] = [
-  {
-    company: "TechSolutions Inc.",
-    position: "Senior Frontend Developer",
-    startDate: "2021-03",
-    endDate: "2023-11",
-    description:
-      "Lideré el desarrollo de interfaces para productos SaaS empresariales, trabajando en un equipo ágil multidisciplinario.",
-    technologies: [
-      { id: "1", name: "React", color: "#61DAFB", icon: "react" },
-      { id: "2", name: "TypeScript", color: "#3178C6", icon: "typescript" },
-      { id: "3", name: "GraphQL", color: "#E10098", icon: "graphql" },
-    ],
-    mainImage: "https://example.com/techsolutions.jpg",
-    achievements: [
-      "Implementé arquitectura de micro-frontends que redujo tiempos de carga en 40%",
-      "Mentoré a 3 desarrolladores junior en el equipo",
-      "Diseñé sistema de diseño reutilizable adoptado por toda la organización",
-    ],
-  },
-  {
-    company: "GreenTech Startup",
-    position: "Full Stack Engineer",
-    startDate: "2019-06",
-    endDate: "2021-02",
-    description:
-      "Desarrollé soluciones completas para plataforma de sostenibilidad ambiental con enfoque en escalabilidad.",
-    technologies: [
-      { id: "4", name: "Node.js", color: "#339933", icon: "nodejs" },
-      { id: "5", name: "MongoDB", color: "#47A248", icon: "mongodb" },
-      { id: "6", name: "AWS", color: "#FF9900", icon: "aws" },
-    ],
-    mainImage: "https://example.com/greentech.jpg",
-    achievements: [
-      "Construí API que procesa 10K+ peticiones/minuto sobre datos ambientales",
-      "Implementé sistema de caché que redujo costos de AWS en 35%",
-      "Integración con múltiples APIs de datos climáticos gubernamentales",
-    ],
-  },
-  {
-    company: "DigitalBank",
-    position: "Mobile Developer",
-    startDate: "2017-01",
-    endDate: "2019-05",
-    description:
-      "Desarrollo de aplicaciones móviles bancarias con altos estándares de seguridad y usabilidad.",
-    technologies: [
-      { id: "7", name: "Flutter", color: "#02569B", icon: "flutter" },
-      { id: "8", name: "Dart", color: "#0175C2", icon: "dart" },
-      { id: "9", name: "Firebase", color: "#FFCA28", icon: "firebase" },
-    ],
-    mainImage: "https://example.com/digitalbank.jpg",
-    achievements: [
-      "App con 500K+ descargas y rating de 4.8/5 en stores",
-      "Implementación de autenticación biométrica segura",
-      "Reducción de crashes en producción en 90% mediante mejor testing",
-    ],
-  },
-  {
-    company: "Freelance",
-    position: "Web Developer",
-    startDate: "2015-09",
-    endDate: "2016-12",
-    description:
-      "Desarrollo de sitios web y aplicaciones personalizadas para diversos clientes.",
-    technologies: [
-      { id: "10", name: "JavaScript", color: "#F7DF1E", icon: "javascript" },
-      { id: "11", name: "PHP", color: "#777BB4", icon: "php" },
-      { id: "12", name: "WordPress", color: "#21759B", icon: "wordpress" },
-    ],
-    achievements: [
-      "Entregué 15+ proyectos para clientes en 6 industrias diferentes",
-      "Desarrollé plugins personalizados para necesidades específicas",
-      "Automatización de procesos de despliegue para clientes recurrentes",
-    ],
-  },
-  {
-    company: "Innovatech Labs",
-    position: "Lead Software Architect",
-    startDate: "2023-12",
-    description:
-      "Liderazgo técnico en desarrollo de soluciones innovadoras para clientes Fortune 500.",
-    technologies: [
-      { id: "13", name: "Kubernetes", color: "#326CE5", icon: "kubernetes" },
-      { id: "14", name: "Go", color: "#00ADD8", icon: "go" },
-      { id: "15", name: "Microservices", color: "#3A7BD5" },
-    ],
-    mainImage: "https://example.com/innovatech.jpg",
-    achievements: [
-      "Diseñé arquitectura escalable para sistema de procesamiento de pagos internacionales",
-      "Implementé estrategia de migración a la nube para cliente financiero",
-      "Establecí prácticas de DevOps que redujeron tiempo de despliegue en 60%",
-    ],
-  },
-  {
-    company: "University Tech Lab",
-    position: "Research Assistant",
-    startDate: "2014-01",
-    endDate: "2015-08",
-    description:
-      "Investigación en tecnologías emergentes y desarrollo de prototipos para proyectos académicos.",
-    technologies: [
-      { id: "16", name: "Python", color: "#3776AB", icon: "python" },
-      { id: "17", name: "Machine Learning", color: "#FF6F00" },
-      { id: "18", name: "R", color: "#276DC3", icon: "r" },
-    ],
-    achievements: [
-      "Publicación de paper sobre algoritmos de recomendación",
-      "Desarrollo de prototipo para análisis de datos educativos",
-      "Colaboración en proyecto de código abierto para visualización de datos",
-    ],
-  },
-];
+import React, { Suspense } from "react";
+import HomeExperienceSectionListContainer from "./list/home-experience-section-list-container";
+import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
 
 export default function HomeExperienceSection() {
   return (
@@ -131,13 +17,16 @@ export default function HomeExperienceSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto max-w-6xl py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {experiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience} />
-            ))}
-          </div>
-        </div>
+        <Suspense
+          fallback={
+            <CardSkeletonGroup
+              containerClassName="grid grid-cols-1 lg:grid-cols-2 gap-4"
+              count={4}
+            />
+          }
+        >
+          <HomeExperienceSectionListContainer />
+        </Suspense>
       </div>
     </section>
   );
