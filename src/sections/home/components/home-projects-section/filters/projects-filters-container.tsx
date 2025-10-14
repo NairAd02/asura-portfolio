@@ -16,6 +16,7 @@ export default function ProjectsFiltersContainer() {
     handleResetFilters,
   } = useProjectsFilters({ useCache: true });
   const { technologies, loadingData: loadingDataTechs } = useTechnologies();
+  const activeFiltersCount = getActiveFiltersCount();
   return (
     <div className="flex flex-col gap-4">
       <div className="flex gap-2">
@@ -42,7 +43,7 @@ export default function ProjectsFiltersContainer() {
         <ProjectsActiveFilters
           filters={filters}
           handleChangeFilters={handleChangeFilters}
-          getActiveFiltersCount={getActiveFiltersCount}
+          activeFiltersCount={activeFiltersCount}
           handleResetFilters={handleResetFilters}
         />
       )}
