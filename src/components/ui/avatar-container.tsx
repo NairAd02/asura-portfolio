@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 
 interface Props {
   image?: string;
-  fallback: string;
+  fallback: ReactNode;
   className?: string;
   avatarFallbackClassName?: string;
 }
