@@ -4,10 +4,10 @@ export interface Experience {
   id: string;
   company: string;
   position: string;
-  startDate: string;
-  endDate?: string;
+  startdate: string;
+  enddate?: string;
   description: string;
-  technologies: Technology[];
-  mainImage?: string;
+  mainImage: string;
   achievements: string[];
+  technologies: Technology[];
 }
