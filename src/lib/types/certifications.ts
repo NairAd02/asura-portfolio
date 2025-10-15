@@ -1,8 +1,10 @@
 export interface Certification {
+  id: string;
   title: string;
+  description?: string;
   institution: string;
-  startDate: string;
-  endDate: string; // Optional, if the experience is current
-  image?: string; // URL to the image of the certification
-  link?: string; // URL to the certification or institution
+  startdate: string;
+  enddate: string;
+  image?: string;
+  link?: string;
 }
