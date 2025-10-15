@@ -5,18 +5,21 @@ interface Props {
   projects: ReactNode;
   experiences: ReactNode;
   skills: ReactNode;
+  certifications: ReactNode
 }
 
 export default function HomeLayout({
   projects: homeProjectsSection,
   experiences: homeExperienceSection,
   skills: homeSkillsSection,
+  certifications: homeCertificationsSection
 }: Props) {
   return (
     <HomeContainer
       homeProjectsSection={homeProjectsSection}
       homeExperienceSection={homeExperienceSection}
       homeSkillsSection={homeSkillsSection}
+      homeCertificationsSection={homeCertificationsSection}
     />
   );
 }
