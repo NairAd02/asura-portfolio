@@ -28,8 +28,8 @@ export async function getExperiencesList(
       filtered = filtered.ilike("position", `%${position.trim()}%`);
     if (description && description.trim())
       filtered = filtered.ilike("description", `%${description.trim()}%`);
-    if (achievements && achievements.trim())
-      filtered = filtered.ilike("achievements", `%${achievements.trim()}%`);
+    // Note: achievements filtering will be done after fetching data from Supabase
+    // since filtering JSON arrays in Supabase is complex and error-prone
     return filtered;
   };
 
@@ -75,9 +75,18 @@ export async function getExperiencesList(
   const { data, error } = await baseQuery;
   if (error) return { data: null, error };
 
-  const experiences = data as (Experience & {
+  let experiences = data as (Experience & {
     experience_has_technology: { technology: Technology }[];
   })[];
+
+  if (achievements && achievements.trim()) {
+    const searchTerm = achievements.trim().toLowerCase();
+    experiences = experiences.filter((experience) => {
+      return experience.achievements.some((achievement) =>
+        achievement.toLowerCase().includes(searchTerm)
+      );
+    });
+  }
 
   try {
     const mappedExperiences = await Promise.all(
@@ -105,6 +114,7 @@ export async function getExperiencesList(
         };
       })
     );
+
     return { data: mappedExperiences, error: null };
   } catch (err) {
     return { data: null, error: err };
