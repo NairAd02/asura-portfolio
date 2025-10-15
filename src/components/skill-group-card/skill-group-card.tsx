@@ -5,6 +5,8 @@ import AvatarContainer from "../ui/avatar-container";
 import { principalPlaceHolder } from "@/lib/place-holders";
 import { Badge } from "../ui/badge";
 import { TrendingUp } from "lucide-react";
+import { levelMap } from "@/lib/types/skills";
+import { Skeleton } from "../ui/skeleton";
 
 interface Props {
   skillGroup: SkillGroup;
@@ -20,7 +22,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
               image={skillGroup.icon || principalPlaceHolder}
               fallback="s-g"
             />
-            {skillGroup.title}
+            {skillGroup.name}
           </div>
           <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <TrendingUp className="h-4 w-4 text-primary" />
@@ -31,8 +33,19 @@ export default function SkillGroupCard({ skillGroup }: Props) {
         <div className="space-y-2">
           {skillGroup.skills.map((skill, index) => (
             <div key={index} className="flex justify-between">
-              <span className="text-sm font-semibold">{skill.name}</span>
-              <Badge variant="default">{skill.level.level}</Badge>
+              <div className="flex items-center gap-2">
+                <AvatarContainer
+                  className="h-4 w-4"
+                  image={skill.icon}
+                  fallback={
+                    <div className="flex items-center gap-2">
+                      <Skeleton className="h-10 w-10 rounded-full" />
+                    </div>
+                  }
+                />
+                <span className="text-sm font-semibold">{skill.name}</span>
+              </div>
+              <Badge variant="default">{levelMap.get(skill.level)?.name}</Badge>
             </div>
           ))}
         </div>
