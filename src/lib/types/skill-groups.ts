@@ -1,8 +1,8 @@
 import { Skill } from "./skills";
 
 export interface SkillGroup {
-  title: string;
-  skills: Skill[];
+  id: string;
+  name: string;
   icon?: string;
-  color?: string;
+  skills: Skill[];
 }
