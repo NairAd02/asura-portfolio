@@ -7,6 +7,7 @@ interface ApplicationPath {
   home: Path & {
     projectsSection: string;
     experiencesSection: string;
+    skillsSection: string;
   };
   projectDetails: (
     params?: Record<string, string>,
@@ -33,6 +34,7 @@ export const paths: ApplicationPath = {
     root: "/",
     projectsSection: "/@projects",
     experiencesSection: "/@experiences",
+    skillsSection: "/@skills",
     isProtected: false,
   },
   projectDetails: (params = {}, query = {}) => {
