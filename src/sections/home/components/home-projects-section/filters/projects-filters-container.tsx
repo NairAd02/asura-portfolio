@@ -39,7 +39,7 @@ export default function ProjectsFiltersContainer() {
           />
         </SheetContainer>
       </div>
-      {getActiveFiltersCount() > 0 && (
+      {activeFiltersCount > 0 && (
         <ProjectsActiveFilters
           filters={filters}
           handleChangeFilters={handleChangeFilters}
