@@ -63,8 +63,8 @@ export default function CertificationGroupCard({ certificationGroup }: Props) {
                     variant="outline"
                   >
                     <span className="whitespace-normal md:whitespace-nowrap">
-                      {formatDate(certification.startDate)} -{" "}
-                      {formatDate(certification.endDate)}
+                      {formatDate(certification.startdate)} -{" "}
+                      {formatDate(certification.enddate)}
                     </span>
                   </Badge>
                 </div>
