@@ -4,5 +4,4 @@ export interface Blog {
   description: string;
   date: string;
   link?: string;
-  image?: string;
 }
