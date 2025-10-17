@@ -38,23 +38,36 @@ export default function DatePickerInput({
 
   // Manejador de cambio de fecha
   const handleDateChange = (date: Date | undefined) => {
-    if (!date) return;
-    const updatedDate = date;
-
-    // Si ya existe una hora, la preservamos
-    if (showTime && internalDate) {
-      updatedDate.setHours(internalDate.getHours());
-      updatedDate.setMinutes(internalDate.getMinutes());
-    }
-
-    setInternalDate(updatedDate);
-    onChange?.(updatedDate);
+    setInternalDate(date);
+    onChange?.(date);
   };
 
   // Manejador de cambio de hora manual
   const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const time = e.target.value;
-    if (!internalDate || !time) return;
+
+    // Si no hay fecha seleccionada, crear una nueva con la hora
+    if (!internalDate) {
+      const newDate = new Date();
+      if (time) {
+        const [hours, minutes] = time.split(":").map(Number);
+        newDate.setHours(hours);
+        newDate.setMinutes(minutes);
+      }
+      setInternalDate(newDate);
+      onChange?.(newDate);
+      return;
+    }
+
+    // Si ya hay fecha, actualizar solo la hora
+    if (!time) {
+      // Si se borra la hora, mantener la fecha pero resetear hora
+      const updated = new Date(internalDate);
+      updated.setHours(0, 0, 0, 0);
+      setInternalDate(updated);
+      onChange?.(updated);
+      return;
+    }
 
     const [hours, minutes] = time.split(":").map(Number);
     const updated = new Date(internalDate);
@@ -62,6 +75,12 @@ export default function DatePickerInput({
     updated.setMinutes(minutes);
     setInternalDate(updated);
     onChange?.(updated);
+  };
+
+  // Formatear la hora para el input time
+  const formatTimeValue = (date: Date | undefined) => {
+    if (!date) return "";
+    return format(date, "HH:mm");
   };
 
   return (
@@ -98,7 +117,7 @@ export default function DatePickerInput({
               <Clock className="h-4 w-4 text-muted-foreground" />
               <Input
                 type="time"
-                value={internalDate ? format(internalDate, "HH:mm") : ""}
+                value={formatTimeValue(internalDate)}
                 onChange={handleTimeChange}
                 className="w-32"
               />
