@@ -3,13 +3,13 @@
 import { createClient } from "../supabase/server";
 import { Blog, BlogsFiltersDTO } from "../types/blogs";
 
-export async function getBlogsList(blogFilters?: BlogsFiltersDTO) {
+export async function getBlogsList(blogFilters: BlogsFiltersDTO) {
   const supabase = await createClient();
 
   const { name, description, date } = blogFilters || {};
 
-  // Helper to apply all text-based filters once
-  const applyTextFilters = (
+  // Apply PostgreSQL filters for name and description
+  const applyPostgreSQLFilters = (
     q: ReturnType<typeof supabase.from> extends infer T
       ? T extends { select: any }
         ? any
@@ -21,18 +21,38 @@ export async function getBlogsList(blogFilters?: BlogsFiltersDTO) {
       filtered = filtered.ilike("name", `%${name.trim()}%`);
     if (description && description.trim())
       filtered = filtered.ilike("description", `%${description.trim()}%`);
-    if (date && date.trim())
-      filtered = filtered.ilike("date", `%${date.trim()}%`);
     return filtered;
   };
 
-  // Start base query and apply text filters
-  const baseQuery = applyTextFilters(supabase.from("blog").select("*"));
+  // Start base query with PostgreSQL filters
+  const baseQuery = applyPostgreSQLFilters(supabase.from("blog").select("*"));
 
   const { data: blogsData, error } = await baseQuery;
   if (error) return { data: null, error };
 
   const blogs = blogsData as Blog[];
 
-  return { data: blogs, error: null };
+  // Apply date filter in TypeScript if needed
+  if (!date || !date.trim()) {
+    return { data: blogs, error: null };
+  }
+
+  let filteredBlogs = blogs;
+
+  if (blogFilters.date) {
+    const blogFilterDate = blogFilters.date;
+
+    filteredBlogs = blogs.filter((blog) => {
+      const blogDate = new Date(blog.date);
+      const filterDate = new Date(blogFilterDate);
+
+      // Normalizar ambas fechas a medianoche
+      const normalizedBlogDate = new Date(blogDate).setHours(0, 0, 0, 0);
+      const normalizedFilterDate = new Date(filterDate).setHours(0, 0, 0, 0);
+
+      return normalizedBlogDate === normalizedFilterDate;
+    });
+  }
+
+  return { data: filteredBlogs, error: null };
 }
