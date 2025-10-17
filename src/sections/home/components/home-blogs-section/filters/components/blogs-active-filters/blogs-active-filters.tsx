@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RotateCcwIcon } from "lucide-react";
 import { BlogsFilters } from "../../hooks/use-blogs-filters";
+import { formatDate } from "@/lib/format-date";
 
 interface Props {
   filters: BlogsFilters;
@@ -62,7 +63,7 @@ export default function BlogsActiveFilters({
           {filters.date && (
             <FilterBadge
               filterName="Fecha"
-              filterValue={filters.date.toISOString()}
+              filterValue={formatDate(filters.date.toISOString())}
               handleDeleteFilter={() => {
                 handleChangeFilters({ date: undefined });
               }}
