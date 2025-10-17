@@ -12,3 +12,10 @@ export interface PortfolioInfo {
   contact_text: string;
   contact_email: string;
 }
+
+export interface PersonalInformationInfo {
+  id: string;
+  contact_name: string;
+  contact_image?: string;
+  introductory_phrase: string;
+}
