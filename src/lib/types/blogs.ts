@@ -1,3 +1,5 @@
+import { BlogsFilters } from "@/sections/home/components/home-blogs-section/filters/hooks/use-blogs-filters";
+
 export interface Blog {
   id: string;
   name: string;
@@ -11,3 +13,12 @@ export interface BlogsFiltersDTO {
   description?: string;
   date?: string;
 }
+
+export const convertBlogsFiltersDTO = (
+  blogsFilters: BlogsFilters
+): BlogsFiltersDTO => {
+  return {
+    ...blogsFilters,
+    date: blogsFilters.date?.toISOString(),
+  };
+};
