@@ -32,19 +32,12 @@ export async function getBlogsList(blogFilters: BlogsFiltersDTO) {
 
   const blogs = blogsData as Blog[];
 
-  // Apply date filter in TypeScript if needed
-  if (!date || !date.trim()) {
-    return { data: blogs, error: null };
-  }
-
   let filteredBlogs = blogs;
 
-  if (blogFilters.date) {
-    const blogFilterDate = blogFilters.date;
-
+  if (date) {
     filteredBlogs = blogs.filter((blog) => {
       const blogDate = new Date(blog.date);
-      const filterDate = new Date(blogFilterDate);
+      const filterDate = new Date(date);
 
       // Normalizar ambas fechas a medianoche
       const normalizedBlogDate = new Date(blogDate).setHours(0, 0, 0, 0);
