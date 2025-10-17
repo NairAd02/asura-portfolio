@@ -10,7 +10,7 @@ interface Props {
 
 export default function BlogsFilters({ filters, handleChangeFilters }: Props) {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 p-2">
       <SearchInput
         id="name"
         value={filters.name}
@@ -19,21 +19,20 @@ export default function BlogsFilters({ filters, handleChangeFilters }: Props) {
           handleChangeFilters({ name: e.target.value || undefined });
         }}
       />
-      <TextareaInput
-        id="description"
-        value={filters.description}
-        placeHolder="Buscar por descripción..."
-        onChange={(e) => {
-          handleChangeFilters({ description: e.target.value || undefined });
-        }}
-      />
-
       <DatePickerInput
         id="date"
         placeholder="Buscar por fecha..."
         value={filters.date}
         onChange={(date) => {
           handleChangeFilters({ date: date || undefined });
+        }}
+      />
+      <TextareaInput
+        id="description"
+        value={filters.description}
+        placeHolder="Buscar por descripción..."
+        onChange={(e) => {
+          handleChangeFilters({ description: e.target.value || undefined });
         }}
       />
     </div>
