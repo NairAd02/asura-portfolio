@@ -10,7 +10,7 @@ interface Props {
 
 export default function BlogsFilters({ filters, handleChangeFilters }: Props) {
   return (
-    <div className="flex items-center gap-4 p-2">
+    <div className="flex flex-col md:flex-row items-center gap-4 p-2">
       <SearchInput
         id="name"
         value={filters.name}
