@@ -7,11 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
-import {
-  ExternalLink,
-  Calendar,
-  ScrollText,
-} from "lucide-react";
+import { ExternalLink, Calendar, ScrollText } from "lucide-react";
 import NavigationComponent from "../navigation-component/navigation-component";
 import { formatDate } from "@/lib/format-date";
 import { Badge } from "../ui/badge";
@@ -27,11 +23,11 @@ export default function BlogCard({ blog }: Props) {
       <div className="relative">
         <CardHeader className="space-y-3">
           <div className="flex items-start justify-between gap-3">
-            <CardTitle className="text-xl font-bold leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-2">
+            <CardTitle className="pb-2 text-xl font-bold leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-2">
               {blog.name}
             </CardTitle>
             <div className="p-1.5 rounded-full bg-primary/70 group-hover:bg-primary border-2 border-primary/20">
-              <ScrollText className="w-3 h-3 text-white" />
+              <ScrollText className="w-4 h-4 text-white" />
             </div>
           </div>
 
