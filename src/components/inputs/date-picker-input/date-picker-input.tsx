@@ -18,7 +18,7 @@ interface Props {
   placeholder?: string;
 }
 
-export default function DateTimeInput({
+export default function DatePickerInput({
   id,
   label,
   value,
