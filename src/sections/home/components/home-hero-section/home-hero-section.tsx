@@ -1,11 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { principalPlaceHolder } from "@/lib/place-holders";
+import { PersonalInformationInfo } from "@/lib/types/portfolio-info";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function HomeHeroSection() {
+interface Props {
+  personalInformationInfo: PersonalInformationInfo;
+}
+
+export default function HomeHeroSection({ personalInformationInfo }: Props) {
   return (
     <section id="inicio" className="p-8 bg-background">
       <div className="px-4 md:px-6">
@@ -13,13 +18,10 @@ export default function HomeHeroSection() {
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Hola, soy{" "}
-                <span className="text-primary">Adrian Suarez Padrón</span>
+                {personalInformationInfo.contact_name}
               </h1>
               <p className="max-w-[600px] text-black font-semibold md:text-xl">
-                Desarrollador de software con enfoque en soluciones escalables y
-                diseño limpio. Especializado en crear experiencias digitales
-                excepcionales.
+                {personalInformationInfo.introductory_phrase}
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -51,7 +53,9 @@ export default function HomeHeroSection() {
           <div className="flex items-center justify-center">
             <div className="relative">
               <Image
-                src={principalPlaceHolder}
+                src={
+                  personalInformationInfo.contact_image || principalPlaceHolder
+                }
                 alt="Foto profesional"
                 width={400}
                 height={400}
