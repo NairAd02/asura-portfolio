@@ -9,6 +9,7 @@ interface ApplicationPath {
     experiencesSection: string;
     skillsSection: string;
     certificationsSection: string;
+    blogsSection: string;
   };
   projectDetails: (
     params?: Record<string, string>,
@@ -37,6 +38,7 @@ export const paths: ApplicationPath = {
     experiencesSection: "/@experiences",
     skillsSection: "/@skills",
     certificationsSection: "/@certifications",
+    blogsSection: "/@blogs",
     isProtected: false,
   },
   projectDetails: (params = {}, query = {}) => {
