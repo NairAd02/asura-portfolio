@@ -29,3 +29,8 @@ export interface ProjectsSectionInfo {
   id: string;
   feature_project_text: string;
 }
+
+export interface ExperiencesSectionInfo {
+  id: string;
+  work_experience_text: string;
+}
