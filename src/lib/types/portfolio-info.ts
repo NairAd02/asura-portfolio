@@ -44,3 +44,8 @@ export interface CertificationsSectionInfo {
   id: string;
   education_and_certifications_text: string;
 }
+
+export interface BlogsSectionInfo {
+  id: string;
+  blog_and_post_text: string;
+}
