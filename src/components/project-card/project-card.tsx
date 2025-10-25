@@ -18,12 +18,12 @@ import TechnologyBadge from "../technology-badge/technology-badge";
 import { paths } from "@/lib/routes/path";
 
 interface Props {
-  proyect: Project;
+  project: Project;
 }
 
-export default function ProjectCard({ proyect }: Props) {
+export default function ProjectCard({ project }: Props) {
   return (
-    <NavigationComponent href={paths.projectDetails({ id: proyect.id }).root}>
+    <NavigationComponent href={paths.projectDetails({ id: project.id }).root}>
       <Card className="group relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-b-4 border-b-primary/40 hover:border-b-primary shadow-md">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-6 bg-primary" />
@@ -31,8 +31,8 @@ export default function ProjectCard({ proyect }: Props) {
         <div className="flex flex-col sm:flex-row h-full">
           <div className="relative w-full sm:w-72 h-64 sm:h-auto flex-shrink-0 overflow-hidden">
             <Image
-              src={proyect.mainImage || principalPlaceHolder}
-              alt={`Imagen del proyecto ${proyect.name}`}
+              src={project.mainImage || principalPlaceHolder}
+              alt={`Imagen del proyecto ${project.name}`}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
             />
@@ -54,10 +54,10 @@ export default function ProjectCard({ proyect }: Props) {
             <div className="space-y-3">
               <div>
                 <h3 className="text-xl font-bold text-foreground group-hover:text-primary line-clamp-2 mb-2">
-                  {proyect.name}
+                  {project.name}
                 </h3>
                 <p className="text-sm text-black font-semibold line-clamp-2 leading-relaxed">
-                  {proyect.description}
+                  {project.description}
                 </p>
               </div>
 
@@ -67,12 +67,12 @@ export default function ProjectCard({ proyect }: Props) {
                   Tecnologías
                 </h4>
                 <div className="flex flex-wrap gap-1">
-                  {proyect.technologies.map((technology, index) => (
+                  {project.technologies.map((technology, index) => (
                     <TechnologyBadge key={index} technology={technology} />
                   ))}
-                  {proyect.technologies.length > 6 && (
+                  {project.technologies.length > 6 && (
                     <Badge variant="outline" className="text-xs px-2 py-0.5">
-                      +{proyect.technologies.length - 6}
+                      +{project.technologies.length - 6}
                     </Badge>
                   )}
                 </div>
@@ -88,7 +88,7 @@ export default function ProjectCard({ proyect }: Props) {
                     Problema
                   </div>
                   <p className="text-black font-semibold line-clamp-2 leading-relaxed">
-                    {proyect.problem}
+                    {project.problem}
                   </p>
                 </div>
 
@@ -98,7 +98,7 @@ export default function ProjectCard({ proyect }: Props) {
                     Solución
                   </div>
                   <p className="text-black font-semibold line-clamp-2 leading-relaxed">
-                    {proyect.solution}
+                    {project.solution}
                   </p>
                 </div>
 
@@ -108,7 +108,7 @@ export default function ProjectCard({ proyect }: Props) {
                     Aprendizaje
                   </div>
                   <p className="text-black font-semibold line-clamp-2 leading-relaxed">
-                    {proyect.teachings}
+                    {project.teachings}
                   </p>
                 </div>
 
@@ -118,7 +118,7 @@ export default function ProjectCard({ proyect }: Props) {
                     Impacto
                   </div>
                   <p className="text-black font-semibold line-clamp-2 leading-relaxed">
-                    {proyect.impact}
+                    {project.impact}
                   </p>
                 </div>
               </div>
@@ -127,8 +127,8 @@ export default function ProjectCard({ proyect }: Props) {
             {/* Botones de acción - Footer */}
             <div className="pt-4 border-t border-border">
               <div className="flex gap-3">
-                {proyect.sourceCodeUrl ? (
-                  <NavigationComponent href={proyect.sourceCodeUrl}>
+                {project.sourceCodeUrl ? (
+                  <NavigationComponent href={project.sourceCodeUrl}>
                     <Button
                       size="sm"
                       variant="outline"
@@ -146,8 +146,8 @@ export default function ProjectCard({ proyect }: Props) {
                   </div>
                 )}
 
-                {proyect.deploymentUrl ? (
-                  <NavigationComponent href={proyect.deploymentUrl}>
+                {project.deploymentUrl ? (
+                  <NavigationComponent href={project.deploymentUrl}>
                     <Button
                       size="sm"
                       className="flex-1 group/btn bg-primary hover:bg-primary/90 transition-all duration-200"
