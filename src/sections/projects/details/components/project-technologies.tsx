@@ -44,7 +44,7 @@ export function ProjectTechnologies({
                         alt={tech.name}
                         width={1920}
                         height={1080}
-                        className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                        className="h-20 w-20 object-contain rounded-2xl transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
                   )}
