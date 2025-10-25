@@ -3,6 +3,7 @@
 import { createClient } from "../supabase/server";
 import {
   AboutInfo,
+  ExperiencesSectionInfo,
   PersonalInformationInfo,
   ProjectsSectionInfo,
 } from "../types/portfolio-info";
@@ -68,5 +69,25 @@ export async function getProjectsSectionInfo() {
     data: {
       ...portfolioEntity,
     } as ProjectsSectionInfo,
+  };
+}
+
+export async function getExperiencesSectionInfo() {
+  const supabase = await createClient();
+
+  const { data: portfolio, error: portfolioError } = await supabase
+    .from("portfolio")
+    .select("id, work_experience_text")
+    .eq("id", process.env.NEXT_PUBLIC_PORTFOLIO_ID)
+    .single();
+
+  if (portfolioError) return { data: null, error: portfolioError };
+
+  const portfolioEntity = portfolio as ExperiencesSectionInfo;
+
+  return {
+    data: {
+      ...portfolioEntity,
+    } as ExperiencesSectionInfo,
   };
 }
