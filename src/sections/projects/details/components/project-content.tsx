@@ -20,13 +20,13 @@ const sections = [
     key: "solution" as const,
     title: "La Solución",
     icon: Lightbulb,
-    color: "text-secondary",
+    color: "text-yellow-500",
   },
   {
     key: "impact" as const,
     title: "El Impacto",
     icon: TrendingUp,
-    color: "text-accent",
+    color: "text-green-500",
   },
   {
     key: "teachings" as const,
@@ -60,7 +60,7 @@ export function ProjectContent({ project }: ProjectContentProps) {
                       <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
                         {section.title}
                       </h2>
-                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+                      <p className="text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty">
                         {project[section.key]}
                       </p>
                     </div>
