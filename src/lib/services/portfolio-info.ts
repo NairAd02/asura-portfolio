@@ -6,6 +6,7 @@ import {
   ExperiencesSectionInfo,
   PersonalInformationInfo,
   ProjectsSectionInfo,
+  SkillsSectionInfo,
 } from "../types/portfolio-info";
 import { getImageUrlOrThrow } from "./supabase-storage";
 
@@ -89,5 +90,25 @@ export async function getExperiencesSectionInfo() {
     data: {
       ...portfolioEntity,
     } as ExperiencesSectionInfo,
+  };
+}
+
+export async function getSkillsSectionInfo() {
+  const supabase = await createClient();
+
+  const { data: portfolio, error: portfolioError } = await supabase
+    .from("portfolio")
+    .select("id, technologies_and_skills_text")
+    .eq("id", process.env.NEXT_PUBLIC_PORTFOLIO_ID)
+    .single();
+
+  if (portfolioError) return { data: null, error: portfolioError };
+
+  const portfolioEntity = portfolio as SkillsSectionInfo;
+
+  return {
+    data: {
+      ...portfolioEntity,
+    } as SkillsSectionInfo,
   };
 }
