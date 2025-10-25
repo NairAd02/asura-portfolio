@@ -78,7 +78,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                       inAnotherTab
                       href={contactSectionInfo.cv_doc}
                     >
-                      <Button className="w-full" asChild>
+                      <Button className="w-full">
                         <Download className="w-4 h-4 mr-2" />
                         Descargar CV
                       </Button>
