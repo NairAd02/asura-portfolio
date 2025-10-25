@@ -5,6 +5,7 @@ import {
   AboutInfo,
   BlogsSectionInfo,
   CertificationsSectionInfo,
+  ContactSectionInfo,
   ExperiencesSectionInfo,
   PersonalInformationInfo,
   ProjectsSectionInfo,
@@ -152,5 +153,28 @@ export async function getBlogsSectionInfo() {
     data: {
       ...portfolioEntity,
     } as BlogsSectionInfo,
+  };
+}
+
+export async function getContactSectionInfo() {
+  const supabase = await createClient();
+
+  const { data: portfolio, error: portfolioError } = await supabase
+    .from("portfolio")
+    .select("id, contact_text, contact_email, contact_phone, location, cv_doc")
+    .eq("id", process.env.NEXT_PUBLIC_PORTFOLIO_ID)
+    .single();
+
+  if (portfolioError) return { data: null, error: portfolioError };
+
+  const portfolioEntity = portfolio as ContactSectionInfo;
+
+  return {
+    data: {
+      ...portfolioEntity,
+      cv_doc: portfolioEntity.cv_doc
+        ? await getImageUrlOrThrow(supabase, portfolioEntity.cv_doc)
+        : undefined,
+    } as ContactSectionInfo,
   };
 }
