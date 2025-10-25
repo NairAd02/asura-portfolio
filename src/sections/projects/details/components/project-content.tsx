@@ -39,8 +39,8 @@ const sections = [
 export function ProjectContent({ project }: ProjectContentProps) {
   return (
     <section className="py-16 md:py-24 bg-muted/30">
-      <div className="container px-4">
-        <div className="max-w-5xl mx-auto space-y-12">
+      <div className=" px-4">
+        <div className="grid xl:grid-cols-2 gap-8">
           {sections.map((section, index) => {
             const Icon = section.icon;
             return (
