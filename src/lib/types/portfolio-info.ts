@@ -49,3 +49,12 @@ export interface BlogsSectionInfo {
   id: string;
   blog_and_post_text: string;
 }
+
+export interface ContactSectionInfo {
+  id: string;
+  contact_text: string;
+  contact_email: string;
+  contact_phone: string;
+  location: string;
+  cv_doc: string;
+}
