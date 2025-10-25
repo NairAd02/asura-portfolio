@@ -1,8 +1,13 @@
 import React, { Suspense } from "react";
 import HomeProjectsSectionListContainer from "./list/home-projects-section-list-container";
 import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
+import { ProjectsSectionInfo } from "@/lib/types/portfolio-info";
 
-export default function HomeProjectsSection() {
+interface Props {
+  projectsSectionInfo: ProjectsSectionInfo;
+}
+
+export default function HomeProjectsSection({ projectsSectionInfo }: Props) {
   return (
     <section id="proyectos" className="py-24 bg-background">
       <div className="px-4 md:px-6">
@@ -12,8 +17,7 @@ export default function HomeProjectsSection() {
               Proyectos Destacados
             </h2>
             <p className="max-w-[900px] text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Una selección de proyectos que demuestran mis habilidades técnicas
-              y enfoque en la resolución de problemas.
+              {projectsSectionInfo.feature_project_text}
             </p>
           </div>
         </div>
