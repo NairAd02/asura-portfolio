@@ -59,7 +59,11 @@ export default function HomeContainer({
       </Suspense>
 
       {/* Education Section */}
-      {homeCertificationsSection}
+      <Suspense
+        fallback={<CardSkeletonGroup containerClassName="w-full" count={1} />}
+      >
+        {homeCertificationsSection}
+      </Suspense>
 
       {/* Blog Section (Optional) */}
       {homeBlogsSection}
