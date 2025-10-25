@@ -3,6 +3,7 @@
 import { createClient } from "../supabase/server";
 import {
   AboutInfo,
+  BlogsSectionInfo,
   CertificationsSectionInfo,
   ExperiencesSectionInfo,
   PersonalInformationInfo,
@@ -131,5 +132,25 @@ export async function getCertificationsSectionInfo() {
     data: {
       ...portfolioEntity,
     } as CertificationsSectionInfo,
+  };
+}
+
+export async function getBlogsSectionInfo() {
+  const supabase = await createClient();
+
+  const { data: portfolio, error: portfolioError } = await supabase
+    .from("portfolio")
+    .select("id, blog_and_post_text")
+    .eq("id", process.env.NEXT_PUBLIC_PORTFOLIO_ID)
+    .single();
+
+  if (portfolioError) return { data: null, error: portfolioError };
+
+  const portfolioEntity = portfolio as BlogsSectionInfo;
+
+  return {
+    data: {
+      ...portfolioEntity,
+    } as BlogsSectionInfo,
   };
 }
