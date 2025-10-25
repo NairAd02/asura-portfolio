@@ -1,7 +1,7 @@
 "use server";
 
 import { createClient } from "../supabase/server";
-import { PersonalInformationInfo } from "../types/portfolio-info";
+import { AboutInfo, PersonalInformationInfo } from "../types/portfolio-info";
 import { getImageUrlOrThrow } from "./supabase-storage";
 
 export async function getPersonalInformationInfo() {
@@ -24,5 +24,25 @@ export async function getPersonalInformationInfo() {
         ? await getImageUrlOrThrow(supabase, portfolioEntity.contact_image)
         : undefined,
     } as PersonalInformationInfo,
+  };
+}
+
+export async function getAboutInfo() {
+  const supabase = await createClient();
+
+  const { data: portfolio, error: portfolioError } = await supabase
+    .from("portfolio")
+    .select("id, about_text")
+    .eq("id", process.env.NEXT_PUBLIC_PORTFOLIO_ID)
+    .single();
+
+  if (portfolioError) return { data: null, error: portfolioError };
+
+  const portfolioEntity = portfolio as AboutInfo;
+
+  return {
+    data: {
+      ...portfolioEntity,
+    } as AboutInfo,
   };
 }
