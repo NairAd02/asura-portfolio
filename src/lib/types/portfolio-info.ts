@@ -34,3 +34,8 @@ export interface ExperiencesSectionInfo {
   id: string;
   work_experience_text: string;
 }
+
+export interface SkillsSectionInfo {
+  id: string;
+  technologies_and_skills_text: string;
+}
