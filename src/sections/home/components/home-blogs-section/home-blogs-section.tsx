@@ -1,8 +1,13 @@
 import React, { Suspense } from "react";
 import HomeBlogsSectionListContainer from "./list/home-blogs-section-list-container";
 import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
+import { BlogsSectionInfo } from "@/lib/types/portfolio-info";
 
-export default function HomeBlogsSection() {
+interface Props {
+  blogsSectionInfo: BlogsSectionInfo;
+}
+
+export default function HomeBlogsSection({ blogsSectionInfo }: Props) {
   return (
     <section id="blogs" className="py-24 bg-background">
       <div className="px-4 md:px-6">
@@ -12,8 +17,7 @@ export default function HomeBlogsSection() {
               Blog & Publicaciones
             </h2>
             <p className="max-w-[900px] text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Comparto conocimientos y experiencias a través de artículos
-              técnicos.
+              {blogsSectionInfo.blog_and_post_text}
             </p>
           </div>
         </div>
