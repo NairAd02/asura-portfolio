@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin } from "lucide-react";
+import { Github } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -14,13 +14,8 @@ export default function Footer() {
         </div>
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://github.com/tu-usuario" target="_blank">
+            <Link href="https://github.com/NairAd02" target="_blank">
               <Github className="h-4 w-4" />
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="https://linkedin.com/in/tu-usuario" target="_blank">
-              <Linkedin className="h-4 w-4" />
             </Link>
           </Button>
         </div>
