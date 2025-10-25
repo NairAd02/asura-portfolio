@@ -8,6 +8,7 @@ interface Props {
   certifications: ReactNode;
   blogs: ReactNode;
   hero: ReactNode;
+  about: ReactNode;
 }
 
 export default function HomeLayout({
@@ -17,6 +18,7 @@ export default function HomeLayout({
   certifications: homeCertificationsSection,
   blogs: homeBlogsSection,
   hero: homeHeroSection,
+  about: homeAboutSection,
 }: Props) {
   return (
     <HomeContainer
@@ -26,6 +28,7 @@ export default function HomeLayout({
       homeSkillsSection={homeSkillsSection}
       homeCertificationsSection={homeCertificationsSection}
       homeBlogsSection={homeBlogsSection}
+      homeAboutSection={homeAboutSection}
     />
   );
 }

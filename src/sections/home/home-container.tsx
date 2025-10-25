@@ -1,4 +1,3 @@
-import HomeAboutSection from "./components/home-about-section/home-about-section";
 import HomeContactSection from "./components/home-contact-section/home-contact-section";
 import { ReactNode, Suspense } from "react";
 import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
@@ -10,6 +9,7 @@ interface Props {
   homeCertificationsSection: ReactNode;
   homeBlogsSection: ReactNode;
   homeHeroSection: ReactNode;
+  homeAboutSection: ReactNode;
 }
 
 export default function HomeContainer({
@@ -19,6 +19,7 @@ export default function HomeContainer({
   homeCertificationsSection,
   homeBlogsSection,
   homeHeroSection,
+  homeAboutSection,
 }: Props) {
   return (
     <div className="flex flex-col bg-background">
@@ -30,7 +31,11 @@ export default function HomeContainer({
       </Suspense>
 
       {/* About Section */}
-      <HomeAboutSection />
+      <Suspense
+        fallback={<CardSkeletonGroup containerClassName="w-full" count={1} />}
+      >
+        {homeAboutSection}
+      </Suspense>
 
       {/* Projects Section */}
       {homeProjectsSection}
