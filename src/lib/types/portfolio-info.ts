@@ -21,6 +21,11 @@ export interface PersonalInformationInfo {
 }
 
 export interface AboutInfo {
-  id: string
+  id: string;
   about_text: string;
+}
+
+export interface ProjectsSectionInfo {
+  id: string;
+  feature_project_text: string;
 }
