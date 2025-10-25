@@ -1,8 +1,15 @@
 import React, { Suspense } from "react";
 import HomeExperienceSectionListContainer from "./list/home-experience-section-list-container";
 import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
+import { ExperiencesSectionInfo } from "@/lib/types/portfolio-info";
 
-export default function HomeExperienceSection() {
+interface Props {
+  experiencesSectionInfo: ExperiencesSectionInfo;
+}
+
+export default function HomeExperienceSection({
+  experiencesSectionInfo,
+}: Props) {
   return (
     <section id="experiencia" className="py-24 bg-muted">
       <div className="px-4 md:px-6">
@@ -12,8 +19,7 @@ export default function HomeExperienceSection() {
               Experiencia Laboral
             </h2>
             <p className="max-w-[900px] text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Mi trayectoria profesional en el desarrollo de software y
-              tecnología.
+              {experiencesSectionInfo.work_experience_text}
             </p>
           </div>
         </div>
