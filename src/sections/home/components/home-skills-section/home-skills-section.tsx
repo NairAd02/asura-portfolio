@@ -1,8 +1,13 @@
 import React, { Suspense } from "react";
 import HomeSkillsSectionListContainer from "./list/home-skills-section-list-container";
 import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
+import { SkillsSectionInfo } from "@/lib/types/portfolio-info";
 
-export default function HomeSkillsSection() {
+interface Props {
+  skillsSectionInfo: SkillsSectionInfo;
+}
+
+export default function HomeSkillsSection({ skillsSectionInfo }: Props) {
   return (
     <section id="habilidades" className="py-24 bg-background">
       <div className="px-4 md:px-6">
@@ -12,8 +17,7 @@ export default function HomeSkillsSection() {
               Tecnologías y Habilidades
             </h2>
             <p className="max-w-[900px] text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Las herramientas y tecnologías que domino para crear soluciones
-              excepcionales.
+              {skillsSectionInfo.technologies_and_skills_text}
             </p>
           </div>
         </div>
