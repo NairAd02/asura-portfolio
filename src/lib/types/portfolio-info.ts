@@ -39,3 +39,8 @@ export interface SkillsSectionInfo {
   id: string;
   technologies_and_skills_text: string;
 }
+
+export interface CertificationsSectionInfo {
+  id: string;
+  education_and_certifications_text: string;
+}
