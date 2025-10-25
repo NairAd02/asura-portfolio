@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { principalPlaceHolder } from "@/lib/place-holders";
 import { PersonalInformationInfo } from "@/lib/types/portfolio-info";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -34,17 +34,13 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
             </div>
             <div className="flex items-center space-x-4 pt-4">
               <Button variant="default" size="icon" asChild>
-                <Link href="https://github.com" target="_blank">
+                <Link href="https://github.com/NairAd02" target="_blank">
                   <Github className="h-5 w-5" />
                 </Link>
               </Button>
+
               <Button variant="default" size="icon" asChild>
-                <Link href="https://linkedin.com" target="_blank">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button variant="default" size="icon" asChild>
-                <Link href="mailto:tu@email.com">
+                <Link href="mailto:adrian.suarez.alphen@email.com">
                   <Mail className="h-5 w-5" />
                 </Link>
               </Button>
