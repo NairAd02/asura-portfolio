@@ -1,7 +1,7 @@
 "use server";
 
 import { createClient } from "../supabase/server";
-import { Project, ProjectsFiltersDTO } from "../types/project";
+import { Project, ProjectDetails, ProjectsFiltersDTO } from "../types/project";
 import { Technology } from "../types/technologies";
 import { getImageUrlOrThrow } from "./supabase-storage";
 
@@ -127,4 +127,51 @@ export async function getProjectsList(projectFilters: ProjectsFiltersDTO) {
   } catch (err) {
     return { data: null, error: err };
   }
+}
+
+export async function getProjectById(id: string) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("project")
+    .select(
+      `
+      *,
+      technology_has_proyect (
+        technology (*)
+      )
+    `
+    )
+    .eq("id", id)
+    .single();
+
+  if (error) return { data: null, error };
+
+  const { technology_has_proyect, ...rest } = data;
+
+  const technologies = await Promise.all(
+    technology_has_proyect.map(async (thp: { technology: Technology }) => ({
+      ...thp.technology,
+      icon: thp.technology.icon
+        ? await getImageUrlOrThrow(supabase, thp.technology.icon)
+        : undefined,
+    }))
+  );
+
+  return {
+    data: {
+      ...rest,
+      technologies,
+      mainImage: data.mainImage
+        ? await getImageUrlOrThrow(supabase, data.mainImage)
+        : undefined,
+      images: Array.isArray(data.images)
+        ? await Promise.all(
+            data.images.map(async (image: string) => {
+              return await getImageUrlOrThrow(supabase, image);
+            })
+          )
+        : [],
+    } as ProjectDetails,
+    error: null,
+  };
 }
