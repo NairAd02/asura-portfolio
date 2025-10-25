@@ -80,7 +80,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-lg md:text-xl text-white max-w-2xl mx-auto text-pretty leading-relaxed"
+            className="text-lg md:text-2xl text-white max-w-2xl mx-auto text-pretty leading-relaxed"
           >
             {project.description}
           </motion.p>
