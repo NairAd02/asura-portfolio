@@ -12,8 +12,8 @@ export default function HomeProjectsSectionList({ projects }: Props) {
     <div className="flex mt-10 flex-col gap-6">
       <ProjectsFiltersContainer />
       <div className="mx-auto grid gap-6 xl:grid-cols-2 lg:gap-4 w-full">
-        {projects.map((proyect, index) => (
-          <ProjectCard key={index} proyect={proyect} />
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} />
         ))}
       </div>
     </div>
