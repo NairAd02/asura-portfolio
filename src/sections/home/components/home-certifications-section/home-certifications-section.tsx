@@ -1,8 +1,15 @@
 import React, { Suspense } from "react";
 import HomeCertificationsSectionListContainer from "./list/home-certifications-section-list-container";
 import { CardSkeletonGroup } from "@/components/card-skeleton-group/card-skeleton-group";
+import { CertificationsSectionInfo } from "@/lib/types/portfolio-info";
 
-export default function HomeCertificationsSection() {
+interface Props {
+  certificationsSectionInfo: CertificationsSectionInfo;
+}
+
+export default function HomeCertificationsSection({
+  certificationsSectionInfo,
+}: Props) {
   return (
     <section id="educacion" className="py-24 bg-muted">
       <div className="px-4 md:px-6">
@@ -12,7 +19,7 @@ export default function HomeCertificationsSection() {
               Educación y Certificaciones
             </h2>
             <p className="max-w-[900px] text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Mi formación académica y certificaciones profesionales.
+              {certificationsSectionInfo.education_and_certifications_text}
             </p>
           </div>
         </div>
