@@ -45,7 +45,11 @@ export default function HomeContainer({
       </Suspense>
 
       {/* Experience Section */}
-      {homeExperienceSection}
+      <Suspense
+        fallback={<CardSkeletonGroup containerClassName="w-full" count={1} />}
+      >
+        {homeExperienceSection}
+      </Suspense>
 
       {/* Skills Section */}
       {homeSkillsSection}
