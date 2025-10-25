@@ -7,11 +7,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Download, Mail, MapPin, Phone } from "lucide-react";
+import { Download, Github, Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
 import ContactForm from "./form/contact-form";
 import { ContactSectionInfo } from "@/lib/types/portfolio-info";
 import NavigationComponent from "@/components/navigation-component/navigation-component";
+import Link from "next/link";
 
 interface Props {
   contactSectionInfo: ContactSectionInfo;
@@ -84,6 +85,18 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                       </Button>
                     </NavigationComponent>
                   )}
+                </div>
+                <Separator />
+
+                <div>
+                  <p className="text-sm font-medium mb-3">Sígueme en:</p>
+                  <div className="flex space-x-2">
+                    <Button variant="ghost" size="icon" asChild>
+                      <Link href="https://github.com/NairAd02" target="_blank">
+                        <Github className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
