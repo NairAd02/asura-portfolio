@@ -19,3 +19,8 @@ export interface PersonalInformationInfo {
   contact_image?: string;
   introductory_phrase: string;
 }
+
+export interface AboutInfo {
+  id: string
+  about_text: string;
+}
