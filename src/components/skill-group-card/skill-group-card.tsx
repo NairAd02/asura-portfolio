@@ -21,7 +21,11 @@ export default function SkillGroupCard({ skillGroup }: Props) {
           <div className="flex items-center gap-2">
             <AvatarContainer
               image={skillGroup.icon || principalPlaceHolder}
-              fallback="s-g"
+              fallback={
+                <div className="flex items-center gap-2">
+                  <Skeleton className="h-8 w-8 rounded-full" />
+                </div>
+              }
             />
             {skillGroup.name}
           </div>
