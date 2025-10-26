@@ -57,7 +57,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
             }}
           />
           {/* Overlay gradient for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/60 to-primary/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/80 to-primary/80" />
         </motion.div>
       )}
 
