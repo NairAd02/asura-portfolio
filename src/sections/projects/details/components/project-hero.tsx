@@ -104,12 +104,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
               </Button>
             )}
             {project.sourceCodeUrl && (
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="group bg-transparent"
-              >
+              <Button size="lg" variant="outline" asChild className="group">
                 <a
                   href={project.sourceCodeUrl}
                   target="_blank"
