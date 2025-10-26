@@ -36,7 +36,7 @@ export function ProjectTechnicalInformation({ technicalInfo }: ProjectTechnicalI
               <Code2 className="h-8 w-8 text-primary" />
             </motion.div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Información Técnica</h2>
-            <p className="text-muted-foreground text-lg">Detalles de implementación y arquitectura del proyecto</p>
+            <p className="text-foreground font-semibold text-lg">Detalles de implementación y arquitectura del proyecto</p>
           </div>
 
           <Card className="relative overflow-hidden p-8 md:p-12 hover:shadow-2xl transition-all duration-500 group">
@@ -74,7 +74,7 @@ export function ProjectTechnicalInformation({ technicalInfo }: ProjectTechnicalI
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                      className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty"
+                      className="text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty"
                     >
                       {paragraph}
                     </motion.p>
