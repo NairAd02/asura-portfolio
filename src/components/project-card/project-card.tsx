@@ -57,7 +57,7 @@ export default function ProjectCard({ project }: Props) {
               <h3 className="text-xl font-bold text-foreground group-hover:text-primary line-clamp-2 mb-2">
                 {project.name}
               </h3>
-              <p className="text-sm xl:text-base text-black font-semibold line-clamp-2 leading-relaxed">
+              <p className="text-sm text-black font-semibold line-clamp-2 leading-relaxed">
                 {project.description}
               </p>
             </div>
@@ -84,41 +84,41 @@ export default function ProjectCard({ project }: Props) {
           <div className="space-y-3 flex-1 min-h-0">
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div className="space-y-1">
-                <div className="flex text-sm xl:text-base items-center gap-1 font-semibold text-foreground">
+                <div className="flex items-center gap-1 font-semibold text-foreground">
                   <Target className="w-3 h-3  text-destructive" />
                   Problema
                 </div>
-                <p className="text-black font-semibold text-sm xl:text-base line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {project.problem}
                 </p>
               </div>
 
               <div className="space-y-1">
-                <div className="flex items-center text-sm xl:text-base gap-1 font-semibold text-foreground">
+                <div className="flex items-center gap-1 font-semibold text-foreground">
                   <Lightbulb className="w-3 h-3 text-yellow-500" />
                   Solución
                 </div>
-                <p className="text-black text-sm xl:text-base font-semibold line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {project.solution}
                 </p>
               </div>
 
               <div className="space-y-1">
-                <div className="flex text-sm xl:text-base items-center gap-1 font-semibold text-foreground">
+                <div className="flex items-center gap-1 font-semibold text-foreground">
                   <TrendingUp className="w-3 h-3 text-blue-500" />
                   Aprendizaje
                 </div>
-                <p className="text-black text-sm xl:text-base font-semibold line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {project.teachings}
                 </p>
               </div>
 
               <div className="space-y-1">
-                <div className="flex text-sm xl:text-base items-center gap-1 font-semibold text-foreground">
+                <div className="flex items-center gap-1 font-semibold text-foreground">
                   <TrendingUp className="w-3 h-3 text-green-500" />
                   Impacto
                 </div>
-                <p className="text-black text-sm xl:text-base font-semibold line-clamp-2 leading-relaxed">
+                <p className="text-black font-semibold line-clamp-2 leading-relaxed">
                   {project.impact}
                 </p>
               </div>
