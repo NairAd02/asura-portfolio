@@ -38,7 +38,7 @@ const sections = [
 
 export function ProjectContent({ project }: ProjectContentProps) {
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section className="py-16 md:py-24 bg-muted">
       <div className="px-20">
         <div className="grid xl:grid-cols-2 gap-8">
           {sections.map((section, index) => {

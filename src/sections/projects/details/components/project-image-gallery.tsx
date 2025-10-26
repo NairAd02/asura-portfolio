@@ -22,7 +22,7 @@ export function ProjectImageGallery({
 
   return (
     <>
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export function ProjectImageGallery({
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ scale: 1.05 }}
-                className={`relative overflow-hidden rounded-xl border-4 border-primary cursor-pointer group ${
+                className={`relative overflow-hidden rounded-xl cursor-pointer group ${
                   index === 0 && mainImage ? "md:col-span-2 md:row-span-2" : ""
                 }`}
                 onClick={() => setSelectedImage(image)}

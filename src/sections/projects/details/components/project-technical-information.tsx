@@ -18,7 +18,7 @@ export function ProjectTechnicalInformation({
   technicalInfo,
 }: ProjectTechnicalInfoProps) {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-16 md:py-24 bg-muted">
       <div className="container px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,7 +37,7 @@ export function ProjectTechnicalInformation({
             >
               <Code2 className="h-8 w-8 text-primary" />
             </motion.div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+            <h2 className="text-3xl md:text-4xl text-primary font-bold tracking-tight mb-3">
               Información Técnica
             </h2>
             <p className="text-foreground font-semibold text-lg">
