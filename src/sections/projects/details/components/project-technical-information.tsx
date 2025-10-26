@@ -19,7 +19,7 @@ export function ProjectTechnicalInformation({
 }: ProjectTechnicalInfoProps) {
   return (
     <section className="py-16 md:py-24 bg-muted">
-      <div className="container px-4">
+      <div className="px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
