@@ -1,10 +1,10 @@
-"use client"
-import { motion } from "framer-motion"
-import { Card } from "@/components/ui/card"
-import { Code2, Cpu, Database, Layers } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Code2, Cpu, Database, Layers } from "lucide-react";
 
 interface ProjectTechnicalInfoProps {
-  technicalInfo: string
+  technicalInfo: string;
 }
 
 const decorativeIcons = [
@@ -12,9 +12,11 @@ const decorativeIcons = [
   { Icon: Cpu, delay: 0.2, position: "top-4 right-4" },
   { Icon: Database, delay: 0.4, position: "bottom-4 left-4" },
   { Icon: Layers, delay: 0.6, position: "bottom-4 right-4" },
-]
+];
 
-export function ProjectTechnicalInformation({ technicalInfo }: ProjectTechnicalInfoProps) {
+export function ProjectTechnicalInformation({
+  technicalInfo,
+}: ProjectTechnicalInfoProps) {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/30">
       <div className="container px-4">
@@ -35,8 +37,12 @@ export function ProjectTechnicalInformation({ technicalInfo }: ProjectTechnicalI
             >
               <Code2 className="h-8 w-8 text-primary" />
             </motion.div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">Información Técnica</h2>
-            <p className="text-foreground font-semibold text-lg">Detalles de implementación y arquitectura del proyecto</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+              Información Técnica
+            </h2>
+            <p className="text-foreground font-semibold text-lg">
+              Detalles de implementación y arquitectura del proyecto
+            </p>
           </div>
 
           <Card className="relative overflow-hidden p-8 md:p-12 hover:shadow-2xl transition-all duration-500 group">
@@ -95,5 +101,5 @@ export function ProjectTechnicalInformation({ technicalInfo }: ProjectTechnicalI
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
