@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AvatarContainer from "../ui/avatar-container";
 import { principalPlaceHolder } from "@/lib/place-holders";
 import { Badge } from "../ui/badge";
-import { TrendingUp } from "lucide-react";
+import { Award, Dot, TrendingUp } from "lucide-react";
 
 import { Skeleton } from "../ui/skeleton";
 import { levelMap } from "@/lib/types/mastered-technologies";
@@ -30,13 +30,13 @@ export default function SkillGroupCard({ skillGroup }: Props) {
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="flex flex-col gap-4">
         <div className="space-y-2">
           {skillGroup.masteredTechnologies.map((masteredTech, index) => (
             <div key={index} className="flex justify-between">
               <div className="flex items-center gap-2">
                 <AvatarContainer
-                  className="h-4 w-4"
+                  className="h-6 w-6"
                   image={masteredTech.technology.icon}
                   fallback={
                     <div className="flex items-center gap-2">
@@ -53,6 +53,22 @@ export default function SkillGroupCard({ skillGroup }: Props) {
               </Badge>
             </div>
           ))}
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-2 items-center">
+            <Award className="text-primary size-4" />
+            <h4 className="text-sm font-semibold text-foreground">
+              Habilidades Destacadas
+            </h4>
+          </div>
+          <div className="grid">
+            {skillGroup.skills.map((skill, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <Dot className="w-6 h-6 text-primary" />
+                <p className="text-sm text-black font-semibold">{skill.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </CardContent>
     </Card>
