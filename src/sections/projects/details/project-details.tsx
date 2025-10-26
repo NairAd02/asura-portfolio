@@ -4,6 +4,7 @@ import { ProjectHero } from "./components/project-hero";
 import { ProjectImageGallery } from "./components/project-image-gallery";
 import { ProjectContent } from "./components/project-content";
 import { ProjectTechnologies } from "./components/project-technologies";
+import { ProjectTechnicalInformation } from "./components/project-technical-information";
 
 interface Props {
   project: ProjectDetailsType;
@@ -13,6 +14,9 @@ export default function ProjectDetails({ project }: Props) {
   return (
     <div className="flex flex-col">
       <ProjectHero project={project} />
+      <ProjectTechnicalInformation
+        technicalInfo={project.technical_information}
+      />
       <ProjectImageGallery
         images={project.images}
         mainImage={project.mainImage}
