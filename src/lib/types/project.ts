@@ -19,6 +19,7 @@ export interface ProjectDetails {
   id: string;
   name: string;
   description: string;
+  technical_information: string;
   mainImage?: string;
   sourceCodeUrl?: string;
   deploymentUrl?: string;
