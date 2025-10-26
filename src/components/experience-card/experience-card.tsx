@@ -35,7 +35,7 @@ export default function ExperienceCard({ experience }: Props) {
               />
             )}
             <div className="flex-1 min-w-0">
-              <CardTitle className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              <CardTitle className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                 {experience.position}
               </CardTitle>
               <CardDescription className="flex items-center gap-2 text-base font-semibold mt-1">
@@ -60,7 +60,7 @@ export default function ExperienceCard({ experience }: Props) {
       <CardContent className="space-y-6">
         {/* Descripción */}
         <div>
-          <p className="text-black font-semibold leading-relaxed">
+          <p className="text-black font-semibold text-sm sm:text-base leading-relaxed">
             {experience.description}
           </p>
         </div>
