@@ -48,7 +48,7 @@ export default function MusicToggleButton() {
         cycleHint();
 
         // Repetir cada 8 segundos (3s visible + 5s oculto)
-        intervalRef.current = setInterval(cycleHint, 8000);
+        intervalRef.current = setInterval(cycleHint, 40000);
       }, 2000);
 
       return () => {
