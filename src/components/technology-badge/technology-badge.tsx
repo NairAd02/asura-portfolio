@@ -9,10 +9,10 @@ interface Props {
 
 export default function TechnologyBadge({ technology }: Props) {
   return (
-    <Badge variant="default" className="px-2 py-1">
+    <Badge variant="outline" className="px-2 py-1">
       {technology.icon && (
         <AvatarContainer
-          className="h-4 w-4"
+          className="h-6 w-6"
           image={technology.icon}
           fallback="tech"
         />
