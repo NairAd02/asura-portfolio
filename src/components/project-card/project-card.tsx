@@ -29,26 +29,22 @@ export default function ProjectCard({ project }: Props) {
 
       <div className="flex flex-col sm:flex-row h-full">
         <NavigationComponent
+          className="relative w-full cursor-pointer sm:w-72 h-64 sm:h-auto flex-shrink-0 overflow-hidden"
           href={paths.projectDetails({ id: project.id }).root}
         >
-          {" "}
-          <div className="relative w-full cursor-pointer sm:w-72 h-64 sm:h-auto flex-shrink-0 overflow-hidden">
-            <Image
-              src={project.mainImage || principalPlaceHolder}
-              alt={`Imagen del proyecto ${project.name}`}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
-            />
-
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-            {/* "Ver detalles" button - appears on hover */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover/image:translate-y-0">
-              <div className="bg-background text-foreground px-6 py-3 rounded-lg shadow-2xl flex items-center gap-2 font-semibold transform scale-90 group-hover/image:scale-100 transition-transform duration-300">
-                <Eye className="w-5 h-5" />
-                Ver detalles
-              </div>
+          <Image
+            src={project.mainImage || principalPlaceHolder}
+            alt={`Imagen del proyecto ${project.name}`}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
+          />
+          {/* Overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* "Ver detalles" button - appears on hover */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover/image:translate-y-0">
+            <div className="bg-background text-foreground px-6 py-3 rounded-lg shadow-2xl flex items-center gap-2 font-semibold transform scale-90 group-hover/image:scale-100 transition-transform duration-300">
+              <Eye className="w-5 h-5" />
+              Ver detalles
             </div>
           </div>
         </NavigationComponent>
