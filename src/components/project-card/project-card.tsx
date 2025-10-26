@@ -132,7 +132,7 @@ export default function ProjectCard({ project }: Props) {
           <div className="pt-4 border-t border-border">
             <div className="flex gap-3">
               {project.sourceCodeUrl ? (
-                <NavigationComponent href={project.sourceCodeUrl}>
+                <NavigationComponent inAnotherTab href={project.sourceCodeUrl}>
                   <Button
                     size="sm"
                     variant="outline"
@@ -151,7 +151,7 @@ export default function ProjectCard({ project }: Props) {
               )}
 
               {project.deploymentUrl ? (
-                <NavigationComponent href={project.deploymentUrl}>
+                <NavigationComponent inAnotherTab href={project.deploymentUrl}>
                   <Button
                     size="sm"
                     className="flex-1 group/btn bg-primary hover:bg-primary/90 transition-all duration-200"
