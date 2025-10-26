@@ -1,3 +1,4 @@
+import { MasteredTechnology } from "./mastered-technologies";
 import { Skill } from "./skills";
 
 export interface SkillGroup {
@@ -5,4 +6,5 @@ export interface SkillGroup {
   name: string;
   icon?: string;
   skills: Skill[];
+  masteredTechnologies: MasteredTechnology[];
 }
