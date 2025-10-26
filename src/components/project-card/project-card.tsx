@@ -36,7 +36,8 @@ export default function ProjectCard({ project }: Props) {
             src={project.mainImage || principalPlaceHolder}
             alt={`Imagen del proyecto ${project.name}`}
             fill
-            className="object-cover transition-transform duration-500 group-hover/image:scale-110 group-hover/image:brightness-75"
+            quality={100}
+            className="object-center transition-transform duration-500 group-hover/image:scale-110 group-hover/image:brightness-75"
           />
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500" />
