@@ -14,7 +14,7 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
   return (
     <section id="inicio" className="p-8 bg-background">
       <div className="px-4 md:px-6">
-        <div className="flex flex-col-reverse md:flex-row justify-between gap-8">
+        <div className="flex flex-col-reverse md:flex-row-reverse justify-center gap-8">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
@@ -53,9 +53,10 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
                   personalInformationInfo.contact_image || principalPlaceHolder
                 }
                 alt="Foto profesional"
-                width={400}
-                height={400}
-                className="aspect-square object-cover rounded-full border-4 border-primary/60"
+                width={300}
+                height={300}
+                quality={100}
+                className="aspect-square object-cover rounded-full "
               />
             </div>
           </div>
