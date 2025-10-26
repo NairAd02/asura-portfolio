@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: Props) {
 
       <div className="flex flex-col sm:flex-row h-full">
         <NavigationComponent
-          className="relative w-full cursor-pointer sm:w-72 h-64 sm:h-auto flex-shrink-0 overflow-hidden"
+          className="relative w-full cursor-pointer sm:w-[40%] h-64 sm:h-auto flex-shrink-0 overflow-hidden"
           href={paths.projectDetails({ id: project.id }).root}
         >
           <Image
