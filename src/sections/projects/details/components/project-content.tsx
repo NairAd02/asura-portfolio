@@ -54,13 +54,13 @@ export function ProjectContent({ project }: ProjectContentProps) {
                 <Card className="p-8 md:p-12 hover:shadow-lg transition-shadow duration-300">
                   <div className="flex items-start gap-6">
                     <div className={`flex-shrink-0 ${section.color}`}>
-                      <Icon className="h-8 w-8 md:h-10 md:w-10" />
+                      <Icon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10" />
                     </div>
                     <div className="space-y-4 flex-1">
-                      <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                      <h2 className="text-base sm:text-2xl md:text-3xl font-bold tracking-tight">
                         {section.title}
                       </h2>
-                      <p className="text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty">
+                      <p className="text-sm sm:text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty">
                         {project[section.key]}
                       </p>
                     </div>
