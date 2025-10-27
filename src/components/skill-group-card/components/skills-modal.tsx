@@ -1,5 +1,6 @@
 "use client";
 
+import AvatarContainer from "@/components/ui/avatar-container";
 import {
   Dialog,
   DialogContent,
@@ -7,6 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Skill } from "@/lib/types/skills";
 import { Award } from "lucide-react";
 
@@ -15,6 +17,7 @@ interface SkillsModalProps {
   onOpenChange: (open: boolean) => void;
   skills: Skill[];
   groupName: string;
+  groupIcon?: string;
 }
 
 export function SkillsModal({
@@ -22,6 +25,7 @@ export function SkillsModal({
   onOpenChange,
   skills,
   groupName,
+  groupIcon,
 }: SkillsModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -43,9 +47,20 @@ export function SkillsModal({
             </DialogTitle>
             <Award className="w-8 h-8 text-primary" />
           </div>
-          <p className="text-center text-primary font-semibold text-2xl">
-            {groupName}
-          </p>
+          <div className="flex items-center w-full justify-center gap-2">
+            <AvatarContainer
+              className="h-12 w-12"
+              image={groupIcon}
+              fallback={
+                <div className="flex items-center gap-2">
+                  <Skeleton className="h-12 w-12 rounded-full" />
+                </div>
+              }
+            />
+            <p className="text-center text-primary font-semibold text-2xl">
+              {groupName}
+            </p>
+          </div>
           <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mt-4" />
         </DialogHeader>
 

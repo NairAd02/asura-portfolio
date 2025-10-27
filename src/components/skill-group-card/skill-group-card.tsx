@@ -90,6 +90,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
         onOpenChange={setIsModalOpen}
         skills={skillGroup.skills}
         groupName={skillGroup.name}
+        groupIcon={skillGroup.icon}
       />
     </>
   );
