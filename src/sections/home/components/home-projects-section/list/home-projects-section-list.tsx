@@ -9,7 +9,7 @@ interface Props {
 
 export default function HomeProjectsSectionList({ projects }: Props) {
   return (
-    <div className="flex mt-10 flex-col gap-6">
+    <div className="flex mt-10 flex-col mx-auto max-w-7xl gap-6">
       <ProjectsFiltersContainer />
       <div className="mx-auto grid gap-6 lg:gap-4 w-full">
         {projects.map((project, index) => (
