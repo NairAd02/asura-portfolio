@@ -2,13 +2,34 @@ import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
 
 const sections = [
-  "inicio",
-  "acerca",
-  "proyectos",
-  "experiencia",
-  "habilidades",
-  "educacion",
-  "contacto",
+  {
+    label: "Inicio",
+    value: "inicio",
+  },
+  {
+    label: "Acerca",
+    value: "acerca",
+  },
+  {
+    label: "Proyectos",
+    value: "proyectos",
+  },
+  {
+    label: "Experiencia",
+    value: "experiencia",
+  },
+  {
+    label: "Habilidades",
+    value: "habilidades",
+  },
+  {
+    label: "Educación",
+    value: "educacion",
+  },
+  {
+    label: "Contacto",
+    value: "contacto",
+  },
 ];
 
 export default function HeaderNav() {
@@ -16,8 +37,8 @@ export default function HeaderNav() {
     <nav className="flex flex-col lg:flex-row items-center gap-2 text-sm font-medium">
       {sections.map((section) => (
         <Link
-          key={section}
-          to={section}
+          key={section.value}
+          to={section.value}
           spy={true}
           smooth={true}
           offset={-100}
@@ -29,7 +50,7 @@ export default function HeaderNav() {
             variant="outline"
             className="transition-all w-full lg:w-auto group-[.active]:bg-primary group-[.active]:text-white hover:text-primary-foreground duration-200 hover:shadow-md hover:bg-primary"
           >
-            {capitalize(section)}
+            {capitalize(section.label)}
           </Button>
         </Link>
       ))}
