@@ -1,4 +1,4 @@
-import { getProjectById } from "@/lib/services/projects";
+import { getProjectMetaDataById } from "@/lib/services/projects";
 import ProjectDetailsContainer from "@/sections/projects/details/project-details-container";
 import { Metadata } from "next";
 import React from "react";
@@ -9,10 +9,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const perfumeId = (await params).id;
-  const res = await getProjectById(perfumeId);
+  const res = await getProjectMetaDataById(perfumeId);
 
   if (!res.data || res.error)
-    throw new Error("Error al cargar al información del proyecto");
+    throw new Error(
+      "Error al cargar al información de la metada data proyecto"
+    );
 
   const project = res.data;
   return {
