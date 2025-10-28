@@ -1,7 +1,12 @@
 "use server";
 
 import { createClient } from "../supabase/server";
-import { Project, ProjectDetails, ProjectsFiltersDTO } from "../types/project";
+import {
+  Project,
+  ProjectDetails,
+  ProjectMetaData,
+  ProjectsFiltersDTO,
+} from "../types/project";
 import { Technology } from "../types/technologies";
 import { getImageUrlOrThrow } from "./supabase-storage";
 
@@ -172,6 +177,24 @@ export async function getProjectById(id: string) {
           )
         : [],
     } as ProjectDetails,
+    error: null,
+  };
+}
+
+export async function getProjectMetaDataById(id: string) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("project")
+    .select(`name, description`)
+    .eq("id", id)
+    .single();
+
+  if (error) return { data: null, error };
+
+  const project = data as ProjectMetaData;
+
+  return {
+    data: project,
     error: null,
   };
 }
