@@ -42,6 +42,13 @@ export default function ContactFormContainer({ emailToSend }: Props) {
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailToSend}&su=${encodedSubject}&body=${encodedBody}`;
 
     window.open(gmailUrl, "_blank");
+
+    form.reset({
+      name: "",
+      email: "",
+      message: "",
+      subject: "",
+    });
   }
   return (
     <Card>
