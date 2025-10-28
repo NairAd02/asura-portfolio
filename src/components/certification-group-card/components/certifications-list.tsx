@@ -2,7 +2,7 @@
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/format-date";
 import { Certification } from "@/lib/types/certifications";
-import { ZoomIn } from "lucide-react";
+import { Award, ZoomIn } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 import {
@@ -11,6 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { principalPlaceHolder } from "@/lib/place-holders";
 
 interface Props {
   certifications: Certification[];
@@ -20,6 +21,7 @@ export default function CertificationsList({ certifications }: Props) {
   const [selectedImage, setSelectedImage] = useState<{
     url: string;
     title: string;
+    institution: string;
   } | null>(null);
   return (
     <div>
@@ -32,6 +34,7 @@ export default function CertificationsList({ certifications }: Props) {
                   setSelectedImage({
                     url: certification.image!,
                     title: certification.title,
+                    institution: certification.institution,
                   })
                 }
                 className="relative block w-full rounded-xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-300 shadow-md hover:shadow-xl group/cert"
@@ -122,21 +125,42 @@ export default function CertificationsList({ certifications }: Props) {
         open={!!selectedImage}
         onOpenChange={(open) => !open && setSelectedImage(null)}
       >
-        <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] p-0">
-          <DialogHeader className="p-6 pb-4">
-            <DialogTitle className="text-lg font-semibold">
-              {selectedImage?.title}
-            </DialogTitle>
+        <DialogContent className="max-w-5xl max-h-[95vh] p-0 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black border-4 border-primary dark:border-white shadow-2xl">
+          {/* Gradientes decorativos superior e inferior */}
+          <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
+
+          {/* Bordes decorativos en las esquinas */}
+          <div className="absolute top-2 left-2 w-8 h-8 border-t-2 border-l-2 border-primary rounded-tl-lg" />
+          <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-primary rounded-tr-lg" />
+          <div className="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-primary rounded-bl-lg" />
+          <div className="absolute bottom-2 right-2 w-8 h-8 border-b-2 border-r-2 border-primary rounded-br-lg" />
+
+          <DialogHeader className="px-8 pt-8 pb-4 relative">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <Award className="w-8 h-8 text-primary" />
+              <DialogTitle className="text-3xl font-bold text-center text-primary font-serif">
+                {selectedImage?.title}
+              </DialogTitle>
+              <Award className="w-8 h-8 text-primary" />
+            </div>
+            <p className="text-center text-primary font-semibold text-xl">
+              {selectedImage?.institution}
+            </p>
+            <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent mt-4" />
           </DialogHeader>
-          <div className="relative w-full px-6 pb-6">
+
+          <div className="px-8 pb-8">
             {selectedImage && (
-              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
-                <Image
-                  src={selectedImage.url || "/placeholder.svg"}
-                  alt={selectedImage.title}
-                  fill
-                  className="object-contain"
-                />
+              <div className="relative w-full max-h-[500px] rounded-lg overflow-hidden border-2 border-primary/60 shadow-lg">
+                <div className="relative w-full aspect-[16/9]">
+                  <Image
+                    src={selectedImage.url || principalPlaceHolder}
+                    alt={selectedImage.title}
+                    fill
+                    className="object-center bg-white dark:bg-gray-900"
+                  />
+                </div>
               </div>
             )}
           </div>
