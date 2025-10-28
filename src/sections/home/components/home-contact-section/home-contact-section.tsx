@@ -9,10 +9,10 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Download, Github, Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
-import ContactForm from "./form/contact-form";
 import { ContactSectionInfo } from "@/lib/types/portfolio-info";
 import NavigationComponent from "@/components/navigation-component/navigation-component";
 import Link from "next/link";
+import ContactFormContainer from "./form/contact-form-container";
 
 interface Props {
   contactSectionInfo: ContactSectionInfo;
@@ -102,7 +102,9 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
             </Card>
 
             {/* Contact Form */}
-            <ContactForm />
+            <ContactFormContainer
+              emailToSend={contactSectionInfo.contact_email}
+            />
           </div>
         </div>
       </div>
