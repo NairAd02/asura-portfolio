@@ -20,7 +20,7 @@ interface Props {
 
 export default function HomeContactSection({ contactSectionInfo }: Props) {
   return (
-    <section id="contacto" className="py-24 bg-muted">
+    <section id="contacto" className="py-24 bg-background">
       <div className="px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
