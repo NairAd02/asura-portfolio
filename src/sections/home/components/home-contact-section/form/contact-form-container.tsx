@@ -39,9 +39,9 @@ export default function ContactFormContainer({ emailToSend }: Props) {
       `Hola, soy ${contactFormData.name} (${contactFormData.email}).\n\n${contactFormData.message}`
     );
 
-    const mailtoLink = `mailto:${emailToSend}?subject=${encodedSubject}&body=${encodedBody}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailToSend}&su=${encodedSubject}&body=${encodedBody}`;
 
-    window.open(mailtoLink, "_blank");
+    window.open(gmailUrl, "_blank");
   }
   return (
     <Card>
@@ -55,7 +55,7 @@ export default function ContactFormContainer({ emailToSend }: Props) {
         <FormProvider {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="w-full flex flex-col gap-8 h-full"
+            className="w-full flex flex-col gap-4 h-full"
           >
             <ContactForm />
 
