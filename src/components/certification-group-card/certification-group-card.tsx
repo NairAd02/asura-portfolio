@@ -4,7 +4,7 @@ import type { CertificationGroup } from "@/lib/types/certification-groups";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/format-date";
-import { FileText, ExternalLink, ZoomIn } from "lucide-react";
+import { FileText, ZoomIn } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -119,7 +119,7 @@ export default function CertificationGroupCard({ certificationGroup }: Props) {
               )}
 
               {/* Link externo debajo de la imagen */}
-              {certification.link && (
+              {/*certification.link && (
                 <a
                   href={certification.link}
                   target="_blank"
@@ -129,7 +129,7 @@ export default function CertificationGroupCard({ certificationGroup }: Props) {
                   <ExternalLink className="w-4 h-4" />
                   Ver credencial en línea
                 </a>
-              )}
+              )*/}
             </div>
           ))}
         </CardContent>
