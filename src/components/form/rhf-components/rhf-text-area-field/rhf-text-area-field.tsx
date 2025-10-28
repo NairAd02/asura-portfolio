@@ -17,6 +17,7 @@ interface Props {
   description?: string;
   fullWidth?: boolean;
   rows?: number;
+  textAreaClassName?: string;
 }
 
 export function RHFTextAreaField({
@@ -26,6 +27,7 @@ export function RHFTextAreaField({
   description,
   fullWidth = true,
   rows = 4,
+  textAreaClassName,
 }: Props) {
   const { control } = useFormContext();
 
@@ -39,7 +41,7 @@ export function RHFTextAreaField({
           <FormControl>
             <Textarea
               rows={rows}
-              className={`${fullWidth ? "w-full" : ""}`}
+              className={`${fullWidth ? "w-full" : ""} ${textAreaClassName}`}
               placeholder={placeholder}
               {...field}
             />
