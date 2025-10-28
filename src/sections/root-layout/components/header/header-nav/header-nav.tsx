@@ -1,38 +1,14 @@
 import { Link } from "react-scroll";
 import { Button } from "@/components/ui/button";
 
-const sections = [
-  {
-    label: "Inicio",
-    value: "inicio",
-  },
-  {
-    label: "Acerca",
-    value: "acerca",
-  },
-  {
-    label: "Proyectos",
-    value: "proyectos",
-  },
-  {
-    label: "Experiencia",
-    value: "experiencia",
-  },
-  {
-    label: "Habilidades",
-    value: "habilidades",
-  },
-  {
-    label: "Educación",
-    value: "educacion",
-  },
-  {
-    label: "Contacto",
-    value: "contacto",
-  },
-];
+interface Props {
+  sections: {
+    label: string;
+    value: string;
+  }[];
+}
 
-export default function HeaderNav() {
+export default function HeaderNav({ sections }: Props) {
   return (
     <nav className="flex flex-col lg:flex-row items-center gap-2 text-sm font-medium">
       {sections.map((section) => (

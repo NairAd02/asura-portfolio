@@ -6,6 +6,7 @@ import { AlignCenter } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import HeaderNav from "./header-nav";
+import { homeSections, projectSections } from "./data/header-sections";
 
 export default function HeaderNavContainer() {
   const pathname = usePathname();
@@ -19,10 +20,18 @@ export default function HeaderNavContainer() {
         breakpoint === "md" ||
         breakpoint === "lg" ? (
           <PopoverContainer trigger={<AlignCenter />}>
-            <HeaderNav />
+            <HeaderNav
+              sections={
+                pathname.includes("project") ? projectSections : homeSections
+              }
+            />
           </PopoverContainer>
         ) : (
-          <HeaderNav />
+          <HeaderNav
+            sections={
+              pathname.includes("project") ? projectSections : homeSections
+            }
+          />
         )
       ) : (
         <></>
