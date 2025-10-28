@@ -6,7 +6,6 @@ interface Props {
   homeExperienceSection: ReactNode;
   homeSkillsSection: ReactNode;
   homeCertificationsSection: ReactNode;
-  homeBlogsSection: ReactNode;
   homeHeroSection: ReactNode;
   homeAboutSection: ReactNode;
   homeContactSection: ReactNode;
@@ -17,7 +16,6 @@ export default function HomeContainer({
   homeExperienceSection,
   homeSkillsSection,
   homeCertificationsSection,
-  homeBlogsSection,
   homeHeroSection,
   homeAboutSection,
   homeContactSection,
@@ -64,13 +62,6 @@ export default function HomeContainer({
         fallback={<CardSkeletonGroup containerClassName="w-full" count={1} />}
       >
         {homeCertificationsSection}
-      </Suspense>
-
-      {/* Blog Section (Optional) */}
-      <Suspense
-        fallback={<CardSkeletonGroup containerClassName="w-full" count={1} />}
-      >
-        {homeBlogsSection}
       </Suspense>
 
       {/* Contact Section */}

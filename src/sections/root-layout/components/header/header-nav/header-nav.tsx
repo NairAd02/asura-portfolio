@@ -8,7 +8,6 @@ const sections = [
   "experiencia",
   "habilidades",
   "educacion",
-  "blogs",
   "contacto",
 ];
 

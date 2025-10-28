@@ -6,7 +6,6 @@ interface Props {
   experiences: ReactNode;
   skills: ReactNode;
   certifications: ReactNode;
-  blogs: ReactNode;
   hero: ReactNode;
   about: ReactNode;
   contact: ReactNode;
@@ -17,7 +16,6 @@ export default function HomeLayout({
   experiences: homeExperienceSection,
   skills: homeSkillsSection,
   certifications: homeCertificationsSection,
-  blogs: homeBlogsSection,
   hero: homeHeroSection,
   about: homeAboutSection,
   contact: homeContactSection,
@@ -29,7 +27,6 @@ export default function HomeLayout({
       homeExperienceSection={homeExperienceSection}
       homeSkillsSection={homeSkillsSection}
       homeCertificationsSection={homeCertificationsSection}
-      homeBlogsSection={homeBlogsSection}
       homeAboutSection={homeAboutSection}
       homeContactSection={homeContactSection}
     />
