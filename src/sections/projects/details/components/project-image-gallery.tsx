@@ -67,7 +67,7 @@ export function ProjectImageGallery({
 
   return (
     <>
-      <section className="py-16 md:py-24 bg-background">
+      <section id="gallery" className="py-16 md:py-24 bg-background">
         <div className=" px-4">
           {/* Header with elegant animation */}
           <motion.div

@@ -37,6 +37,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
+      id="hero"
       className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
