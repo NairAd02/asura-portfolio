@@ -5,12 +5,11 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AvatarContainer from "../ui/avatar-container";
 import { principalPlaceHolder } from "@/lib/place-holders";
-import { Badge } from "../ui/badge";
 import { Award, TrendingUp, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "../ui/skeleton";
-import { levelMap } from "@/lib/types/mastered-technologies";
 import { SkillsModal } from "./components/skills-modal";
+import SkillLevelStars from "./components/skill-level-starts/skill-level-starts";
 
 interface Props {
   skillGroup: SkillGroup;
@@ -58,9 +57,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
                     {masteredTech.technology.name}
                   </span>
                 </div>
-                <Badge variant="default">
-                  {levelMap.get(masteredTech.level)?.name}
-                </Badge>
+                <SkillLevelStars level={masteredTech.level} />
               </div>
             ))}
           </div>
