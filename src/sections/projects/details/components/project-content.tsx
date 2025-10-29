@@ -60,9 +60,18 @@ export function ProjectContent({ project }: ProjectContentProps) {
                       <h2 className="text-base sm:text-2xl md:text-3xl font-bold tracking-tight">
                         {section.title}
                       </h2>
-                      <p className="text-sm sm:text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty">
-                        {project[section.key]}
-                      </p>
+                      <div className="space-y-2">
+                        {project[section.key]
+                          .split("\n")
+                          .map((paragraph, index) => (
+                            <p
+                              key={index}
+                              className="text-sm sm:text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty"
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                      </div>
                     </div>
                   </div>
                 </Card>
