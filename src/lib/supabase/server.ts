@@ -1,13 +1,14 @@
 // lib/supabase/server-client.ts
-import { createServerClient } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { createServerClient } from "@supabase/ssr";
+import { SupabaseClient } from "@supabase/supabase-js";
+import { cookies } from "next/headers";
 
-let client: ReturnType<typeof createServerClient> | null = null
+let client: SupabaseClient<any, "public", any> | null = null;
 
 export async function createClient() {
-  if (client) return client
+  if (client) return client;
 
-  const cookieStore = await cookies()
+  const cookieStore = await cookies();
   client = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -18,11 +19,11 @@ export async function createClient() {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
-            )
+            );
           } catch {}
         },
       },
     }
-  )
-  return client
+  );
+  return client;
 }
