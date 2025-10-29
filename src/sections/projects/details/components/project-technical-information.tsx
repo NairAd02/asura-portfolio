@@ -73,7 +73,7 @@ export function ProjectTechnicalInformation({
                 className="prose prose-lg max-w-none dark:prose-invert"
               >
                 <div className="space-y-4">
-                  {technicalInfo.split("\n\n").map((paragraph, index) => (
+                  {technicalInfo.split("\n").map((paragraph, index) => (
                     <motion.p
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
