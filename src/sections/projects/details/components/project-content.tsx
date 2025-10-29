@@ -39,7 +39,7 @@ const sections = [
 export function ProjectContent({ project }: ProjectContentProps) {
   return (
     <section id="context" className="py-16 md:py-24 bg-muted">
-      <div className="px-4 lg:px-20">
+      <div className="max-w-5xl mx-auto px-4">
         <div className="grid gap-8">
           {sections.map((section, index) => {
             const Icon = section.icon;
