@@ -27,9 +27,9 @@ export default function ProjectCard({ project }: Props) {
       {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-6 bg-primary" />
 
-      <div className="flex flex-col md:flex-row h-full">
+      <div className="flex flex-col  h-full">
         <NavigationComponent
-          className="relative w-full group/image cursor-pointer md:w-[40%] h-64 md:h-auto flex-shrink-0 overflow-hidden"
+          className="relative w-full group/image cursor-pointer h-64 flex-shrink-0 overflow-hidden"
           href={paths.projectDetails({ id: project.id }).root}
         >
           <Image
@@ -50,14 +50,14 @@ export default function ProjectCard({ project }: Props) {
           </div>
         </NavigationComponent>
 
-        <CardContent className="flex-1 p-6 flex gap-4 flex-col justify-between">
+        <CardContent className="flex-1 p-6 pb-0 flex gap-4 flex-col justify-between">
           {/* Header */}
           <div className="space-y-3">
             <div>
-              <h3 className="text-xl font-bold text-foreground group-hover:text-primary line-clamp-2 mb-2">
+              <h3 className="text-xl font-bold text-foreground group-hover:text-primary line-clamp-1 mb-2">
                 {project.name}
               </h3>
-              <p className="text-sm text-black font-semibold line-clamp-5 leading-relaxed">
+              <p className="text-sm text-black font-semibold line-clamp-3 leading-relaxed">
                 {project.description}
               </p>
             </div>
@@ -68,7 +68,7 @@ export default function ProjectCard({ project }: Props) {
                 Tecnologías
               </h4>
               <div className="flex flex-wrap gap-1">
-                {project.technologies.map((technology, index) => (
+                {project.technologies.slice(0, 6).map((technology, index) => (
                   <TechnologyBadge key={index} technology={technology} />
                 ))}
                 {project.technologies.length > 6 && (
