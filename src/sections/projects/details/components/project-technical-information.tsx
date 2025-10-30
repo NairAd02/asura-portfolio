@@ -79,7 +79,7 @@ export function ProjectTechnicalInformation({
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
                       className="text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty"
                     >
                       {paragraph}
