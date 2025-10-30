@@ -23,7 +23,7 @@ export default function CertificationModal({
 }: Props) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-xl max-h-[98vh] p-0 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black border-4 border-primary dark:border-white shadow-2xl">
+      <DialogContent className="max-w-xl max-h-[90vh] p-0 overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black border-4 border-primary dark:border-white shadow-2xl">
         {/* Gradientes decorativos superior e inferior */}
         <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
@@ -37,12 +37,12 @@ export default function CertificationModal({
         <DialogHeader className="px-8 pt-8 relative">
           <div className="flex items-center justify-center gap-3 ">
             <Award className="w-8 h-8 text-primary" />
-            <DialogTitle className="text-3xl font-bold text-center text-primary font-serif">
+            <DialogTitle className="text-xl sm:text-3xl font-bold text-center text-primary font-serif">
               {certification.title}
             </DialogTitle>
             <Award className="w-8 h-8 text-primary" />
           </div>
-          <p className="text-center text-primary font-semibold text-xl">
+          <p className="text-center text-primary font-semibold text-lg sm:text-xl">
             {certification.institution}
           </p>
           <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent " />
@@ -50,7 +50,7 @@ export default function CertificationModal({
 
         <div className="px-8 pb-8">
           <div className="relative w-full  rounded-lg overflow-hidden border-2 border-primary/60 shadow-lg">
-            <div className="relative w-full h-[60vh] sm:h-[72vh]">
+            <div className="relative w-full h-[60vh] sm:h-[64vh]">
               <Image
                 src={certification.image || principalPlaceHolder}
                 alt={certification.title}
