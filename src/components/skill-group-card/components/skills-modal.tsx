@@ -42,7 +42,7 @@ export function SkillsModal({
         <DialogHeader className="px-8 pt-8 pb-4 relative">
           <div className="flex items-center justify-center gap-3 mb-2">
             <Award className="w-8 h-8 text-primary" />
-            <DialogTitle className="text-3xl font-bold text-center text-primary font-serif">
+            <DialogTitle className="text-3xl font-bold font-lora text-center text-primary">
               Habilidades Destacadas
             </DialogTitle>
             <Award className="w-8 h-8 text-primary" />
@@ -57,7 +57,7 @@ export function SkillsModal({
                 </div>
               }
             />
-            <p className="text-center text-primary font-semibold text-2xl">
+            <p className="text-center text-primary font-lora font-semibold text-2xl">
               {groupName}
             </p>
           </div>
@@ -71,7 +71,7 @@ export function SkillsModal({
                 key={index}
                 className="group relative bg-white/80 backdrop-blur-sm rounded-lg p-4 border-2 border-primary/60 dark:border-gray-700 hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-300 hover:scale-105"
               >
-                <p className="text-foreground flex-1 font-semibold leading-relaxed text-sm sm:text-base">
+                <p className="text-foreground flex-1 font-lora leading-relaxed text-sm sm:text-base">
                   {skill.name}
                 </p>
               </div>

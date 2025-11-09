@@ -23,7 +23,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
       <Card className="group hover:shadow-lg transition-all duration-300 border-t-4 border-t-primary/40 hover:border-t-primary">
         <CardHeader>
           <CardTitle className="flex justify-between group-hover:text-primary font-bold items-center gap-2">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center font-lora gap-2">
               <AvatarContainer
                 image={skillGroup.icon || principalPlaceHolder}
                 fallback={
@@ -53,7 +53,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
                       </div>
                     }
                   />
-                  <span className="text-sm font-semibold">
+                  <span className="text-sm font-lora font-semibold">
                     {masteredTech.technology.name}
                   </span>
                 </div>
@@ -65,7 +65,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
           <div className="flex flex-col gap-3">
             <div className="flex gap-2 items-center">
               <Award className="text-primary size-4" />
-              <h4 className="text-sm font-semibold text-foreground">
+              <h4 className="text-sm font-semibold font-lora text-foreground">
                 Habilidades Destacadas
               </h4>
             </div>
@@ -76,7 +76,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
               className="flex items-center gap-2 group/btn cursor-pointer relative"
             >
               <Eye className="w-4 h-4 text-white group-hover/btn:animate-pulse" />
-              <span className="font-semibold">Ver Habildiades</span>
+              <span>Ver Habildiades</span>
             </Button>
           </div>
         </CardContent>
