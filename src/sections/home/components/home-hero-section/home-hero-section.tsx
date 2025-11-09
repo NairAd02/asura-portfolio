@@ -20,7 +20,7 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
               <h1 className="text-3xl font-bold text-primary tracking-tighter sm:text-5xl xl:text-6xl/none">
                 {personalInformationInfo.contact_name}
               </h1>
-              <p className="max-w-[600px] text-black font-semibold md:text-xl">
+              <p className="max-w-[600px] text-black md:text-xl">
                 {personalInformationInfo.introductory_phrase}
               </p>
             </div>

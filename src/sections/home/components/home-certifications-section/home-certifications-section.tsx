@@ -18,7 +18,7 @@ export default function HomeCertificationsSection({
             <h2 className="text-3xl text-primary font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Educación, Premios y Certificaciones
             </h2>
-            <p className="max-w-[900px] text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               {certificationsSectionInfo.education_and_certifications_text}
             </p>
           </div>

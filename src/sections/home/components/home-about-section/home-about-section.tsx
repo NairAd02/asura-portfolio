@@ -13,7 +13,7 @@ export default function HomeAboutSection({ aboutInfo }: Props) {
           <h2 className="text-3xl text-primary font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Sobre Mí
           </h2>
-          <p className="mt-4 text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="mt-4 text-black  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             {aboutInfo.about_text}
           </p>
         </div>

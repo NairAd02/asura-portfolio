@@ -16,7 +16,7 @@ export default function HomeSkillsSection({ skillsSectionInfo }: Props) {
             <h2 className="text-3xl text-primary font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Tecnologías y Habilidades
             </h2>
-            <p className="max-w-[900px] text-black font-semibold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               {skillsSectionInfo.technologies_and_skills_text}
             </p>
           </div>
