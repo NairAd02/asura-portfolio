@@ -19,7 +19,7 @@ interface Props {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary/40 hover:border-l-primary">
+    <Card className="group hover:shadow-lg gap-1 transition-all duration-300 border-l-4 border-l-primary/40 hover:border-l-primary">
       <CardHeader className="pb-4">
         <div className="flex flex-col gap-3">
           <div className="flex gap-4 items-center">
@@ -60,7 +60,7 @@ export default function ExperienceCard({ experience }: Props) {
       <CardContent className="space-y-6">
         {/* Descripción */}
         <div>
-          <p className="text-black font-semibold text-sm sm:text-base leading-relaxed">
+          <p className="text-black text-sm sm:text-base leading-relaxed">
             {experience.description}
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function ExperienceCard({ experience }: Props) {
               {experience.achievements.map((achievement, index) => (
                 <li
                   key={index}
-                  className="text-sm text-black font-semibold relative before:content-['•'] before:text-primary before:font-bold before:absolute before:-left-4"
+                  className="text-sm text-black relative before:content-['•'] before:text-primary before:font-bold before:absolute before:-left-4"
                 >
                   {achievement}
                 </li>
