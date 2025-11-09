@@ -53,8 +53,8 @@ export default function ContactFormContainer({ emailToSend }: Props) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Envíame un Mensaje</CardTitle>
-        <CardDescription>
+        <CardTitle className="font-lora">Envíame un Mensaje</CardTitle>
+        <CardDescription className="font-lora">
           Completa el formulario y me pondré en contacto contigo pronto
         </CardDescription>
       </CardHeader>
@@ -84,7 +84,7 @@ export default function ContactFormContainer({ emailToSend }: Props) {
                   </>
                 )}
               </Button>
-              <p className="text-xs text-muted-foreground text-center">
+              <p className="text-xs text-muted-foreground font-lora text-center">
                 * Campos obligatorios
               </p>
             </div>

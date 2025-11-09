@@ -37,8 +37,8 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
             {/* Contact Info */}
             <Card>
               <CardHeader>
-                <CardTitle>Información de Contacto</CardTitle>
-                <CardDescription>
+                <CardTitle className="font-lora">Información de Contacto</CardTitle>
+                <CardDescription className="font-lora">
                   Puedes contactarme a través de cualquiera de estos medios
                 </CardDescription>
               </CardHeader>
@@ -46,8 +46,8 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">
+                    <p className="font-semibold font-lora">Email</p>
+                    <p className="text-muted-foreground font-lora">
                       {contactSectionInfo.contact_email}
                     </p>
                   </div>
@@ -55,8 +55,8 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium">Teléfono</p>
-                    <p className="text-muted-foreground">
+                    <p className="font-semibold font-lora">Teléfono</p>
+                    <p className="text-muted-foreground font-lora">
                       {contactSectionInfo.contact_phone}
                     </p>
                   </div>
@@ -64,8 +64,8 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-medium">Ubicación</p>
-                    <p className="text-muted-foreground">
+                    <p className="font-semibold font-lora">Ubicación</p>
+                    <p className="text-muted-foreground font-lora">
                       {contactSectionInfo.location}
                     </p>
                   </div>
@@ -89,7 +89,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                 <Separator />
 
                 <div>
-                  <p className="text-sm font-medium mb-3">Sígueme en:</p>
+                  <p className="text-sm font-semibold font-lora mb-3">Sígueme en:</p>
                   <div className="flex space-x-2">
                     <Button variant="ghost" size="icon" asChild>
                       <Link href="https://github.com/NairAd02" target="_blank">
