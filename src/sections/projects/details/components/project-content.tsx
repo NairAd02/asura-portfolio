@@ -57,7 +57,7 @@ export function ProjectContent({ project }: ProjectContentProps) {
                       <Icon
                         className={`h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 ${section.color}`}
                       />
-                      <h2 className="text-base sm:text-2xl md:text-3xl font-bold tracking-tight">
+                      <h2 className="text-base sm:text-2xl md:text-3xl font-bold font-lora">
                         {section.title}
                       </h2>
                     </div>
@@ -68,7 +68,7 @@ export function ProjectContent({ project }: ProjectContentProps) {
                           .map((paragraph, index) => (
                             <p
                               key={index}
-                              className="text-sm sm:text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty"
+                              className="text-sm sm:text-base md:text-lg text-foreground font-lora leading-relaxed text-pretty"
                             >
                               {paragraph}
                             </p>

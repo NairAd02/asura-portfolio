@@ -77,10 +77,10 @@ export function ProjectImageGallery({
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="mb-12 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary text-balance">
+            <h2 className="text-4xl md:text-5xl font-bold font-lora mb-4 text-primary text-balance">
               Galería del Proyecto
             </h2>
-            <p className="text-foreground font-semibold text-lg">
+            <p className="text-foreground font-lora text-lg">
               {allImages.length}{" "}
               {allImages.length === 1 ? "imagen" : "imágenes"}
             </p>
@@ -132,10 +132,10 @@ export function ProjectImageGallery({
                 >
                   <div className="flex items-center justify-between text-white">
                     <div>
-                      <p className="text-sm font-medium opacity-80">
+                      <p className="text-sm font-medium font-lora opacity-80">
                         Imagen {index + 1}
                       </p>
-                      <p className="text-lg font-semibold">{projectName}</p>
+                      <p className="text-lg font-lora font-semibold">{projectName}</p>
                     </div>
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: 90 }}
@@ -180,10 +180,10 @@ export function ProjectImageGallery({
               className="absolute top-0 left-0 right-0 p-6 flex items-center justify-between z-10"
             >
               <div className="text-white">
-                <p className="text-sm opacity-60">
+                <p className="text-sm font-lora opacity-60">
                   {selectedIndex + 1} / {allImages.length}
                 </p>
-                <p className="text-lg font-semibold">{projectName}</p>
+                <p className="text-lg font-lora font-semibold">{projectName}</p>
               </div>
 
               <div className="flex gap-2">

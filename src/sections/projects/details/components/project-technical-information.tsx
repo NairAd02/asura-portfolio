@@ -37,10 +37,10 @@ export function ProjectTechnicalInformation({
             >
               <Code2 className="h-8 w-8 text-primary" />
             </motion.div>
-            <h2 className="text-3xl md:text-4xl text-primary font-bold tracking-tight mb-3">
+            <h2 className="text-3xl md:text-4xl text-primary font-bold font-lora mb-3">
               Información Técnica
             </h2>
-            <p className="text-foreground font-semibold text-lg">
+            <p className="text-foreground md:text-xl/relaxed lg:text-base/relaxed font-lora xl:text-xl/relaxed">
               Detalles de implementación y arquitectura del proyecto
             </p>
           </div>
@@ -80,7 +80,7 @@ export function ProjectTechnicalInformation({
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.1 }}
-                      className="text-base md:text-lg text-foreground font-semibold leading-relaxed text-pretty"
+                      className="text-base md:text-lg font-lora text-foreground leading-relaxed text-pretty"
                     >
                       {paragraph}
                     </motion.p>
