@@ -34,8 +34,8 @@ export function RHFTextField({
       control={control}
       name={name}
       render={({ field }) => (
-        <FormItem className={`${fullWidth ? "w-full" : ""}`}>
-          {label && <FormLabel>{label}</FormLabel>}
+        <FormItem className={`${fullWidth ? "w-full" : ""} font-lora`}>
+          {label && <FormLabel className="font-semibold">{label}</FormLabel>}
           <FormControl>
             <Input
               type={type}
