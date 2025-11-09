@@ -15,7 +15,7 @@ export default function CertificationGroupCard({ certificationGroup }: Props) {
           <div className="p-2 rounded-lg bg-primary/70 group-hover:bg-primary transition-colors">
             <FileText className="w-5 h-5 text-white" />
           </div>
-          <CardTitle className="text-xl font-bold text-black group-hover:text-primary">
+          <CardTitle className="text-xl font-bold font-lora text-black group-hover:text-primary">
             {certificationGroup.title}
           </CardTitle>
         </div>

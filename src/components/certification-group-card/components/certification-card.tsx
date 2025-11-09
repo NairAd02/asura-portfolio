@@ -40,18 +40,18 @@ export default function CertificationCard({ certification }: Props) {
             {/* Información superpuesta */}
             <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
               {/* Título */}
-              <h3 className="font-bold text-xl mb-2 leading-tight text-shadow">
+              <h3 className="font-bold font-lora text-xl mb-2 leading-tight text-shadow">
                 {certification.title}
               </h3>
 
               {/* Institución */}
-              <p className="text-sm font-medium text-white/90 mb-3">
+              <p className="text-sm font-medium font-lora text-white/90 mb-3">
                 {certification.institution}
               </p>
 
               {/* Fechas */}
               <div className="flex items-center gap-2">
-                <Badge className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 transition-colors">
+                <Badge className="bg-white/20 backdrop-blur-sm font-lora border-white/30 text-white hover:bg-white/30 transition-colors">
                   {formatDate(certification.startdate, "yymmdd")} -{" "}
                   {formatDate(certification.enddate, "yymmdd")}
                 </Badge>
@@ -59,7 +59,7 @@ export default function CertificationCard({ certification }: Props) {
 
               {/* Descripción si existe */}
               {certification.description && (
-                <p className="text-sm text-white/80 mt-3 line-clamp-2">
+                <p className="text-sm font-lora text-white/80 mt-3 line-clamp-2">
                   {certification.description}
                 </p>
               )}
@@ -69,16 +69,16 @@ export default function CertificationCard({ certification }: Props) {
       ) : (
         // Fallback si no hay imagen
         <div className="p-6 rounded-xl border-2 border-border bg-muted/30">
-          <h3 className="font-semibold text-lg mb-2">{certification.title}</h3>
+          <h3 className="font-semibold text-lg font-lora mb-2">{certification.title}</h3>
           <p className="text-sm text-muted-foreground mb-3">
             {certification.institution}
           </p>
-          <Badge variant="outline">
+          <Badge variant="outline" className="font-lora">
             {formatDate(certification.startdate, "yymmdd")} -{" "}
             {formatDate(certification.enddate, "yymmdd")}
           </Badge>
           {certification.description && (
-            <p className="text-sm text-muted-foreground mt-3">
+            <p className="text-sm font-lora text-muted-foreground mt-3">
               {certification.description}
             </p>
           )}

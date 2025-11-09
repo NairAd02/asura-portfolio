@@ -37,12 +37,12 @@ export default function CertificationModal({
         <DialogHeader className="px-8 pt-8 relative">
           <div className="flex items-center justify-center gap-3 ">
             <Award className="w-8 h-8 text-primary" />
-            <DialogTitle className="text-xl sm:text-3xl font-bold text-center text-primary font-serif">
+            <DialogTitle className="text-xl sm:text-3xl font-bold text-center text-primary font-lora">
               {certification.title}
             </DialogTitle>
             <Award className="w-8 h-8 text-primary" />
           </div>
-          <p className="text-center text-primary font-semibold text-lg sm:text-xl">
+          <p className="text-center text-primary font-semibold font-lora text-lg sm:text-xl">
             {certification.institution}
           </p>
           <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent " />
