@@ -56,7 +56,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary font-bold font-lora tracking-wider text-balance">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-primary font-bold font-cormorant tracking-wider text-balance">
                   {project.name}
                 </h1>
               </motion.div>
@@ -68,7 +68,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                 className="relative"
               >
                 <div className="max-h-[280px] overflow-y-auto pr-2 pb-4 scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent">
-                  <p className="text-base md:text-lg lg:text-xl text-primary leading-relaxed text-pretty">
+                  <p className="text-base md:text-lg lg:text-xl text-primary font-lora leading-relaxed text-pretty">
                     {project.description}
                   </p>
                 </div>
