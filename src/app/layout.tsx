@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/sections/root-layout/components/header/header";
 import Footer from "@/sections/root-layout/components/footer/footer";
 import ProgressBar from "@/components/providers/progress-bar.";
+import { Lora, Cormorant_Garamond } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-cormorant",
 });
 
 export const metadata: Metadata = {
@@ -27,9 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${lora.variable} ${cormorant.variable} antialiased`}>
         <ProgressBar>
           <div className="flex min-h-screen flex-col">
             <Header />
