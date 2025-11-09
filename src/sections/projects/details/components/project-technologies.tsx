@@ -22,7 +22,7 @@ export function ProjectTechnologies({
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-lora text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary font-cormorant text-center mb-12">
             Tecnologías Utilizadas
           </h2>
 

@@ -37,7 +37,7 @@ export function ProjectTechnicalInformation({
             >
               <Code2 className="h-8 w-8 text-primary" />
             </motion.div>
-            <h2 className="text-3xl md:text-4xl text-primary font-bold font-lora mb-3">
+            <h2 className="text-3xl md:text-4xl text-primary font-bold font-cormorant mb-3">
               Información Técnica
             </h2>
             <p className="text-foreground md:text-xl/relaxed lg:text-base/relaxed font-lora xl:text-xl/relaxed">

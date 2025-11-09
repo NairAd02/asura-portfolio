@@ -77,7 +77,7 @@ export function ProjectImageGallery({
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="mb-12 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-lora mb-4 text-primary text-balance">
+            <h2 className="text-4xl md:text-5xl font-bold font-cormorant mb-4 text-primary text-balance">
               Galería del Proyecto
             </h2>
             <p className="text-foreground font-lora text-lg">
