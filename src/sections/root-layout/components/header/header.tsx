@@ -14,7 +14,7 @@ export default function Header() {
               <div className="flex items-center gap-4">
                 {" "}
                 <AppLogo />
-                <span className="font-bold">Asura-Portfolio</span>
+                <span className="font-bold font-lora">Asura-Portfolio</span>
               </div>
             </NavigationComponent>
             <MusicToggleButton />
