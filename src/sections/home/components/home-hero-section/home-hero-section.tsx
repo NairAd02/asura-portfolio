@@ -17,7 +17,7 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
         <div className="flex flex-col-reverse md:flex-row-reverse justify-center gap-8">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold text-primary font-cormorant sm:text-5xl xl:text-6xl/none">
+              <h1 className="text-3xl font-bold text-primary font-cormorant tracking-wider  sm:text-5xl xl:text-6xl">
                 {personalInformationInfo.contact_name}
               </h1>
               <p className="max-w-[600px] text-black font-lora md:text-xl">
