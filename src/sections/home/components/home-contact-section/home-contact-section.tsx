@@ -24,7 +24,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
       <div className="px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl text-primary font-bold font-cormorant tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl text-primary font-bold font-cormorant sm:text-4xl md:text-5xl">
               Contacto
             </h2>
             <p className="max-w-[900px] text-black font-lora md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
