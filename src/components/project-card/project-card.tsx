@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: Props) {
 
       <div className="flex flex-col  h-full">
         <NavigationComponent
-          className="relative w-full group/image cursor-pointer h-64 flex-shrink-0 overflow-hidden"
+          className="relative w-full group/image cursor-pointer h-60 flex-shrink-0 overflow-hidden"
           href={paths.projectDetails({ id: project.id }).root}
         >
           <Image
@@ -50,11 +50,11 @@ export default function ProjectCard({ project }: Props) {
           </div>
         </NavigationComponent>
 
-        <CardContent className="flex-1 p-6 pb-0 flex gap-4 flex-col justify-between">
+        <CardContent className="flex-1 p-6 pt-3 pb-0 flex gap-4 flex-col justify-between">
           {/* Header */}
           <div className="space-y-3">
             <div>
-              <h3 className="text-xl font-bold font-lora text-foreground group-hover:text-primary line-clamp-1 mb-2">
+              <h3 className="text-lg font-bold font-lora text-foreground group-hover:text-primary line-clamp-1 mb-0.5">
                 {project.name}
               </h3>
               <p className="text-sm text-black font-lora line-clamp-3 leading-relaxed">
@@ -68,12 +68,12 @@ export default function ProjectCard({ project }: Props) {
                 Tecnologías
               </h4>
               <div className="flex flex-wrap gap-1">
-                {project.technologies.slice(0, 6).map((technology, index) => (
+                {project.technologies.slice(0, 3).map((technology, index) => (
                   <TechnologyBadge key={index} technology={technology} />
                 ))}
-                {project.technologies.length > 6 && (
+                {project.technologies.length > 3 && (
                   <Badge variant="outline" className="text-xs px-2 py-0.5">
-                    +{project.technologies.length - 6}
+                    +{project.technologies.length - 3}
                   </Badge>
                 )}
               </div>
