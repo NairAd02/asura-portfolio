@@ -20,7 +20,7 @@ interface Props {
 export default function ExperienceCard({ experience }: Props) {
   return (
     <Card className="group hover:shadow-lg gap-1 transition-all duration-300 border-l-4 border-l-primary/40 hover:border-l-primary">
-      <CardHeader className="pb-4">
+      <CardHeader className="pb-1">
         <div className="flex flex-col gap-3">
           <div className="flex gap-4 items-center">
             {experience.mainImage && (
