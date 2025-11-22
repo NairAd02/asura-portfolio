@@ -10,14 +10,17 @@ interface Props {
 
 export default function TechnologyBadge({ technology }: Props) {
   return (
-    <Badge variant="outline" className="px-2 font-lora font-semibold py-1">
+    <Badge
+      variant="outline"
+      className="px-2 text-xs font-lora font-semibold py-1"
+    >
       {technology.icon && (
         <AvatarContainer
-          className="h-6 w-6"
+          className="h-4 w-4"
           image={technology.icon}
           fallback={
             <div className="flex items-center gap-2">
-              <Skeleton className="h-6 w-6 rounded-full" />
+              <Skeleton className="h-4 w-4 rounded-full" />
             </div>
           }
         />
