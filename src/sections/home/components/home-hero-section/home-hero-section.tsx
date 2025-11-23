@@ -14,10 +14,10 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
   return (
     <section id="inicio" className="p-8 bg-background">
       <div className="px-4 md:px-6">
-        <div className="flex flex-col-reverse md:flex-row-reverse justify-center gap-8">
+        <div className="flex flex-col-reverse md:flex-row-reverse justify-center gap-4 md:gap-8">
           <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold text-primary font-cormorant tracking-wider  sm:text-5xl xl:text-6xl">
+            <div className="space-y-1 sm:space-y-2">
+              <h1 className="text-2xl font-bold text-primary font-cormorant tracking-wider  sm:text-5xl xl:text-6xl">
                 {personalInformationInfo.contact_name}
               </h1>
               <p className="max-w-[600px] text-black font-lora md:text-xl">
@@ -32,7 +32,7 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
                 <Link href="#contacto">Contactar</Link>
               </Button>
             </div>
-            <div className="flex items-center space-x-4 pt-4">
+            <div className="flex items-center space-x-4 sm:pt-4">
               <Button variant="default" size="icon" asChild>
                 <Link href="https://github.com/NairAd02" target="_blank">
                   <Github className="h-5 w-5" />
