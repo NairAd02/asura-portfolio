@@ -11,7 +11,7 @@ export default function Header() {
         <div className="flex px-4 h-14 items-center justify-between">
           <div className="flex items-center gap-2">
             <NavigationComponent href="/">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
                 {" "}
                 <AppLogo />
                 <span className="font-bold font-lora">Asura-Portfolio</span>
