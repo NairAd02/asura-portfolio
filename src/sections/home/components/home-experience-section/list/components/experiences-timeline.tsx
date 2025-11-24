@@ -78,19 +78,7 @@ export default function ExperienceTimeline({ experiences }: Props) {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary flex items-center justify-center shadow-lg ring-4 ring-background">
                     <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                   </div>
-                  {/* Pulse animation */}
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.5, 0, 0.5],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "easeInOut",
-                    }}
-                    className="absolute inset-0 rounded-full bg-primary"
-                  />
+                 
                 </motion.div>
               </div>
 
@@ -106,19 +94,6 @@ export default function ExperienceTimeline({ experiences }: Props) {
           );
         })}
       </div>
-
-      {/* End marker */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="relative mt-12 pl-16 sm:pl-24"
-      >
-        <div className="absolute left-4 sm:left-8 -translate-x-1/2">
-          <div className="w-6 h-6 rounded-full bg-primary/30 ring-4 ring-background" />
-        </div>
-      </motion.div>
     </div>
   );
 }
