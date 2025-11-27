@@ -76,7 +76,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
               className="flex items-center gap-2 group/btn cursor-pointer relative"
             >
               <Eye className="w-4 h-4 text-white group-hover/btn:animate-pulse" />
-              <span>Ver Habildiades</span>
+              <span>Ver Detalles</span>
             </Button>
           </div>
         </CardContent>
