@@ -1,7 +1,7 @@
 import AppLogo from "@/components/app-logo/app-logo";
 import NavigationComponent from "@/components/navigation-component/navigation-component";
 import React from "react";
-import MusicToggleButton from "@/components/music-toggle-button/music-toggle-button";
+//import MusicToggleButton from "@/components/music-toggle-button/music-toggle-button";
 import HeaderNavContainer from "./header-nav/header-nav-container";
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
                 <span className="font-bold font-lora">Asura-Portfolio</span>
               </div>
             </NavigationComponent>
-            <MusicToggleButton />
+            {/* <MusicToggleButton />*/}
           </div>
           <HeaderNavContainer />
         </div>
