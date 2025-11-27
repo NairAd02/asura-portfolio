@@ -185,16 +185,21 @@ export async function getProjectMetaDataById(id: string) {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("project")
-    .select(`name, description`)
+    .select(`name, description, mainImage`)
     .eq("id", id)
     .single();
 
   if (error) return { data: null, error };
 
-  const project = data as ProjectMetaData;
+  const { mainImage, ...restData } = data as ProjectMetaData;
 
   return {
-    data: project,
+    data: {
+      ...restData,
+      mainImage: mainImage
+        ? await getImageUrlOrThrow(supabase, mainImage)
+        : undefined,
+    },
     error: null,
   };
 }

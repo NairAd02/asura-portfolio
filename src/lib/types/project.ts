@@ -3,6 +3,7 @@ import { Technology } from "./technologies";
 export interface ProjectMetaData {
   name: string;
   description: string;
+  mainImage: string
 }
 
 export interface Project {
