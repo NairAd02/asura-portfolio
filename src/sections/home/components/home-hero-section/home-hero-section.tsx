@@ -12,7 +12,7 @@ interface Props {
 
 export default function HomeHeroSection({ personalInformationInfo }: Props) {
   return (
-    <section id="inicio" className="p-8 bg-background">
+    <section id="inicio" className="p-8 pt-5 md:pt-8 bg-background">
       <div className="px-4 md:px-6">
         <div className="flex flex-col-reverse md:flex-row-reverse justify-center gap-4 md:gap-8">
           <div className="flex flex-col justify-center space-y-4">
