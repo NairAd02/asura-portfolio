@@ -20,5 +20,13 @@ export default async function HomeExperienceSectionListContainer() {
     throw new Error("Error fetching experiences");
   }
   const experiences = res.data as Experience[];
-  return <HomeExperienceSectionList experiences={experiences} />;
+
+  // Sort experiences by date (most recent first)
+  const sortedExperiences = [...experiences].sort((a, b) => {
+    const dateA = new Date(a.startdate).getTime();
+    const dateB = new Date(b.startdate).getTime();
+    return dateB - dateA;
+  });
+
+  return <HomeExperienceSectionList experiences={sortedExperiences} />;
 }

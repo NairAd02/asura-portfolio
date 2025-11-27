@@ -10,18 +10,13 @@ interface Props {
 }
 
 export default function ExperienceTimeline({ experiences }: Props) {
-  // Sort experiences by date (most recent first)
-  const sortedExperiences = [...experiences].sort((a, b) => {
-    const dateA = new Date(a.startdate).getTime();
-    const dateB = new Date(b.startdate).getTime();
-    return dateB - dateA;
-  });
+  
 
-  const experiencesWithYears = sortedExperiences.map((exp, index) => {
+  const experiencesWithYears = experiences.map((exp, index) => {
     const year = new Date(exp.startdate).getFullYear();
     const prevYear =
       index > 0
-        ? new Date(sortedExperiences[index - 1].startdate).getFullYear()
+        ? new Date(experiences[index - 1].startdate).getFullYear()
         : null;
     return {
       ...exp,
