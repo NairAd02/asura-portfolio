@@ -23,9 +23,8 @@ interface Props {
 
 export default function ProjectCard({ project }: Props) {
   return (
-    <Card className="group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-b-4 border-b-primary/40 hover:border-b-primary shadow-md">
+    <Card className="group relative pt-0 border-t-12 border-t-primary overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-b-4 border-b-primary/40 hover:border-b-primary shadow-md">
       {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-6 bg-primary" />
 
       <div className="flex flex-col  h-full">
         <NavigationComponent
