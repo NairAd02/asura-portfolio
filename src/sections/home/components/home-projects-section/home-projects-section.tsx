@@ -24,7 +24,7 @@ export default function HomeProjectsSection({ projectsSectionInfo }: Props) {
         <Suspense
           fallback={
             <CardSkeletonGroup
-              containerClassName="mx-auto mt-10 max-w-7xl grid gap-6 lg:gap-4 w-full"
+              containerClassName="mt-10 mx-auto max-w-7xl grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6"
               count={4}
             />
           }
