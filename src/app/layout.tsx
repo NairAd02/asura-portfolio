@@ -21,10 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const personalInformation = res.data;
   return {
-    title:
-      "Hola, soy: " +
-      personalInformation.contact_name +
-      ". Y este es mi Portafolio",
+    title: personalInformation.contact_name,
     description: personalInformation.introductory_phrase,
     openGraph: {
       title:
