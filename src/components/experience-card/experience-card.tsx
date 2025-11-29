@@ -60,7 +60,7 @@ export default function ExperienceCard({ experience }: Props) {
       <CardContent className="space-y-6">
         {/* Descripción */}
         <div>
-          <p className="text-black text-sm font-lora sm:text-base leading-relaxed">
+          <p className="text-black text-sm font-lora sm:text-sm leading-relaxed">
             {experience.description}
           </p>
         </div>
