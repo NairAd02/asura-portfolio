@@ -141,7 +141,7 @@ export default function ProjectCard({ project }: Props) {
               ) : (
                 <div className="flex-1 flex items-center justify-center p-2 rounded-md bg-muted/50 border border-dashed border-muted-foreground/30">
                   <span className="text-xs text-muted-foreground">
-                    Sin código
+                    Sin Código
                   </span>
                 </div>
               )}
@@ -153,13 +153,13 @@ export default function ProjectCard({ project }: Props) {
                     className="flex-1 group/btn bg-primary hover:bg-primary/90 transition-all duration-200"
                   >
                     <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    Demo
+                    Ir a Ver
                   </Button>
                 </NavigationComponent>
               ) : (
                 <div className="flex-1 flex items-center justify-center p-2 rounded-md bg-muted/50 border border-dashed border-muted-foreground/30">
                   <span className="text-xs text-muted-foreground">
-                    Sin demo
+                    Sin Despliegue
                   </span>
                 </div>
               )}

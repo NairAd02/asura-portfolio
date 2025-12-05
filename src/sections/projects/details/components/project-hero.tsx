@@ -90,7 +90,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Ver Proyecto
+                    Ir a Ver
                     <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </a>
                 </Button>
