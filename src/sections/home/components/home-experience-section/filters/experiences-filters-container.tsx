@@ -21,11 +21,11 @@ export default function ExperiencesFiltersContainer() {
     <div className="flex flex-col gap-4">
       <div className="flex gap-2">
         <SheetContainer
-          title="Filtros de Experiencias Laborales"
+          title="Work Experience Filters"
           trigger={
             <Button className="flex items-center gap-2">
               {" "}
-              <SlidersHorizontal /> Filtros
+              <SlidersHorizontal /> Filters
             </Button>
           }
         >

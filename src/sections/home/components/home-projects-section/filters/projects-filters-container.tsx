@@ -21,11 +21,11 @@ export default function ProjectsFiltersContainer() {
     <div className="flex flex-col gap-4">
       <div className="flex gap-2">
         <SheetContainer
-          title="Filtros de Proyectos"
+          title="Project Filters"
           trigger={
             <Button className="flex items-center gap-2">
               {" "}
-              <SlidersHorizontal /> Filtros
+              <SlidersHorizontal /> Filters
             </Button>
           }
         >
