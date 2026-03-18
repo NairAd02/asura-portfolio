@@ -9,7 +9,7 @@ export default function ContactForm() {
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <RHFTextField name="name" label="Name *" placeholder="Your name" />
-        <RHFTextField name="email" label="Email *" placeholder="tu@email.com" />
+        <RHFTextField name="email" label="Email *" placeholder="you@email.com" />
       </div>
 
       <RHFTextField
