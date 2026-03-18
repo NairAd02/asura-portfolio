@@ -24,7 +24,7 @@ export default function BlogsActiveFilters({
     <div>
       <div className="space-y-4">
         <div className="flex gap-2 items-center">
-          <Label>Filtros Activos</Label>
+          <Label>Active Filters</Label>
 
           <Badge variant="default" className="ml-2">
             {activeFiltersCount}
@@ -37,14 +37,14 @@ export default function BlogsActiveFilters({
             className="h-8"
           >
             <RotateCcwIcon className="h-4 w-4 mr-1" />
-            Limpiar
+            Clear
           </Button>
         </div>
 
         <div className="flex flex-wrap gap-2">
           {filters.name && (
             <FilterBadge
-              filterName="Nombre"
+              filterName="Name"
               filterValue={filters.name}
               handleDeleteFilter={() => {
                 handleChangeFilters({ name: undefined });
@@ -53,7 +53,7 @@ export default function BlogsActiveFilters({
           )}
           {filters.description && (
             <FilterBadge
-              filterName="Descripción"
+              filterName="Description"
               filterValue={filters.description}
               handleDeleteFilter={() => {
                 handleChangeFilters({ description: undefined });
@@ -62,7 +62,7 @@ export default function BlogsActiveFilters({
           )}
           {filters.date && (
             <FilterBadge
-              filterName="Fecha"
+              filterName="Date"
               filterValue={formatDate(filters.date.toISOString())}
               handleDeleteFilter={() => {
                 handleChangeFilters({ date: undefined });

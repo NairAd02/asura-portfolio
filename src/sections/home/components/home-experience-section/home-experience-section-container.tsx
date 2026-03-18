@@ -6,7 +6,7 @@ export default async function HomeExperiencesSectionContainer() {
   const res = await getExperiencesSectionInfo();
   if (!res.data || res.error) {
     console.log(res.error);
-    return <div>Problemas en la carga de la sección de las experiencias</div>;
+    return <div>Problems loading the experiences section</div>;
   }
 
   const experiencesSectionInfo = res.data;

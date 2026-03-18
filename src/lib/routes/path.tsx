@@ -61,7 +61,7 @@ export const paths: ApplicationPath = {
 export const isProtectedRoute = (route: string): boolean => {
   const [routeWithoutQuery, _] = route.split("?");
 
-  // Primero intentamos hacer match con rutas estáticas
+  // First we try to match with static routes
   for (const key in paths) {
     const path = paths[key as keyof ApplicationPath];
 
@@ -77,10 +77,10 @@ export const isProtectedRoute = (route: string): boolean => {
     const path = paths[key as keyof ApplicationPath];
 
     if (typeof path === "function") {
-      // Obtenemos el path base sin parámetros reemplazados
+      // Get the base path without replaced parameters
       const basePath = path({} as any).root.split("?")[0];
 
-      // Creamos un regex para hacer match con los parámetros
+      // Create a regex to match with the parameters
       const regexPattern =
         basePath.replace(/\[([^\]]+)\]/g, "([^/]+)").replace(/\//g, "\\/") +
         "$";

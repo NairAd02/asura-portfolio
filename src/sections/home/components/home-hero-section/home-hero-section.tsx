@@ -26,10 +26,10 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Button size="lg" asChild>
-                <Link href="#proyectos">Ver Proyectos</Link>
+                <Link href="#proyectos">View Projects</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link href="#contacto">Contactar</Link>
+                <Link href="#contacto">Contact</Link>
               </Button>
             </div>
             <div className="flex items-center space-x-4 sm:pt-4">
@@ -52,7 +52,7 @@ export default function HomeHeroSection({ personalInformationInfo }: Props) {
                 src={
                   personalInformationInfo.contact_image || principalPlaceHolder
                 }
-                alt="Foto profesional"
+                alt="Professional photo"
                 width={300}
                 height={300}
                 quality={100}

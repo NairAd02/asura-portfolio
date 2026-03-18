@@ -1,5 +1,5 @@
 "use client";
-import { motion, Variants } from "framer-motion"; // Importa Variants
+import { motion, Variants } from "framer-motion"; // Import Variants
 import { SearchX } from "lucide-react";
 
 interface Props {
@@ -8,10 +8,10 @@ interface Props {
 }
 
 export default function EmptyContent({
-  title = "No hay elementos disponibles",
-  description = "No se encontraron elementos para mostrar",
+  title = "No items available",
+  description = "No items found to display",
 }: Props) {
-  // Tipado explícito para iconVariants
+  // Explicit typing for iconVariants
   const iconVariants: Variants = {
     hidden: { scale: 0.8, opacity: 0 },
     visible: {
@@ -19,12 +19,12 @@ export default function EmptyContent({
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut", // Aceptado por Framer Motion
+        ease: "easeOut", // Accepted by Framer Motion
       },
     },
   };
 
-  // Tipado explícito para floatAnimation
+  // Explicit typing for floatAnimation
   const floatAnimation: Variants = {
     initial: { y: 0 },
     animate: {
@@ -32,7 +32,7 @@ export default function EmptyContent({
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut", // Aceptado por Framer Motion
+        ease: "easeInOut", // Accepted by Framer Motion
       },
     },
   };

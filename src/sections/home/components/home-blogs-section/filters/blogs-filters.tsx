@@ -14,14 +14,14 @@ export default function BlogsFilters({ filters, handleChangeFilters }: Props) {
       <SearchInput
         id="name"
         value={filters.name}
-        placeHolder="Buscar por nombre..."
+        placeHolder="Search by name..."
         onChange={(e) => {
           handleChangeFilters({ name: e.target.value || undefined });
         }}
       />
       <DatePickerInput
         id="date"
-        placeholder="Buscar por fecha..."
+        placeholder="Search by date..."
         value={filters.date}
         onChange={(date) => {
           handleChangeFilters({ date: date || undefined });
@@ -30,7 +30,7 @@ export default function BlogsFilters({ filters, handleChangeFilters }: Props) {
       <TextareaInput
         id="description"
         value={filters.description}
-        placeHolder="Buscar por descripción..."
+        placeHolder="Search by description..."
         onChange={(e) => {
           handleChangeFilters({ description: e.target.value || undefined });
         }}

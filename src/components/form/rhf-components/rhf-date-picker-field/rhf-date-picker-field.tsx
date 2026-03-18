@@ -31,7 +31,7 @@ interface Props {
 export function RHFDatePickerField({
   name,
   label,
-  placeholder = "Selecciona una fecha",
+  placeholder = "Select a date",
   description,
   fullWidth = true,
 }: Props) {

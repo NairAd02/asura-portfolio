@@ -23,7 +23,7 @@ export default function ExperiencesActiveFilters({
     <div>
       <div className="space-y-4">
         <div className="flex gap-2 items-center">
-          <Label>Filtros Activos</Label>
+          <Label>Active Filters</Label>
 
           <Badge variant="default" className="ml-2">
             {activeFiltersCount}
@@ -36,14 +36,14 @@ export default function ExperiencesActiveFilters({
             className="h-8"
           >
             <RotateCcwIcon className="h-4 w-4 mr-1" />
-            Limpiar
+            Clear
           </Button>
         </div>
 
         <div className="flex flex-wrap gap-2">
           {filters.company && (
             <FilterBadge
-              filterName="Empresa"
+              filterName="Company"
               filterValue={filters.company}
               handleDeleteFilter={() => {
                 handleChangeFilters({ company: undefined });
@@ -52,7 +52,7 @@ export default function ExperiencesActiveFilters({
           )}
           {filters.description && (
             <FilterBadge
-              filterName="Descripción"
+              filterName="Description"
               filterValue={filters.description}
               handleDeleteFilter={() => {
                 handleChangeFilters({ description: undefined });
@@ -61,7 +61,7 @@ export default function ExperiencesActiveFilters({
           )}
           {filters.position && (
             <FilterBadge
-              filterName="Rol desempeñado"
+              filterName="Role performed"
               filterValue={filters.position}
               handleDeleteFilter={() => {
                 handleChangeFilters({ position: undefined });
@@ -70,7 +70,7 @@ export default function ExperiencesActiveFilters({
           )}
           {filters.achievements && (
             <FilterBadge
-              filterName="Logros"
+              filterName="Achievements"
               filterValue={filters.achievements}
               handleDeleteFilter={() => {
                 handleChangeFilters({ achievements: undefined });

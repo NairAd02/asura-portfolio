@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function SubmitButton({
-  text = "Enviar",
+  text = "Submit",
   submitLoading,
 }: Props) {
   return (

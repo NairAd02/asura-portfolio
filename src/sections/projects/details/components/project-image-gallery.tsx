@@ -78,11 +78,11 @@ export function ProjectImageGallery({
             className="mb-12 text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold font-cormorant mb-4 text-primary text-balance">
-              Galería del Proyecto
+              Project Gallery
             </h2>
             <p className="text-foreground font-lora text-lg">
               {allImages.length}{" "}
-              {allImages.length === 1 ? "imagen" : "imágenes"}
+              {allImages.length === 1 ? "image" : "images"}
             </p>
           </motion.div>
 
@@ -112,7 +112,7 @@ export function ProjectImageGallery({
                 >
                   <Image
                     src={image || "/placeholder.svg"}
-                    alt={`${projectName} - Imagen ${index + 1}`}
+                    alt={`${projectName} - Image ${index + 1}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -133,7 +133,7 @@ export function ProjectImageGallery({
                   <div className="flex items-center justify-between text-white">
                     <div>
                       <p className="text-sm font-medium font-lora opacity-80">
-                        Imagen {index + 1}
+                        Image {index + 1}
                       </p>
                       <p className="text-lg font-lora font-semibold">{projectName}</p>
                     </div>
@@ -231,7 +231,7 @@ export function ProjectImageGallery({
                 >
                   <Image
                     src={allImages[selectedIndex] || "/placeholder.svg"}
-                    alt={`${projectName} - Imagen ${selectedIndex + 1}`}
+                    alt={`${projectName} - Image ${selectedIndex + 1}`}
                     width={1920}
                     height={1080}
                     className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
@@ -308,7 +308,7 @@ export function ProjectImageGallery({
                   >
                     <Image
                       src={image || "/placeholder.svg"}
-                      alt={`Miniatura ${index + 1}`}
+                      alt={`Thumbnail ${index + 1}`}
                       fill
                       className="object-cover"
                       sizes="80px"

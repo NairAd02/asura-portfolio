@@ -23,7 +23,7 @@ export function ProjectTechnologies({
           className="max-w-5xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-primary font-cormorant text-center mb-12">
-            Tecnologías Utilizadas
+            Technologies Used
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">

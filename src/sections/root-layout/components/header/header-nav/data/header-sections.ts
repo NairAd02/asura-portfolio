@@ -1,53 +1,53 @@
 export const homeSections = [
   {
-    label: "Inicio",
+    label: "Home",
     value: "inicio",
   },
   {
-    label: "Acerca",
+    label: "About",
     value: "acerca",
   },
   {
-    label: "Proyectos",
+    label: "Projects",
     value: "proyectos",
   },
   {
-    label: "Experiencia",
+    label: "Experience",
     value: "experiencia",
   },
   {
-    label: "Habilidades",
+    label: "Skills",
     value: "habilidades",
   },
   {
-    label: "Educación",
+    label: "Education",
     value: "educacion",
   },
   {
-    label: "Contacto",
+    label: "Contact",
     value: "contacto",
   },
 ];
 
 export const projectSections = [
   {
-    label: "Inicio",
+    label: "Home",
     value: "hero",
   },
   {
-    label: "Información Técnica",
+    label: "Technical Information",
     value: "technicalInformation",
   },
   {
-    label: "Galería",
+    label: "Gallery",
     value: "gallery",
   },
   {
-    label: "Contexto",
+    label: "Context",
     value: "context",
   },
   {
-    label: "Tecnologías",
+    label: "Technologies",
     value: "technologies",
   },
 ];

@@ -42,7 +42,7 @@ export function RHFSelectField({
   options,
   fullWidth = true,
   loading = false,
-  emptyText = "No hay datos",
+  emptyText = "No data",
   clearable = false, 
 }: Props) {
   const { control, setValue } = useFormContext();
@@ -68,7 +68,7 @@ export function RHFSelectField({
                 <SelectTrigger className={`${fullWidth ? "w-full" : ""}`}>
                   <SelectValue
                     placeholder={
-                      loading ? "Cargando..." : placeholder || "Selecciona"
+                      loading ? "Loading..." : placeholder || "Select"
                     }
                   />
                 </SelectTrigger>

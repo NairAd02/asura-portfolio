@@ -51,7 +51,7 @@ export default function ExperienceCard({ experience }: Props) {
             <Calendar className="h-3 w-3" />
             <span className="whitespace-normal md:whitespace-nowrap">
               {formatDate(experience.startdate)} -{" "}
-              {experience.enddate ? formatDate(experience.enddate) : "Presente"}
+              {experience.enddate ? formatDate(experience.enddate) : "Present"}
             </span>
           </Badge>
         </div>
@@ -71,7 +71,7 @@ export default function ExperienceCard({ experience }: Props) {
             <div className="flex items-center gap-2">
               <Trophy className="h-4 w-4 text-amber-500" />
               <h4 className="text-sm font-lora font-semibold text-foreground">
-                Logros clave
+                Key Achievements
               </h4>
             </div>
             <ul className="space-y-2 ml-6">
@@ -93,7 +93,7 @@ export default function ExperienceCard({ experience }: Props) {
             <div className="flex items-center gap-2">
               <Code className="h-4 w-4 text-blue-500" />
               <h4 className="text-sm font-lora font-semibold text-foreground">
-                Tecnologías
+                Technologies
               </h4>
             </div>
             <div className="flex flex-wrap gap-2">

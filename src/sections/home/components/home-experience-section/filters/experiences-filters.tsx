@@ -37,7 +37,7 @@ export default function ExperiencesFilters({
       {/* Technologies */}
       <ListInput
         id="technologies"
-        label="Tecnologías"
+        label="Technologies"
         values={filters.technologies}
         options={technologies.data.map((technology) => ({
           value: technology.id,
@@ -50,18 +50,18 @@ export default function ExperiencesFilters({
       {/* Search for name */}
       <SearchInput
         id="company"
-        label="Buscar por Empresa"
+        label="Search by Company"
         value={filters.company}
-        placeHolder="Introduzca la empresa..."
+        placeHolder="Enter company..."
         onChange={(e) => {
           handleChangeFilters({ company: e.target.value || undefined });
         }}
       />
       <SearchInput
         id="position"
-        label="Buscar por rol desempeñado"
+        label="Search by role performed"
         value={filters.position}
-        placeHolder="Introduzca el rol que desempeño en la empresa..."
+        placeHolder="Enter the role performed at the company..."
         onChange={(e) => {
           handleChangeFilters({ position: e.target.value || undefined });
         }}
@@ -69,9 +69,9 @@ export default function ExperiencesFilters({
 
       <TextareaInput
         id="description"
-        label="Buscar por descripción"
+        label="Search by description"
         value={filters.description}
-        placeHolder="Introduzca la descripción..."
+        placeHolder="Enter description..."
         onChange={(e) => {
           handleChangeFilters({ description: e.target.value || undefined });
         }}
@@ -79,9 +79,9 @@ export default function ExperiencesFilters({
 
       <TextareaInput
         id="achievements"
-        label="Buscar por logros"
+        label="Search by achievements"
         value={filters.achievements}
-        placeHolder="Introduzca los logros alcanzados en la empresa..."
+        placeHolder="Enter achievements at the company..."
         onChange={(e) => {
           handleChangeFilters({ achievements: e.target.value || undefined });
         }}

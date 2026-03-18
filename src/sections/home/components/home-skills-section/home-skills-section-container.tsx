@@ -6,7 +6,7 @@ export default async function HomeSkillsSectionContainer() {
   const res = await getSkillsSectionInfo();
   if (!res.data || res.error) {
     console.log(res.error);
-    return <div>Problemas en la carga de la sección de las habilidades</div>;
+    return <div>Problems loading the skills section</div>;
   }
 
   const skillsSectionInfo = res.data;

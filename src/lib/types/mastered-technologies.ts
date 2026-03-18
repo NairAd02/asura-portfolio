@@ -2,8 +2,8 @@ import { Technology } from "./technologies";
 
 export enum LevelEnum {
   BASIC = "basic",
-  ADVANCED = "avanzado",
-  INTERMEDIATE = "intermedio",
+  ADVANCED = "advanced",
+  INTERMEDIATE = "intermediate",
 }
 
 export const levelMap: Map<
@@ -20,12 +20,12 @@ export const levelMap: Map<
       | "warning";
   }
 > = new Map([
-  [LevelEnum.ADVANCED, { name: "Avanzado", color: "secondary" }],
-  [LevelEnum.INTERMEDIATE, { name: "Intermedio", color: "secondary" }],
-  [LevelEnum.BASIC, { name: "Básico", color: "secondary" }],
+  [LevelEnum.ADVANCED, { name: "Advanced", color: "secondary" }],
+  [LevelEnum.INTERMEDIATE, { name: "Intermediate", color: "secondary" }],
+  [LevelEnum.BASIC, { name: "Basic", color: "secondary" }],
 ]);
 
-// Función para obtener el color del nivel
+// Function to get the level color
 export const getLevelColor = (level: LevelEnum): string => {
   switch (level) {
     case LevelEnum.BASIC:
@@ -37,7 +37,7 @@ export const getLevelColor = (level: LevelEnum): string => {
   }
 };
 
-// Función para obtener el número de estrellas según el nivel
+// Function to get the number of stars based on level
 export const getLevelStars = (level: LevelEnum): number => {
   switch (level) {
     case LevelEnum.BASIC:
@@ -49,15 +49,15 @@ export const getLevelStars = (level: LevelEnum): number => {
   }
 };
 
-// Función para obtener el texto del nivel en español
+// Function to get the level text
 export const getLevelText = (level: LevelEnum): string => {
   switch (level) {
     case LevelEnum.BASIC:
-      return "Básico";
+      return "Basic";
     case LevelEnum.INTERMEDIATE:
-      return "Intermedio";
+      return "Intermediate";
     default:
-      return "Avanzado";
+      return "Advanced";
   }
 };
 

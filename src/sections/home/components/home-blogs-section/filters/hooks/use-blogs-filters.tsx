@@ -70,17 +70,17 @@ export default function useBlogsFilters({
       });
   }, [useCache, SECTION_KEY]);
 
-  // Función debounced para guardar filtros con revalidatePath
+  // Debounced function to save filters with revalidatePath
   const debouncedSaveFilters = useDebouncedCallback(
     (newFilters: BlogsFilters) => {
       startTransition(async () => {
         await saveFilters(SECTION_KEY, newFilters);
       });
     },
-    600 // ms de espera antes de guardar y revalidar
+    600 // ms wait before saving and revalidating
   );
 
-  // Cambia filtros y guarda con debounce
+  // Change filters and save with debounce
   function handleChangeFilters(updatedFilters: Partial<BlogsFilters>) {
     const newFilters = { ...filters, ...updatedFilters };
     setFilters(newFilters);

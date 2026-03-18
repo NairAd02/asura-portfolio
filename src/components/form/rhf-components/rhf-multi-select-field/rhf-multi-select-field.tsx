@@ -23,8 +23,8 @@ interface Props {
   label?: string;
   description?: string;
   options: SelectOption[];
-  columns?: number; // opcional: número de columnas
-  maxHeight?: string; // opcional: altura máxima para scroll
+  columns?: number; // optional: number of columns
+  maxHeight?: string; // optional: maximum height for scroll
   loading?: boolean;
   emptyText?: string;
 }
@@ -44,7 +44,7 @@ export function RHFMultiSelectField({
   columns = 2,
   maxHeight = "max-h-60",
   loading = false,
-  emptyText = "No hay datos",
+  emptyText = "No data",
 }: Props) {
   const { control } = useFormContext();
 

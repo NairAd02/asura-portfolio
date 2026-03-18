@@ -23,7 +23,7 @@ export default function ProjectsActiveFilters({
     <div>
       <div className="space-y-4">
         <div className="flex gap-2 items-center">
-          <Label>Filtros Activos</Label>
+          <Label>Active Filters</Label>
 
           <Badge variant="default" className="ml-2">
             {activeFiltersCount}
@@ -36,14 +36,14 @@ export default function ProjectsActiveFilters({
             className="h-8"
           >
             <RotateCcwIcon className="h-4 w-4 mr-1" />
-            Limpiar
+            Clear
           </Button>
         </div>
 
         <div className="flex flex-wrap gap-2">
           {filters.name && (
             <FilterBadge
-              filterName="Nombre"
+              filterName="Name"
               filterValue={filters.name}
               handleDeleteFilter={() => {
                 handleChangeFilters({ name: undefined });
@@ -52,7 +52,7 @@ export default function ProjectsActiveFilters({
           )}
           {filters.description && (
             <FilterBadge
-              filterName="Descripción"
+              filterName="Description"
               filterValue={filters.description}
               handleDeleteFilter={() => {
                 handleChangeFilters({ description: undefined });
@@ -61,7 +61,7 @@ export default function ProjectsActiveFilters({
           )}
           {filters.problem && (
             <FilterBadge
-              filterName="Problema"
+              filterName="Problem"
               filterValue={filters.problem}
               handleDeleteFilter={() => {
                 handleChangeFilters({ problem: undefined });
@@ -70,7 +70,7 @@ export default function ProjectsActiveFilters({
           )}
           {filters.impact && (
             <FilterBadge
-              filterName="Impacto"
+              filterName="Impact"
               filterValue={filters.impact}
               handleDeleteFilter={() => {
                 handleChangeFilters({ impact: undefined });
@@ -79,7 +79,7 @@ export default function ProjectsActiveFilters({
           )}
           {filters.solution && (
             <FilterBadge
-              filterName="Solución"
+              filterName="Solution"
               filterValue={filters.solution}
               handleDeleteFilter={() => {
                 handleChangeFilters({ solution: undefined });
@@ -88,7 +88,7 @@ export default function ProjectsActiveFilters({
           )}
           {filters.teachings && (
             <FilterBadge
-              filterName="Aprendizaje"
+              filterName="Learning"
               filterValue={filters.teachings}
               handleDeleteFilter={() => {
                 handleChangeFilters({ teachings: undefined });

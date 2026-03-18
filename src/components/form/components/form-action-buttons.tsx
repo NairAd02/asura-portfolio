@@ -10,8 +10,8 @@ interface Props {
 }
 
 export default function FormActionButtons({
-  cancelButtonText = "Cancelar",
-  submitButtonText = "subir información",
+  cancelButtonText = "Cancel",
+  submitButtonText = "submit information",
   submitLoading,
   handleClose,
 }: Props) {

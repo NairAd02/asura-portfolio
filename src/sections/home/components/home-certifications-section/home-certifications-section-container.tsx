@@ -7,7 +7,7 @@ export default async function HomeCertificationsSectionContainer() {
   if (!res.data || res.error) {
     console.log(res.error);
     return (
-      <div>Problemas en la carga de la sección de las certificaciones</div>
+      <div>Problems loading the certifications section</div>
     );
   }
 

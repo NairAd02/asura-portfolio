@@ -39,7 +39,7 @@ export async function getBlogsList(blogFilters: BlogsFiltersDTO) {
       const blogDate = new Date(blog.date);
       const filterDate = new Date(date);
 
-      // Normalizar ambas fechas a medianoche
+      // Normalize both dates to midnight
       const normalizedBlogDate = new Date(blogDate).setHours(0, 0, 0, 0);
       const normalizedFilterDate = new Date(filterDate).setHours(0, 0, 0, 0);
 

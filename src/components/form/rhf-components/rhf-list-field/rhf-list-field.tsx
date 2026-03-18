@@ -4,7 +4,7 @@ import { PlusIcon, X } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useCallback } from "react";
-import { AlertCircle } from "lucide-react"; // Icono opcional para errores
+import { AlertCircle } from "lucide-react"; // Optional icon for errors
 
 interface Props<T> {
   name: string;
@@ -18,11 +18,11 @@ interface Props<T> {
 
 export function RHFListField<T>({
   name,
-  label = "Elementos",
-  emptyText = "No hay datos",
+  label = "Items",
+  emptyText = "No data",
   StackComponent,
   newItem,
-  addButtonLabel = "Agregar",
+  addButtonLabel = "Add",
   className,
 }: Props<T>) {
   const {
@@ -38,7 +38,7 @@ export function RHFListField<T>({
     append(newItem);
   }, [append, newItem]);
 
-  // Obtener error raíz del array
+  // Get root error from array
   const fieldError = errors[name] as { message?: string } | undefined;
 
   return (

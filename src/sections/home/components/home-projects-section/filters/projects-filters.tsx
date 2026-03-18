@@ -37,7 +37,7 @@ export default function ProjectsFilters({
       {/* Technologies */}
       <ListInput
         id="technologies"
-        label="Tecnologías"
+        label="Technologies"
         values={filters.technologies}
         options={technologies.data.map((technology) => ({
           value: technology.id,
@@ -50,18 +50,18 @@ export default function ProjectsFilters({
       {/* Search for name */}
       <SearchInput
         id="name"
-        label="Buscar por nombre"
+        label="Search by name"
         value={filters.name}
-        placeHolder="Introduzca el nombre..."
+        placeHolder="Enter name..."
         onChange={(e) => {
           handleChangeFilters({ name: e.target.value || undefined });
         }}
       />
       <TextareaInput
         id="description"
-        label="Buscar por descripción"
+        label="Search by description"
         value={filters.description}
-        placeHolder="Introduzca la descripción..."
+        placeHolder="Enter description..."
         onChange={(e) => {
           handleChangeFilters({ description: e.target.value || undefined });
         }}
@@ -69,9 +69,9 @@ export default function ProjectsFilters({
 
       <TextareaInput
         id="problem"
-        label="Buscar por problema"
+        label="Search by problem"
         value={filters.problem}
-        placeHolder="Introduzca el problema del proyecto..."
+        placeHolder="Enter project problem..."
         onChange={(e) => {
           handleChangeFilters({ problem: e.target.value || undefined });
         }}
@@ -79,9 +79,9 @@ export default function ProjectsFilters({
 
       <TextareaInput
         id="impact"
-        label="Buscar por impacto"
+        label="Search by impact"
         value={filters.impact}
-        placeHolder="Introduzca el impacto del proyecto..."
+        placeHolder="Enter project impact..."
         onChange={(e) => {
           handleChangeFilters({ impact: e.target.value || undefined });
         }}
@@ -89,9 +89,9 @@ export default function ProjectsFilters({
 
       <TextareaInput
         id="solution"
-        label="Buscar por solución"
+        label="Search by solution"
         value={filters.solution}
-        placeHolder="Introduzca la solución del proyecto..."
+        placeHolder="Enter project solution..."
         onChange={(e) => {
           handleChangeFilters({ solution: e.target.value || undefined });
         }}
@@ -99,9 +99,9 @@ export default function ProjectsFilters({
 
       <TextareaInput
         id="teachings"
-        label="Buscar por Aprendizaje"
+        label="Search by Learning"
         value={filters.teachings}
-        placeHolder="Introduzca el aprendizaje del proyecto..."
+        placeHolder="Enter project learnings..."
         onChange={(e) => {
           handleChangeFilters({ teachings: e.target.value || undefined });
         }}

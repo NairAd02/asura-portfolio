@@ -24,29 +24,29 @@ export default function DatePickerInput({
   value,
   onChange,
   showTime = false,
-  placeholder = "Seleccione una fecha",
+  placeholder = "Select a date",
 }: Props) {
   const [open, setOpen] = React.useState(false);
   const [internalDate, setInternalDate] = React.useState<Date | undefined>(
     value
   );
 
-  // Sincroniza el valor externo con el interno
+  // Synchronize external value with internal
   React.useEffect(() => {
     setInternalDate(value);
   }, [value]);
 
-  // Manejador de cambio de fecha
+  // Date change handler
   const handleDateChange = (date: Date | undefined) => {
     setInternalDate(date);
     onChange?.(date);
   };
 
-  // Manejador de cambio de hora manual
+  // Manual time change handler
   const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const time = e.target.value;
 
-    // Si no hay fecha seleccionada, crear una nueva con la hora
+    // If no date is selected, create a new one with the time
     if (!internalDate) {
       const newDate = new Date();
       if (time) {
@@ -59,9 +59,9 @@ export default function DatePickerInput({
       return;
     }
 
-    // Si ya hay fecha, actualizar solo la hora
+    // If there's already a date, update only the time
     if (!time) {
-      // Si se borra la hora, mantener la fecha pero resetear hora
+      // If time is deleted, keep the date but reset time
       const updated = new Date(internalDate);
       updated.setHours(0, 0, 0, 0);
       setInternalDate(updated);
@@ -77,7 +77,7 @@ export default function DatePickerInput({
     onChange?.(updated);
   };
 
-  // Formatear la hora para el input time
+  // Format the time for the time input
   const formatTimeValue = (date: Date | undefined) => {
     if (!date) return "";
     return format(date, "HH:mm");

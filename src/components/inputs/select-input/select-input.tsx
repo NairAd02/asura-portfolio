@@ -25,7 +25,7 @@ interface Props {
 
 export default function SelectInput({
   label,
-  placeHolder = "Seleccione elemento",
+  placeHolder = "Select item",
   value,
   onValueChange,
   options,
@@ -43,7 +43,7 @@ export default function SelectInput({
           disabled={loading}
         >
           <SelectTrigger className={`${fullWidth ? "w-full" : ""}`}>
-            <SelectValue placeholder={loading ? "Cargando..." : placeHolder} />
+            <SelectValue placeholder={loading ? "Loading..." : placeHolder} />
           </SelectTrigger>
           <SelectContent>
             {options.map((option, index) => (

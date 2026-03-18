@@ -66,7 +66,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
             <div className="flex gap-2 items-center">
               <Award className="text-primary size-4" />
               <h4 className="text-sm font-semibold font-lora text-foreground">
-                Habilidades Destacadas
+                Featured Skills
               </h4>
             </div>
 
@@ -76,7 +76,7 @@ export default function SkillGroupCard({ skillGroup }: Props) {
               className="flex items-center gap-2 group/btn cursor-pointer relative"
             >
               <Eye className="w-4 h-4 text-white group-hover/btn:animate-pulse" />
-              <span>Ver Detalles</span>
+              <span>View Details</span>
             </Button>
           </div>
         </CardContent>

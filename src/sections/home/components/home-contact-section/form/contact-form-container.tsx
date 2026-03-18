@@ -36,7 +36,7 @@ export default function ContactFormContainer({ emailToSend }: Props) {
   function onSubmit(contactFormData: ContactFormDataSchema) {
     const encodedSubject = encodeURIComponent(contactFormData.subject);
     const encodedBody = encodeURIComponent(
-      `Hola, soy ${contactFormData.name} (${contactFormData.email}).\n\n${contactFormData.message}`
+      `Hello, I'm ${contactFormData.name} (${contactFormData.email}).\n\n${contactFormData.message}`
     );
 
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailToSend}&su=${encodedSubject}&body=${encodedBody}`;
@@ -53,9 +53,9 @@ export default function ContactFormContainer({ emailToSend }: Props) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-lora">Envíame un Mensaje</CardTitle>
+        <CardTitle className="font-lora">Send me a Message</CardTitle>
         <CardDescription className="font-lora">
-          Completa el formulario y me pondré en contacto contigo pronto
+          Fill out the form and I'll get in touch with you soon
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -75,17 +75,17 @@ export default function ContactFormContainer({ emailToSend }: Props) {
                 {form.formState.isSubmitting ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    Preparando...
+                    Preparing...
                   </>
                 ) : (
                   <>
                     <Mail className="w-4 h-4 mr-2" />
-                    Enviar Mensaje
+                    Send Message
                   </>
                 )}
               </Button>
               <p className="text-xs text-muted-foreground font-lora text-center">
-                * Campos obligatorios
+                * Required fields
               </p>
             </div>
           </form>

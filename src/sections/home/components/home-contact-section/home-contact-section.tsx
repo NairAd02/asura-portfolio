@@ -25,7 +25,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl text-primary font-bold font-cormorant sm:text-4xl md:text-5xl">
-              Contacto
+              Contact
             </h2>
             <p className="max-w-[900px] text-black font-lora md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               {contactSectionInfo.contact_text}
@@ -37,9 +37,9 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
             {/* Contact Info */}
             <Card>
               <CardHeader>
-                <CardTitle className="font-lora">Información de Contacto</CardTitle>
+                <CardTitle className="font-lora">Contact Information</CardTitle>
                 <CardDescription className="font-lora">
-                  Puedes contactarme a través de cualquiera de estos medios
+                  You can contact me through any of these means
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -55,7 +55,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-semibold font-lora">Teléfono</p>
+                    <p className="font-semibold font-lora">Phone</p>
                     <p className="text-muted-foreground font-lora">
                       {contactSectionInfo.contact_phone}
                     </p>
@@ -64,7 +64,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="font-semibold font-lora">Ubicación</p>
+                    <p className="font-semibold font-lora">Location</p>
                     <p className="text-muted-foreground font-lora">
                       {contactSectionInfo.location}
                     </p>
@@ -81,7 +81,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                     >
                       <Button className="w-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Descargar CV
+                        Download CV
                       </Button>
                     </NavigationComponent>
                   )}
@@ -89,7 +89,7 @@ export default function HomeContactSection({ contactSectionInfo }: Props) {
                 <Separator />
 
                 <div>
-                  <p className="text-sm font-semibold font-lora mb-3">Sígueme en:</p>
+                  <p className="text-sm font-semibold font-lora mb-3">Follow me on:</p>
                   <div className="flex space-x-2">
                     <Button variant="ghost" size="icon" asChild>
                       <Link href="https://github.com/NairAd02" target="_blank">

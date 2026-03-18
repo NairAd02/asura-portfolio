@@ -33,18 +33,18 @@ export default function ProjectCard({ project }: Props) {
         >
           <Image
             src={project.mainImage || principalPlaceHolder}
-            alt={`Imagen del proyecto ${project.name}`}
+            alt={`Project image ${project.name}`}
             fill
             quality={100}
             className="object-center transition-transform duration-500 group-hover/image:scale-110 group-hover/image:brightness-75"
           />
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500" />
-          {/* "Ver detalles" button - appears on hover */}
+          {/* "View details" button - appears on hover */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100 transition-all duration-500 translate-y-4 group-hover/image:translate-y-0">
             <div className="bg-background text-foreground px-6 py-3 rounded-lg shadow-2xl flex items-center gap-2 font-semibold transform scale-90 group-hover/image:scale-100 transition-transform duration-300">
               <Eye className="w-5 h-5" />
-              Ver detalles
+              View details
             </div>
           </div>
         </NavigationComponent>
@@ -64,7 +64,7 @@ export default function ProjectCard({ project }: Props) {
             <div className="space-y-2">
               <h4 className="text-xs font-lora text-foreground flex items-center gap-1">
                 <Code2 className="w-3 h-3" />
-                Tecnologías
+                Technologies
               </h4>
               <div className="flex flex-wrap gap-1">
                 {project.technologies.slice(0, 3).map((technology, index) => (
@@ -79,13 +79,13 @@ export default function ProjectCard({ project }: Props) {
             </div>
           </div>
 
-          {/* Detalles del proyecto - Compacto */}
+          {/* Project details - Compact */}
           <div className="space-y-3 flex-1 min-h-0">
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div className="space-y-1">
                 <div className="flex items-center gap-1 font-lora text-foreground">
                   <Target className="w-3 h-3  text-destructive" />
-                  Problema
+                  Problem
                 </div>
                 <p className="text-black font-lora line-clamp-2 leading-relaxed">
                   {project.problem}
@@ -95,7 +95,7 @@ export default function ProjectCard({ project }: Props) {
               <div className="space-y-1">
                 <div className="flex items-center gap-1 font-lora text-foreground">
                   <Lightbulb className="w-3 h-3 text-yellow-500" />
-                  Solución
+                  Solution
                 </div>
                 <p className="text-black font-lora line-clamp-2 leading-relaxed">
                   {project.solution}
@@ -105,7 +105,7 @@ export default function ProjectCard({ project }: Props) {
               <div className="space-y-1">
                 <div className="flex items-center gap-1 font-lora text-foreground">
                   <TrendingUp className="w-3 h-3 text-blue-500" />
-                  Aprendizaje
+                  Learning
                 </div>
                 <p className="text-black font-lora line-clamp-2 leading-relaxed">
                   {project.teachings}
@@ -115,7 +115,7 @@ export default function ProjectCard({ project }: Props) {
               <div className="space-y-1">
                 <div className="flex items-center gap-1 font-lora text-foreground">
                   <TrendingUp className="w-3 h-3 text-green-500" />
-                  Impacto
+                  Impact
                 </div>
                 <p className="text-black font-lora line-clamp-2 leading-relaxed">
                   {project.impact}
@@ -124,7 +124,7 @@ export default function ProjectCard({ project }: Props) {
             </div>
           </div>
 
-          {/* Botones de acción - Footer */}
+          {/* Action buttons - Footer */}
           <div className="pt-4 border-t border-border">
             <div className="flex gap-3">
               {project.sourceCodeUrl ? (
@@ -135,13 +135,13 @@ export default function ProjectCard({ project }: Props) {
                     className="flex-1 group/btn hover:bg-primary hover:text-primary-foreground transition-all duration-200 bg-transparent"
                   >
                     <Github className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
-                    Código
+                    Code
                   </Button>
                 </NavigationComponent>
               ) : (
                 <div className="flex-1 flex items-center justify-center p-2 rounded-md bg-muted/50 border border-dashed border-muted-foreground/30">
                   <span className="text-xs text-muted-foreground">
-                    Sin Código
+                    No Code
                   </span>
                 </div>
               )}
@@ -153,13 +153,13 @@ export default function ProjectCard({ project }: Props) {
                     className="flex-1 group/btn bg-primary hover:bg-primary/90 transition-all duration-200"
                   >
                     <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    Ir a Ver
+                    Go to View
                   </Button>
                 </NavigationComponent>
               ) : (
                 <div className="flex-1 flex items-center justify-center p-2 rounded-md bg-muted/50 border border-dashed border-muted-foreground/30">
                   <span className="text-xs text-muted-foreground">
-                    Sin Despliegue
+                    No Deployment
                   </span>
                 </div>
               )}

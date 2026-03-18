@@ -34,7 +34,7 @@ export default function ListInput({
           ))}
         </div>
       ) : options.length === 0 ? (
-        <p className="text-sm text-gray-500">No hay opciones disponibles</p>
+        <p className="text-sm text-gray-500">No options available</p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {options.map((option, index) => (
