@@ -43,7 +43,7 @@ export function SkillsModal({
           <div className="flex items-center justify-center gap-3 mb-2">
             <Award className="w-8 h-8 text-primary" />
             <DialogTitle className="text-3xl font-bold font-lora text-center text-primary">
-              Habilidades Destacadas
+              Key Skills
             </DialogTitle>
             <Award className="w-8 h-8 text-primary" />
           </div>

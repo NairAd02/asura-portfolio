@@ -8,20 +8,20 @@ export default function ContactForm() {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <RHFTextField name="name" label="Nombre *" placeholder="Tu nombre" />
+        <RHFTextField name="name" label="Name *" placeholder="Your name" />
         <RHFTextField name="email" label="Email *" placeholder="tu@email.com" />
       </div>
 
       <RHFTextField
         name="subject"
-        label="Asunto *"
-        placeholder="¿De qué quieres hablar?"
+        label="Subject *"
+        placeholder="What do you want to talk about?"
       />
 
       <RHFTextAreaField
         name="message"
-        label="Mensaje *"
-        placeholder="Cuéntame sobre tu proyecto o consulta..."
+        label="Message *"
+        placeholder="Tell me about your project or inquiry..."
         textAreaClassName="min-h-[120px]"
       />
     </div>

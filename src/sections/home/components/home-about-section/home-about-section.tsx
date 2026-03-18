@@ -11,7 +11,7 @@ export default function HomeAboutSection({ aboutInfo }: Props) {
       <div className="px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl text-primary font-bold font-cormorant sm:text-4xl md:text-5xl">
-            Sobre Mí
+            About Me
           </h2>
           <p className="mt-4 text-black font-lora  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             {aboutInfo.about_text}
